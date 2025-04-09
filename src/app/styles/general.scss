@@ -1,0 +1,78 @@
+@use './mixins.scss' as *;
+
+html {
+    height: auto;
+    font-size: 10px;
+
+    @include media($media-l) {
+        font-size: calc(100vw / 1920 * 10);
+    }
+
+    @include media {
+        font-size: calc(100vw / 375 * 10);
+    }
+
+    &, * {
+        // firefox
+        scrollbar-color: #E9DED4 transparent;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar,
+        &::-webkit-scrollbar-thumb {
+            border-radius: 0.2rem;
+        }
+
+        &::-webkit-scrollbar {
+            width: 0.4rem; /* ширина для вертикального скролла */
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #E9DED4;
+        }
+    }
+}
+
+html, body, #root {
+    min-height: 100vh;
+}
+
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--default-text-color);
+    font-family: var(--font-urbanist);
+    font-size: var(--default-font-size);
+    font-style: normal;
+    line-height: var(--default-line-height);
+    font-optical-sizing: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: var(--wrapper-max-width);
+    margin: 0 auto;
+    padding-inline: var(--wrapper-padding-inline);
+
+    @include media {
+        padding-inline: 2rem;
+    }
+}
+
+button {
+    transition: .25s ease-out color, .25s background-color;
+}
+
+a {
+    color: rgb(48, 87, 162);
+}
+
