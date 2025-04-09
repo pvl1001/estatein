@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-    {ignores: ['dist']},
+    { ignores: ['dist'] },
     {
         extends: [js.configs.recommended, ...tseslint.configs.recommended],
         files: ['**/*.{ts,tsx}'],
@@ -19,18 +19,17 @@ export default tseslint.config(
         },
         rules: {
             ...reactHooks.configs.recommended.rules,
-            "no-debugger": "warn",
-            "no-empty-pattern": "off",
-            "react/react-in-jsx-scope": "off",
-            "react/display-name": "off",
-            "react/no-unescaped-entities": "off",
-            "react-hooks/exhaustive-deps": "off",
-            "@typescript-eslint/no-unused-expressions": "off",
-            "@typescript-eslint/no-unused-vars": "off",
-            "@typescript-eslint/no-empty-object-type": "off",
-            "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-require-imports": "off",
-            "prefer-const": "off",
+            'no-debugger': 'warn',
+            'no-empty-pattern': 'off',
+            'react/react-in-jsx-scope': 'off',
+            'react/display-name': 'off',
+            'react/no-unescaped-entities': 'off',
+            'react-hooks/exhaustive-deps': 'off',
+            '@typescript-eslint/no-unused-expressions': 'off',
+            '@typescript-eslint/no-empty-object-type': 'off',
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/no-require-imports': 'off',
+            'prefer-const': 'off',
         },
-    },
+    }
 )
