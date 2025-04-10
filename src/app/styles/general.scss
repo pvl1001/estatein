@@ -8,13 +8,18 @@ html {
         font-size: calc(100vw / 1920 * 10);
     }
 
-    @include media {
-        font-size: calc(100vw / 375 * 10);
+    @include media($media-m) {
+        font-size: calc(100vw / 1440 * 10);
     }
 
-    &, * {
+    @include media($media-s) {
+        font-size: calc(100vw / 390 * 10);
+    }
+
+    &,
+    * {
         // firefox
-        scrollbar-color: #E9DED4 transparent;
+        scrollbar-color: #e9ded4 transparent;
         scrollbar-width: thin;
 
         &::-webkit-scrollbar,
@@ -28,15 +33,16 @@ html {
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #E9DED4;
+            background-color: #e9ded4;
         }
     }
 }
 
-html, body, #root {
+html,
+body,
+#root {
     min-height: 100vh;
 }
-
 
 body {
     background-color: var(--main-bg-color);
@@ -62,17 +68,19 @@ main {
     max-width: var(--wrapper-max-width);
     margin: 0 auto;
     padding-inline: var(--wrapper-padding-inline);
+    outline: 0.1rem solid red;
 
-    @include media {
+    @include media($media-s) {
         padding-inline: 2rem;
     }
 }
 
 button {
-    transition: .25s ease-out color, .25s background-color;
+    transition:
+        0.25s ease-out color,
+        0.25s background-color;
 }
 
 a {
     color: rgb(48, 87, 162);
 }
-
