@@ -1,0 +1,102 @@
+.inner {
+    display: block;
+    top: 50%;
+    margin-top: -0.2rem;
+
+    &::before {
+        top: -1rem;
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        display: block;
+    }
+}
+
+._ {
+    display: grid;
+    width: 3.3rem;
+    padding: 0.6rem;
+    transform: rotateY(180deg);
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    place-items: center;
+
+    .inner {
+        top: 0.2rem;
+        transition: background-color 0s linear 0.13s;
+
+        &,
+        &::after,
+        &::before {
+            position: absolute;
+            width: inherit;
+            height: 0.2rem;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+            border-radius: 0.4rem;
+            background-color: #fff;
+        }
+
+        &::after {
+            top: 1.2rem;
+            width: 50%;
+            transition:
+                width 0.2s ease-out,
+                top 0.2s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s,
+                transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+
+        &::before {
+            top: 0.6rem;
+            transition:
+                top 0.1s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s,
+                transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+    }
+
+    &:hover .inner::after {
+        width: 100%;
+    }
+
+    &.active .inner {
+        transition-delay: 0.22s;
+        background-color: transparent !important;
+
+        &::after {
+            top: -0.4rem;
+            width: 100%;
+            transform: translate3d(0, 1rem, 0) rotate(-45deg);
+            transition:
+                top 0.2s cubic-bezier(0.33, 0, 0.66, 0.33),
+                transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+        }
+
+        &::before {
+            top: -0.4rem;
+            transform: translate3d(0, 1rem, 0) rotate(45deg);
+            transition:
+                top 0.1s cubic-bezier(0.33, 0, 0.66, 0.33) 0.15s,
+                transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.22s;
+        }
+    }
+
+    &.active .inner,
+    ._.active .inner::after,
+    ._.active .inner::before {
+        background-color: #fff;
+    }
+}
+
+.box {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 1.2rem;
+}

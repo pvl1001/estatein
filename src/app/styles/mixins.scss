@@ -1,6 +1,6 @@
-$media-l: 1756px;
-$media-m: 1280px;
-$media-s: 767px;
+$media-l: 1920px;
+$media-m: 1440px;
+$media-s: 576px;
 
 @mixin hover {
     @media (hover: hover) and (pointer: fine) {
