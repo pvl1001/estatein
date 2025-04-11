@@ -1,11 +1,11 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { HashRouter, Route, Routes } from 'react-router'
 import { Footer } from 'widgets/Footer'
 import { Header } from 'widgets/Header'
 import { Nav } from 'widgets/Nav'
 
 function App() {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Nav />
             <Routes>
                 <Route
@@ -19,7 +19,7 @@ function App() {
                 ></Route>
             </Routes>
             <Footer />
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
