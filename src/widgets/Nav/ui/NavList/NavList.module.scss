@@ -1,0 +1,11 @@
+._ {
+    display: flex;
+
+    @include media($media-s) {
+        display: contents;
+    }
+}
+
+.button {
+    padding-block: 1.6rem;
+}

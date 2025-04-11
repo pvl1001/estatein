@@ -48,10 +48,18 @@ body {
     background-color: var(--main-bg-color);
     color: var(--default-text-color);
     font-family: var(--font-urbanist);
-    font-size: var(--default-font-size);
+    font-size: var(--default-font-size-l);
     font-style: normal;
     line-height: var(--default-line-height);
     font-optical-sizing: auto;
+
+    @include media($media-m) {
+        font-size: var(--default-font-size-m);
+    }
+
+    @include media($media-s) {
+        font-size: var(--default-font-size-s);
+    }
 }
 
 #root {
@@ -67,11 +75,14 @@ main {
     width: 100%;
     max-width: var(--wrapper-max-width);
     margin: 0 auto;
-    padding-inline: var(--wrapper-padding-inline);
     outline: 0.1rem solid red;
 
+    @include media($media-m) {
+        padding-inline: var(--wrapper-padding-inline);
+    }
+
     @include media($media-s) {
-        padding-inline: 2rem;
+        padding-inline: 1.6rem;
     }
 }
 
