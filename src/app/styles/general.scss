@@ -8,13 +8,18 @@ html {
         font-size: calc(100vw / 1920 * 10);
     }
 
-    @include media {
-        font-size: calc(100vw / 375 * 10);
+    @include media($media-m) {
+        font-size: calc(100vw / 1440 * 10);
     }
 
-    &, * {
+    @include media($media-s) {
+        font-size: calc(100vw / 390 * 10);
+    }
+
+    &,
+    * {
         // firefox
-        scrollbar-color: #E9DED4 transparent;
+        scrollbar-color: #e9ded4 transparent;
         scrollbar-width: thin;
 
         &::-webkit-scrollbar,
@@ -28,24 +33,33 @@ html {
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: #E9DED4;
+            background-color: #e9ded4;
         }
     }
 }
 
-html, body, #root {
+html,
+body,
+#root {
     min-height: 100vh;
 }
-
 
 body {
     background-color: var(--main-bg-color);
     color: var(--default-text-color);
     font-family: var(--font-urbanist);
-    font-size: var(--default-font-size);
+    font-size: var(--default-font-size-l);
     font-style: normal;
     line-height: var(--default-line-height);
     font-optical-sizing: auto;
+
+    @include media($media-m) {
+        font-size: var(--default-font-size-m);
+    }
+
+    @include media($media-s) {
+        font-size: var(--default-font-size-s);
+    }
 }
 
 #root {
@@ -61,18 +75,23 @@ main {
     width: 100%;
     max-width: var(--wrapper-max-width);
     margin: 0 auto;
-    padding-inline: var(--wrapper-padding-inline);
+    outline: 0.1rem solid red;
 
-    @include media {
-        padding-inline: 2rem;
+    @include media($media-m) {
+        padding-inline: var(--wrapper-padding-inline);
+    }
+
+    @include media($media-s) {
+        padding-inline: 1.6rem;
     }
 }
 
 button {
-    transition: .25s ease-out color, .25s background-color;
+    transition:
+        0.25s ease-out color,
+        0.25s background-color;
 }
 
 a {
     color: rgb(48, 87, 162);
 }
-

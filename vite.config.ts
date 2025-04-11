@@ -1,29 +1,34 @@
-import react from '@vitejs/plugin-react';
-import {resolve} from 'path';
-import {defineConfig, loadEnv, UserConfig} from 'vite';
-import svgr from 'vite-plugin-svgr';
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
+import { defineConfig, loadEnv, UserConfig } from 'vite'
+import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
-export default ({mode}: UserConfig) => {
-    process.env = {...process.env, ...loadEnv(mode ?? '', process.cwd())};
+export default ({ mode }: UserConfig) => {
+    process.env = { ...process.env, ...loadEnv(mode ?? '', process.cwd()) }
 
     return defineConfig({
         base: process.env.VITE_BASEPATH,
-        plugins: [
-            react(),
-            svgr(),
-        ],
+        plugins: [react(), svgr()],
         server: {
             port: 3000,
             open: true,
         },
         css: {
+            transformer: 'postcss',
             modules: {
-                generateScopedName: "[name]__[local]_[hash:base64:3]",
+                generateScopedName: (classname, filename, css) => {
+                    const cleanName: string = filename
+                        .split('/')
+                        .pop()
+                        .replace(/\.module\.s?css/, '')
+                    const hash: string = Buffer.from(css).toString('base64').slice(0, 3)
+                    return `${cleanName}__${classname}_${hash}`
+                },
             },
             preprocessorOptions: {
                 scss: {
-                    api: 'modern-compiler', // or "modern"
+                    api: 'modern-compiler',
                     additionalData: '@use "/src/app/styles/mixins" as *;',
                 },
             },
@@ -36,7 +41,7 @@ export default ({mode}: UserConfig) => {
                 features: resolve('src/features'),
                 entities: resolve('src/entities'),
                 shared: resolve('src/shared'),
-            }
+            },
         },
         build: {
             // outDir: 'dist',
@@ -52,29 +57,29 @@ export default ({mode}: UserConfig) => {
                     },
                     chunkFileNames: 'assets/js/[name]-[hash].js',
                     entryFileNames: 'assets/js/[name]-[hash].js',
-                    assetFileNames: ({name}) => {
+                    assetFileNames: ({ name }) => {
                         if (/\.woff2?$/.test(name ?? '')) {
-                            return 'assets/fonts/[name]-[hash][extname]';
+                            return 'assets/fonts/[name]-[hash][extname]'
                         }
 
                         if (/\.(gif|jpe?g|png|svg|webp)$/.test(name ?? '')) {
-                            return 'assets/img/[name]-[hash][extname]';
+                            return 'assets/img/[name]-[hash][extname]'
                         }
 
                         if (/\.webm$/.test(name ?? '')) {
-                            return 'assets/video/[name]-[hash][extname]';
+                            return 'assets/video/[name]-[hash][extname]'
                         }
 
                         if (/\.css$/.test(name ?? '')) {
-                            return 'assets/css/[name]-[hash][extname]';
+                            return 'assets/css/[name]-[hash][extname]'
                         }
 
                         // default value
                         // ref: https://rollupjs.org/guide/en/#outputassetfilenames
-                        return 'assets/[name]-[hash][extname]';
+                        return 'assets/[name]-[hash][extname]'
                     },
-                }
-            }
-        }
-    });
-};
+                },
+            },
+        },
+    })
+}

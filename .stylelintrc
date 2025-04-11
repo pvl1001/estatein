@@ -8,6 +8,14 @@
     "stylelint-config-property-sort-order-smacss"
   ],
   "rules": {
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "global"
+        ]
+      }
+    ],
     "scss/double-slash-comment-whitespace-inside": null,
     "no-empty-source": null,
     "custom-property-empty-line-before": null,

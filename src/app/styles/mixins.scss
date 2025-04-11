@@ -1,16 +1,17 @@
-$media-l: 1366px;
-$media-m: 767px;
+$media-l: 1920px;
+$media-m: 1440px;
+$media-s: 576px;
 
 @mixin hover {
-    @media(hover: hover) and (pointer: fine) {
+    @media (hover: hover) and (pointer: fine) {
         &:hover {
-            @content
+            @content;
         }
     }
 }
 
-@mixin media($px: $media-m) {
-    @media(max-width: $px) {
-        @content
+@mixin media($px) {
+    @media (max-width: $px) {
+        @content;
     }
 }
