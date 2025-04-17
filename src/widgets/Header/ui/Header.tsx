@@ -1,14 +1,11 @@
-import s from "./Header.module.scss";
-
+import s from './Header.module.scss'
 
 type Props = {}
 
 export function Header({}: Props) {
     return (
         <header className={s._}>
-            <div className="wrapper">
-                header
-            </div>
+            <div className="wrapper">header</div>
         </header>
-    );
+    )
 }
