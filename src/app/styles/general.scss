@@ -2,11 +2,7 @@
 
 html {
     height: auto;
-    font-size: 10px;
-
-    @include media($media-l) {
-        font-size: calc(100vw / 1920 * 10);
-    }
+    font-size: calc(100vw / 1920 * 10);
 
     @include media($media-m) {
         font-size: calc(100vw / 1440 * 10);
@@ -75,7 +71,6 @@ main {
     width: 100%;
     max-width: var(--wrapper-max-width);
     margin: 0 auto;
-    outline: 0.1rem solid red;
 
     @include media($media-m) {
         padding-inline: var(--wrapper-padding-inline);

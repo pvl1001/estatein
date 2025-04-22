@@ -1,16 +1,13 @@
-import { useLayoutEffect } from "react";
-
+import { useLayoutEffect } from 'react'
 
 export function useWindowResize(resize: () => void) {
-
     useLayoutEffect(() => {
-        resize();
+        resize()
 
-        window.addEventListener("resize", resize);
+        window.addEventListener('resize', resize)
 
         return () => {
-            window.removeEventListener("resize", resize);
-        };
-    }, []);
-
+            window.removeEventListener('resize', resize)
+        }
+    }, [])
 }

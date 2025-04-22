@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
+import App from './src/app/App'
 import { createRoot } from 'react-dom/client'
-import App from './src/app/App.tsx'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './src/app/styles/index.scss'

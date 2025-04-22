@@ -1,7 +1,7 @@
-import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-import { defineConfig, loadEnv, UserConfig } from 'vite'
+import { UserConfig, defineConfig, loadEnv } from 'vite'
 import svgr from 'vite-plugin-svgr'
+import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default ({ mode }: UserConfig) => {
@@ -22,7 +22,9 @@ export default ({ mode }: UserConfig) => {
                         .split('/')
                         .pop()
                         .replace(/\.module\.s?css/, '')
-                    const hash: string = Buffer.from(css).toString('base64').slice(0, 3)
+                    const hash: string = Buffer.from(css)
+                        .toString('base64')
+                        .slice(0, 3)
                     return `${cleanName}__${classname}_${hash}`
                 },
             },

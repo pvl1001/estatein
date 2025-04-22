@@ -1,0 +1,15 @@
+._ {
+    display: flex;
+
+    @include media($media-s) {
+        display: contents;
+    }
+}
+
+.button {
+    padding: 1.4rem 2.4rem;
+
+    @include media($media-m) {
+        padding: 1.2rem 2rem;
+    }
+}
