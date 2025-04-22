@@ -30,12 +30,6 @@ $z-index: 10;
 }
 
 .logo {
-    display: flex;
-    width: 16rem;
-
-    @include media($media-m) {
-        width: 11.3rem;
-    }
     @include media($media-s) {
         width: 9.33rem;
     }
