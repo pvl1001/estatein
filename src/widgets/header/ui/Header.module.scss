@@ -1,3 +1,5 @@
+$z-index: 10;
+
 ._ {
     background: rgb(26, 26, 26);
 
@@ -67,14 +69,14 @@
     }
 
     &._active {
-        z-index: 10;
+        z-index: $z-index;
         transform: rotateY(0);
     }
 }
 
 .burger_button {
     display: none;
-    z-index: 2;
+    z-index: $z-index;
 
     @include media($media-s) {
         display: initial;
