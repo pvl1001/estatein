@@ -19,7 +19,7 @@ export const Copyright: FC<Props> = ({ socials }) => {
 
                 <ul className={s.icon_list}>
                     {socials.map((social) => (
-                        <li key={s.link}>
+                        <li key={social.link}>
                             <a href={social.link} className={s.icon}>
                                 {social.icon}
                             </a>
