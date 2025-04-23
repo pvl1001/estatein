@@ -1,0 +1,102 @@
+._ {
+    --footer-link-list-gap: 1.7rem;
+    --footer-form-width: 42.3rem;
+    --footer-padding-block: 10rem;
+    --footer-email-container-gap: 3rem;
+    --footer-category-list-gap: 9.7rem;
+    --footer-category-title-margin-bottom: 3rem;
+    --footer-category-title-font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding-block: var(--footer-padding-block);
+}
+
+.email_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--footer-email-container-gap);
+}
+
+.form {
+    width: var(--footer-form-width);
+}
+
+.category_list {
+    display: flex;
+    gap: var(--footer-category-list-gap);
+
+    &__title {
+        margin-bottom: var(--footer-category-title-margin-bottom);
+        color: var(--description-color);
+        font-size: var(--footer-category-title-font-size);
+        font-weight: 500;
+        line-height: 2.4rem;
+    }
+}
+
+.link_list {
+    display: grid;
+    gap: var(--footer-link-list-gap);
+}
+
+@include media($media-m) {
+    ._ {
+        --footer-form-width: 30.5rem;
+        --footer-padding-block: 8rem;
+        --footer-category-title-font-size: 1.8rem;
+        --footer-email-container-gap: 2.4rem;
+        --footer-category-list-gap: 8.7rem;
+        --footer-category-title-margin-bottom: 2.5rem;
+        --footer-link-list-gap: 1.6rem;
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --footer-category-title-font-size: 1.6rem;
+        --footer-form-width: 100%;
+        --footer-padding-block: 5rem;
+        --footer-category-title-margin-bottom: 1.5rem;
+        --footer-link-list-gap: 1.1rem;
+        --footer-email-container-gap: 1.9rem;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .category_list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 4rem;
+
+        > li {
+            padding-top: 2.2rem;
+        }
+
+        > li:nth-child(2n) {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 2rem auto 0 -2rem;
+                width: 0.1rem;
+                background-color: var(--border-color);
+            }
+        }
+
+        > li:nth-child(4) {
+            grid-row: span 2;
+        }
+    }
+
+    .link_list > li:last-child {
+        padding-bottom: 2.2rem;
+        border-bottom: var(--border);
+    }
+}

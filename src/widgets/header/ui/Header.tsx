@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { NavLink } from 'react-router'
 import cn from 'classnames'
 import { Button } from 'shared/ui/button'
-import { Icon } from 'shared/ui/icon'
+import { Logo } from 'shared/ui/logo'
 import { NavListItem } from '../types.ts'
 import { Burger } from './Burger/Burger'
 import { NavList } from './NavList/NavList'
@@ -20,9 +20,7 @@ export const Header: FC<Props> = ({ routes }) => {
     return (
         <header className={s._}>
             <div className={cn('wrapper', s.wrapper)}>
-                <a href={'/'} className={s.logo}>
-                    <Icon.Logo />
-                </a>
+                <Logo className={s.logo} />
 
                 <nav className={cn(s.burger_menu, isActive && s._active)}>
                     <NavList

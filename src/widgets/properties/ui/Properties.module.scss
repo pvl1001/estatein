@@ -1,0 +1,68 @@
+._ {
+    --properties-padding-block: 10rem;
+    --properties-title-margin-bottom: 2.1rem;
+    --properties-container-gap: 25rem;
+    --properties-bg:
+        url('../img/abstract_left.webp') left bottom / 54.6rem no-repeat,
+        url('../img/abstract_right.webp') right bottom / 63.5rem no-repeat;
+
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background: var(--properties-bg);
+}
+
+.container {
+    display: flex;
+    gap: var(--properties-container-gap);
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--properties-padding-block);
+}
+
+.title {
+    margin-bottom: var(--properties-title-margin-bottom);
+}
+
+.button {
+    flex-shrink: 0;
+}
+
+@include media($media-m) {
+    ._ {
+        --properties-padding-block: 6rem;
+        --properties-title-margin-bottom: 1.6rem;
+        --properties-container-gap: 15rem;
+        --properties-bg:
+            url('../img/abstract_left.webp') left -0.3rem / 45.6rem no-repeat,
+            url('../img/abstract_right.webp') right bottom / 50.5rem no-repeat;
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --properties-padding-block: 5rem;
+        --properties-title-margin-bottom: 0.5rem;
+        --properties-container-gap: 3rem;
+        --properties-bg: url('../img/abstract_right.webp') right
+            calc(100% + 1.4rem) / 34.5rem no-repeat;
+
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 2.5rem;
+            right: 0.5rem;
+            width: 52.2rem;
+            height: 28.4rem;
+            transform: rotate(90deg);
+            background: url('../img/abstract_left.webp') 0 0 / cover no-repeat;
+        }
+    }
+
+    .container {
+        display: grid;
+    }
+}

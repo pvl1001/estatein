@@ -21,15 +21,16 @@ h1.title {
         @include media($media-m) {
             font-size: 3.8rem;
         }
-    }
 
-    @include media($media-s) {
-        font-size: 2.8rem;
+        @include media($media-s) {
+            font-size: 2.8rem;
+            line-height: 150%;
+        }
     }
 }
 
 .description {
-    color: rgb(153, 153, 153);
+    color: var(--description-color);
     font-weight: 500;
     line-height: 150%;
 }

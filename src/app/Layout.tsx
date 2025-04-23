@@ -2,7 +2,9 @@ import { FC } from 'react'
 import { Outlet } from 'react-router'
 import { Footer } from 'widgets/footer'
 import { Header } from 'widgets/header'
-import { routes } from './lib/routes.ts'
+import { Properties } from '../widgets/properties'
+import { footerLinks } from './lib/footerLinks'
+import { routes } from './lib/routes'
 
 type Props = {}
 
@@ -13,7 +15,8 @@ export const Layout: FC<Props> = () => {
             <main>
                 <Outlet />
             </main>
-            <Footer />
+            <Properties />
+            <Footer links={footerLinks} />
         </>
     )
 }

@@ -41,21 +41,14 @@ body,
 }
 
 body {
+    @include font-size;
+
     background-color: var(--main-bg-color);
     color: var(--default-text-color);
     font-family: var(--font-urbanist);
-    font-size: var(--default-font-size-l);
     font-style: normal;
     line-height: var(--default-line-height);
     font-optical-sizing: auto;
-
-    @include media($media-m) {
-        font-size: var(--default-font-size-m);
-    }
-
-    @include media($media-s) {
-        font-size: var(--default-font-size-s);
-    }
 }
 
 #root {
@@ -88,5 +81,5 @@ button {
 }
 
 a {
-    color: rgb(48, 87, 162);
+    color: var(--default-text-color);
 }
