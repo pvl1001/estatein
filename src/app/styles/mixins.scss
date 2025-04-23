@@ -15,3 +15,15 @@ $media-s: 576px;
         @content;
     }
 }
+
+@mixin font-size() {
+    font-size: var(--default-font-size-l);
+
+    @include media($media-m) {
+        font-size: var(--default-font-size-m);
+    }
+
+    @include media($media-s) {
+        font-size: var(--default-font-size-s);
+    }
+}

@@ -29,7 +29,7 @@ h1.title {
 }
 
 .description {
-    color: rgb(153, 153, 153);
+    color: var(--description-color);
     font-weight: 500;
     line-height: 150%;
 }

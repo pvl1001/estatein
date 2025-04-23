@@ -1,0 +1,85 @@
+.icon {
+    display: grid;
+    width: var(--text-field-icon-size);
+    margin-right: var(--text-field-icon-margin-right);
+    place-items: center;
+    aspect-ratio: 1;
+
+    svg path {
+        transition: var(--text-field-tranition);
+    }
+}
+
+._ {
+    --text-field-height: 6.6rem;
+    --text-field-padding-inline: 2.4rem;
+    --text-field-border-radius: 1.2rem;
+    --text-field-icon-size: 2.8rem;
+    --text-field-font-size: 1.8rem;
+    --text-field-icon-margin-right: 1rem;
+    --text-field-send-button-width: 3rem;
+    --text-field-tranition: 0.1s ease-out;
+    --text-field-bgc: transparent;
+
+    @include media($media-m) {
+        --text-field-height: 5.2rem;
+        --text-field-padding-inline: 2rem;
+        --text-field-border-radius: 0.8rem;
+        --text-field-font-size: 1.4rem;
+        --text-field-icon-margin-right: 0.65rem;
+        --text-field-send-button-width: 2.4rem;
+    }
+
+    @include media($media-s) {
+        //--text-field-height: 5.2rem;
+    }
+
+    display: flex;
+    align-items: center;
+    height: var(--text-field-height);
+    padding-inline: var(--text-field-padding-inline);
+    transition: var(--text-field-tranition);
+    border: var(--border);
+    border-radius: var(--text-field-border-radius);
+    background-color: var(--text-field-bgc);
+    color: var(--default-text-color);
+    font-size: var(--text-field-font-size);
+    cursor: text;
+
+    input {
+        width: 100%;
+        background-color: inherit;
+        color: inherit;
+        font-size: inherit;
+
+        ::placeholder {
+            color: var(--description-color);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &:has(input:focus),
+    &:has(input:active) {
+        border-color: var(--default-text-color);
+
+        svg path {
+            fill: var(--default-text-color);
+        }
+    }
+}
+
+.send_button {
+    $padding: 1rem;
+
+    display: grid;
+    box-sizing: content-box;
+    flex-shrink: 0;
+    width: var(--text-field-send-button-width);
+    margin-right: -$padding;
+    padding: $padding;
+    aspect-ratio: 1;
+    place-items: center;
+}
