@@ -21,19 +21,6 @@
     --text-field-tranition: 0.1s ease-out;
     --text-field-bgc: transparent;
 
-    @include media($media-m) {
-        --text-field-height: 5.2rem;
-        --text-field-padding-inline: 2rem;
-        --text-field-border-radius: 0.8rem;
-        --text-field-font-size: 1.4rem;
-        --text-field-icon-margin-right: 0.65rem;
-        --text-field-send-button-width: 2.4rem;
-    }
-
-    @include media($media-s) {
-        //--text-field-height: 5.2rem;
-    }
-
     display: flex;
     align-items: center;
     height: var(--text-field-height);
@@ -82,4 +69,15 @@
     padding: $padding;
     aspect-ratio: 1;
     place-items: center;
+}
+
+@include media($media-m) {
+    ._ {
+        --text-field-height: 5.2rem;
+        --text-field-padding-inline: 2rem;
+        --text-field-border-radius: 0.8rem;
+        --text-field-font-size: 1.4rem;
+        --text-field-icon-margin-right: 0.65rem;
+        --text-field-send-button-width: 2.4rem;
+    }
 }
