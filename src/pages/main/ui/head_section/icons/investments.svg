@@ -1,0 +1,32 @@
+<svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <clipPath id="clip139_6476">
+            <rect id="Icon" rx="0.000000" width="23.000000" height="23.000000" transform="translate(18.500000 18.500000)" fill="white" fill-opacity="0"/>
+        </clipPath>
+        <linearGradient x1="4.939018" y1="63.292686" x2="62.743927" y2="-4.024376" id="paint_linear_139_6474_0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A685FA"/>
+            <stop offset="0.323723" stop-color="#A685FA" stop-opacity="0.000000"/>
+        </linearGradient>
+        <linearGradient x1="59.817078" y1="-7.682915" x2="4.939034" y2="60.000023" id="paint_linear_139_6474_1" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A685FA"/>
+            <stop offset="0.576615" stop-color="#A685FA" stop-opacity="0.000000"/>
+        </linearGradient>
+        <linearGradient x1="3.209686" y1="10.483860" x2="51.822578" y2="52.000004" id="paint_linear_139_6475_0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A685FA"/>
+            <stop offset="0.323723" stop-color="#A685FA" stop-opacity="0.000000"/>
+        </linearGradient>
+        <linearGradient x1="60.693550" y1="61.935467" x2="9.596779" y2="25.741936" id="paint_linear_139_6475_1" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A685FA"/>
+            <stop offset="0.576615" stop-color="#A685FA" stop-opacity="0.000000"/>
+        </linearGradient>
+    </defs>
+    <g clip-path="url(#clip139_6476)">
+        <path id="Union"
+              d="M30 20.25C30.41 20.25 30.75 20.58 30.75 21L30.75 23.25C30.75 23.66 30.41 24 30 24C29.58 24 29.25 23.66 29.25 23.25L29.25 21C29.25 20.58 29.58 20.25 30 20.25ZM25.75 25.75C25.46 26.05 24.98 26.05 24.69 25.75L23.1 24.16C22.95 24.01 22.88 23.82 22.88 23.63C22.88 23.44 22.95 23.25 23.1 23.1C23.39 22.81 23.87 22.81 24.16 23.1L25.75 24.69C25.9 24.84 25.97 25.03 25.97 25.22C25.97 25.41 25.9 25.61 25.75 25.75ZM37.11 23.63C37.11 23.82 37.04 24.01 36.89 24.16L35.3 25.75C35.01 26.05 34.53 26.05 34.24 25.75C34.09 25.61 34.02 25.41 34.02 25.22C34.02 25.03 34.09 24.84 34.24 24.69L35.83 23.1C36.12 22.81 36.6 22.81 36.89 23.1C37.04 23.25 37.11 23.44 37.11 23.63ZM25.5 30C25.5 27.51 27.51 25.5 30 25.5C32.48 25.5 34.5 27.51 34.5 30C34.5 32.48 32.48 34.5 30 34.5C27.51 34.5 25.5 32.48 25.5 30ZM24 30C24 30.41 23.66 30.75 23.25 30.75L21 30.75C20.58 30.75 20.25 30.41 20.25 30C20.25 29.58 20.58 29.25 21 29.25L23.25 29.25C23.66 29.25 24 29.58 24 30ZM39.75 30C39.75 30.41 39.41 30.75 39 30.75L36.75 30.75C36.33 30.75 36 30.41 36 30C36 29.58 36.33 29.25 36.75 29.25L39 29.25C39.41 29.25 39.75 29.58 39.75 30ZM36.89 36.89C36.6 37.18 36.12 37.18 35.83 36.89L34.24 35.3C34.09 35.15 34.02 34.96 34.02 34.77C34.02 34.58 34.09 34.38 34.24 34.24C34.53 33.94 35.01 33.94 35.3 34.24L36.89 35.83C37.04 35.98 37.11 36.17 37.11 36.36C37.11 36.55 37.04 36.74 36.89 36.89ZM25.97 34.77C25.97 34.96 25.9 35.15 25.75 35.3L24.16 36.89C23.87 37.18 23.39 37.18 23.1 36.89C22.95 36.74 22.88 36.55 22.88 36.36C22.88 36.17 22.95 35.98 23.1 35.83L24.69 34.24C24.98 33.94 25.46 33.94 25.75 34.24C25.9 34.38 25.97 34.58 25.97 34.77ZM30 36C30.41 36 30.75 36.33 30.75 36.75L30.75 39C30.75 39.41 30.41 39.75 30 39.75C29.58 39.75 29.25 39.41 29.25 39L29.25 36.75C29.25 36.33 29.58 36 30 36Z"
+              fill="#A685FA" fill-opacity="1.000000" fill-rule="evenodd"/>
+    </g>
+    <rect id="Container" rx="21.500000" width="43.000000" height="43.000000" transform="translate(8.500000 8.500000)" stroke="url(#paint_linear_139_6475_0)" stroke-opacity="1.000000" stroke-width="1.000000"/>
+    <rect id="Container" rx="21.500000" width="43.000000" height="43.000000" transform="translate(8.500000 8.500000)" stroke="url(#paint_linear_139_6475_1)" stroke-opacity="1.000000" stroke-width="1.000000"/>
+    <rect id="Icon Container" rx="29.500000" width="59.000000" height="59.000000" transform="translate(0.500000 0.500000)" stroke="url(#paint_linear_139_6474_0)" stroke-opacity="1.000000" stroke-width="1.000000"/>
+    <rect id="Icon Container" rx="29.500000" width="59.000000" height="59.000000" transform="translate(0.500000 0.500000)" stroke="url(#paint_linear_139_6474_1)" stroke-opacity="1.000000" stroke-width="1.000000"/>
+</svg>

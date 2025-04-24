@@ -20,7 +20,7 @@
     "no-empty-source": null,
     "custom-property-empty-line-before": null,
     "color-function-notation": "legacy",
-    "selector-class-pattern": "(^_$)|(^_?[a-z]+_?[a-z0-9]*$)",
+    "selector-class-pattern": "(^_$)|(^_?([a-z]+_?[a-z0-9])*$)",
     "order/order": [
       [
         "dollar-variables",
