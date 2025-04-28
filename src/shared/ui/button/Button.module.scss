@@ -12,8 +12,13 @@
     --background: none;
 }
 
+._dark {
+    --background: var(--dark-color);
+}
+
 ._ {
     box-sizing: content-box;
+    flex-shrink: 0;
     padding: 1.8rem 2.4rem;
     border: var(--border);
     border-radius: var(--border-radius);
@@ -22,7 +27,7 @@
     color: var(--default-text-color);
     font-size: 1.8rem;
 
-    @include media($media-m) {
+    @include media($media-s) {
         padding: 1.5rem 2rem;
         border-radius: var(--border-radius-s);
         font-size: 1.4rem;

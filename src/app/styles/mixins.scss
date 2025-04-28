@@ -1,6 +1,5 @@
 $media-l: 1920px;
-$media-m: 1440px;
-$media-s: 576px;
+$media-s: 767px;
 
 @mixin hover {
     @media (hover: hover) and (pointer: fine) {
@@ -18,10 +17,6 @@ $media-s: 576px;
 
 @mixin font-size() {
     font-size: var(--default-font-size-l);
-
-    @include media($media-m) {
-        font-size: var(--default-font-size-m);
-    }
 
     @include media($media-s) {
         font-size: var(--default-font-size-s);

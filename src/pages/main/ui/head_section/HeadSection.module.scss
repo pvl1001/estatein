@@ -2,7 +2,8 @@
     --head-section-card-list-gap: 2rem;
     --head-section-card-list-border-radius: 0;
     --head-section-card-list-box-shadow: 0 0 0 1rem rgb(25, 25, 25);
-    --head-section-card-list-wrapper-padding-block: 0;
+    --head-section-card-list-wrapper-padding-top: 0;
+    --head-section-buttons-gap: 2rem;
 }
 
 .top_container {
@@ -23,13 +24,6 @@
     max-width: 75.8rem;
     min-height: 81.4rem;
     gap: 6rem;
-
-    @include media($media-m) {
-        max-width: 61rem;
-        min-height: 62.2rem;
-        padding-top: initial;
-        gap: 5rem;
-    }
 
     @include media($media-s) {
         min-height: initial;
@@ -74,11 +68,6 @@
     width: 17.5rem;
     translate: -50%;
 
-    @include media($media-m) {
-        right: -30.9%;
-        width: 12.9rem;
-    }
-
     @include media($media-s) {
         top: -13.5rem;
         right: initial;
@@ -91,10 +80,6 @@
 .title {
     margin-bottom: 2.4rem;
 
-    @include media($media-m) {
-        margin-bottom: 2rem;
-    }
-
     @include media($media-s) {
         margin-bottom: 1.6rem;
     }
@@ -102,11 +87,7 @@
 
 .buttons {
     display: flex;
-    gap: 2rem;
-
-    @include media($media-m) {
-        gap: 1.6rem;
-    }
+    gap: var(--head-section-buttons-gap);
 
     @include media($media-s) {
         flex-direction: column;
@@ -119,10 +100,6 @@
 
     li {
         flex: 1;
-    }
-
-    @include media($media-m) {
-        gap: 1.6rem;
     }
 
     @include media($media-s) {
@@ -143,10 +120,6 @@
     border-radius: var(--border-radius);
     background: var(--dark-color);
 
-    @include media($media-m) {
-        padding: 1.4rem 2rem;
-    }
-
     @include media($media-s) {
         padding: 1.6rem;
         border-radius: var(--border-radius-s);
@@ -157,10 +130,6 @@
         font-size: 4rem;
         font-weight: 700;
         line-height: 150%;
-
-        @include media($media-m) {
-            font-size: 3rem;
-        }
 
         @include media($media-s) {
             font-size: 2.4rem;
@@ -182,20 +151,16 @@
 
 .head_card_list_wrapper {
     display: contents;
-    padding-block: var(--head-section-card-list-wrapper-padding-block);
-}
-
-@include media($media-m) {
-    ._ {
-        --head-section-card-list-gap: 1rem;
-    }
+    padding-top: var(--head-section-card-list-wrapper-padding-top);
 }
 
 @include media($media-s) {
     ._ {
         --head-section-card-list-border-radius: 1.2rem;
         --head-section-card-list-box-shadow: 0 0 0 0.4rem rgb(25, 25, 25);
-        --head-section-card-list-wrapper-padding-block: 4rem;
+        --head-section-card-list-wrapper-padding-top: 4rem;
+        --head-section-card-list-gap: 1rem;
+        --head-section-buttons-gap: 1.5rem;
     }
 
     .head_card_list_wrapper {

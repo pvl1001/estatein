@@ -1,0 +1,104 @@
+._ {
+    --feature-card-padding: 4rem;
+    --feature-card-gap: 3rem;
+    --feature-card-border-radius: 1.2rem;
+    --feature-card-text-container-gap: 1rem;
+    --feature-card-image-height: 31.8rem;
+    --feature-card-option-list-gap: 1rem;
+    --feature-card-option-list-font-size: 1.8rem;
+    --feature-card-option-padding: 0.8rem 1.4rem;
+    --feature-card-option-icon-width: 2.4rem;
+    --feature-card-button-width: 23rem;
+    --feature-card-price-font-size: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    padding: var(--feature-card-padding);
+    gap: var(--feature-card-gap);
+    border: var(--border);
+    border-radius: var(--feature-card-border-radius);
+}
+
+.image {
+    object-position: center;
+    width: 100%;
+    height: var(--feature-card-image-height);
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.text_container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--feature-card-text-container-gap);
+}
+
+.option_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--feature-card-option-list-gap);
+    font-size: var(--feature-card-option-list-font-size);
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: var(--feature-card-option-padding);
+        border: var(--border);
+        border-radius: 2.8rem;
+        background-color: var(--dark-color);
+        gap: 0.4rem;
+
+        svg {
+            width: var(--feature-card-option-icon-width);
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    button {
+        flex: 1;
+        max-width: var(--feature-card-button-width);
+    }
+}
+
+.price_container {
+    display: grid;
+}
+
+.price_title {
+    color: var(--description-color);
+    font-size: var(--feature-card-option-list-font-size);
+}
+
+.price {
+    display: block;
+    font-size: var(--feature-card-price-font-size);
+}
+
+.read_more {
+    text-decoration: underline;
+}
+
+@include media($media-s) {
+    ._ {
+        --feature-card-gap: 2rem;
+        --feature-card-padding: 2.4rem;
+        --feature-card-text-container-gap: 0.2rem;
+        --feature-card-image-height: 21rem;
+        --feature-card-option-list-font-size: 1.4rem;
+        --feature-card-option-padding: 0.4rem 1.4rem;
+        --feature-card-option-list-gap: 0.6rem;
+        --feature-card-button-width: 16rem;
+        --feature-card-option-icon-width: 2rem;
+        --feature-card-price-font-size: 1.8rem;
+    }
+
+    .button {
+        display: none;
+    }
+}

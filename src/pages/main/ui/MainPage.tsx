@@ -1,14 +1,20 @@
-import { HeadSection } from './head_section/HeadSection.tsx'
+import { useEffect, useState } from 'react'
+import { TFeaturedItem } from 'entities/featured_card'
+import { getFeatureds } from '../model/api/getFeatureds'
+import { FeaturedProperties } from './featured_properties/FeaturedProperties'
+import { HeadSection } from './head_section/HeadSection'
 
 export const MainPage = () => {
+    const [featuredList, setFeaturedList] = useState<TFeaturedItem[]>([])
+
+    useEffect(() => {
+        getFeatureds().then(setFeaturedList)
+    }, [])
+
     return (
         <>
-            <HeadSection
-                title={'Discover Your Dream Property with Estatein'}
-                description={
-                    'Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams.'
-                }
-            />
+            <HeadSection />
+            <FeaturedProperties featuredList={featuredList} />
         </>
     )
 }

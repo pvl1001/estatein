@@ -10,12 +10,9 @@ import { countCards } from './lib/countCards'
 import { headCards } from './lib/headCards'
 import s from './HeadSection.module.scss'
 
-type Props = {
-    title: string
-    description: string
-}
+type Props = {}
 
-export const HeadSection: FC<Props> = ({ title, description }) => {
+export const HeadSection: FC<Props> = ({}) => {
     return (
         <section className={s._}>
             <div className={s.top_container}>
@@ -27,9 +24,13 @@ export const HeadSection: FC<Props> = ({ title, description }) => {
                     <div className={s.container}>
                         <div className={s.text_container}>
                             <Text.Title as={'h1'} className={s.title}>
-                                {title}
+                                Discover Your Dream Property with Estatein
                             </Text.Title>
-                            <Text.Description>{description}</Text.Description>
+                            <Text.Description>
+                                Your journey to finding the perfect property
+                                begins here. Explore our listings to find the
+                                home that matches your dreams.
+                            </Text.Description>
                             <DiscoverIcon className={s.discover_icon} />
                         </div>
 

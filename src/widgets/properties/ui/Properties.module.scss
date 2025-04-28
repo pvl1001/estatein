@@ -23,21 +23,6 @@
     margin-bottom: var(--properties-title-margin-bottom);
 }
 
-.button {
-    flex-shrink: 0;
-}
-
-@include media($media-m) {
-    ._ {
-        --properties-padding-block: 6rem;
-        --properties-title-margin-bottom: 1.6rem;
-        --properties-container-gap: 15rem;
-        --properties-bg:
-            url('../img/abstract_left.webp') left -0.3rem / 45.6rem no-repeat,
-            url('../img/abstract_right.webp') right bottom / 50.5rem no-repeat;
-    }
-}
-
 @include media($media-s) {
     ._ {
         --properties-padding-block: 5rem;

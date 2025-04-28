@@ -1,0 +1,27 @@
+._ {
+    --text-box-gap: 2.1rem;
+    --text-box-stars-height: 3rem;
+    --text-box-stars-top: -4.8rem;
+    --text-box-stars-left: -2rem;
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: var(--text-box-gap);
+}
+
+.stars_icon {
+    position: absolute;
+    top: var(--text-box-stars-top);
+    left: var(--text-box-stars-left);
+    height: var(--text-box-stars-height);
+}
+
+@include media($media-s) {
+    ._ {
+        --text-box-gap: 0.5rem;
+        --text-box-stars-height: 2rem;
+        --text-box-stars-top: -2rem;
+        --text-box-stars-left: -0.8rem;
+    }
+}

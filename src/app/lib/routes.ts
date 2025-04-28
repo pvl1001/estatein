@@ -1,12 +1,5 @@
 import { NavListItem } from 'widgets/header'
-
-export enum Paths {
-    MAIN = '/',
-    ABOUT = '/about',
-    PROPERTIES = '/properties',
-    SERVICES = '/services',
-    CONTACT = '/contact',
-}
+import { Paths } from 'shared/lib/const'
 
 export const routes: NavListItem[] = [
     {

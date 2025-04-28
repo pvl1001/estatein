@@ -4,8 +4,8 @@ import { ContactPage } from 'pages/contact'
 import { MainPage } from 'pages/main'
 import { PropertiesPage } from 'pages/properties'
 import { ServicesPage } from 'pages/services'
-import { Layout } from './Layout.tsx'
-import { Paths } from './lib/routes.ts'
+import { Paths } from 'shared/lib/const'
+import { Layout } from './Layout'
 
 const router = createHashRouter([
     {
