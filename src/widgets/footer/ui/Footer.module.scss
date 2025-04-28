@@ -42,24 +42,13 @@
     gap: var(--footer-link-list-gap);
 }
 
-@include media($media-m) {
-    ._ {
-        --footer-form-width: 30.5rem;
-        --footer-padding-block: 8rem;
-        --footer-category-title-font-size: 1.8rem;
-        --footer-email-container-gap: 2.4rem;
-        --footer-category-list-gap: 8.7rem;
-        --footer-category-title-margin-bottom: 2.5rem;
-        --footer-link-list-gap: 1.6rem;
-    }
-}
-
 @include media($media-s) {
     ._ {
         --footer-category-title-font-size: 1.6rem;
         --footer-form-width: 100%;
         --footer-padding-block: 5rem;
         --footer-category-title-margin-bottom: 1.5rem;
+        --footer-category-list-gap: 8.7rem;
         --footer-link-list-gap: 1.1rem;
         --footer-email-container-gap: 1.9rem;
     }

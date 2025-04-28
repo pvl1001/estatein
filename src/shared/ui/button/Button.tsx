@@ -3,7 +3,7 @@ import cn from 'classnames'
 import s from './Button.module.scss'
 
 type Props = ComponentProps<'button'> & {
-    theme?: 'default' | 'link' | 'primary'
+    theme?: 'default' | 'link' | 'primary' | 'dark'
 }
 
 export const Button: FC<Props> = ({

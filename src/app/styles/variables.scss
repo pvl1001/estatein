@@ -1,12 +1,15 @@
+@use '/src/app/styles/mixins' as *;
+
 $wrapper: 159.6rem;
 
 :root {
+    --breakpoint-desktop: #{$media-l};
+    --breakpoint-mobile: #{$media-s};
     --font-urbanist: 'Urbanist', sans-serif;
     --default-text-color: #fff;
     --default-line-height: 1.5;
 
     --default-font-size-l: 1.8rem;
-    --default-font-size-m: 1.6rem;
     --default-font-size-s: 1.4rem;
 
     --wrapper-max-width: #{$wrapper};

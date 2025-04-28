@@ -4,10 +4,6 @@ html {
     height: auto;
     font-size: calc(100vw / 1920 * 10);
 
-    @include media($media-m) {
-        font-size: calc(100vw / 1440 * 10);
-    }
-
     @include media($media-s) {
         font-size: calc(100vw / 390 * 10);
     }
@@ -56,17 +52,23 @@ body {
 }
 
 main {
+    --main-page-gap: 15rem;
+
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    gap: var(--main-page-gap);
+    padding-bottom: var(--main-page-gap);
+
+    @include media($media-s) {
+        --main-page-gap: 8rem;
+    }
 }
 
 .wrapper {
     width: 100%;
     max-width: var(--wrapper-max-width);
     margin: 0 auto;
-
-    @include media($media-m) {
-        padding-inline: var(--wrapper-padding-inline);
-    }
 
     @include media($media-s) {
         padding-inline: 1.6rem;
