@@ -4,6 +4,7 @@ import { Button } from 'shared/ui/button'
 import { Text } from 'shared/ui/text'
 import { CountItem } from './CountItem'
 import { HeadCard } from './head_card/HeadCard'
+import DiscoverArrowIcon from './icons/arrow.svg?react'
 import DiscoverIcon from './icons/discover.svg?react'
 import cityImg from './img/city.webp'
 import { countCards } from './lib/countCards'
@@ -31,7 +32,14 @@ export const HeadSection: FC<Props> = ({}) => {
                                 begins here. Explore our listings to find the
                                 home that matches your dreams.
                             </Text.Description>
-                            <DiscoverIcon className={s.discover_icon} />
+                            <div className={s.discover_icon}>
+                                <DiscoverIcon
+                                    className={s.discover_icon__round}
+                                />
+                                <DiscoverArrowIcon
+                                    className={s.discover_icon__arrow}
+                                />
+                            </div>
                         </div>
 
                         <div className={s.buttons}>
