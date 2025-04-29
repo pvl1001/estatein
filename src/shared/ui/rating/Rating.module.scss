@@ -1,0 +1,33 @@
+._ {
+    --client-say-stars-gap: 1rem;
+    --client-say-star-size: 4.4rem;
+    --client-say-star-padding: 1rem;
+
+    display: flex;
+    gap: var(--client-say-stars-gap);
+}
+
+.star {
+    display: flex;
+    width: var(--client-say-star-size);
+    padding: var(--client-say-star-padding);
+    border: var(--border);
+    border-radius: 50%;
+    aspect-ratio: 1;
+
+    &._active {
+        background-color: var(--dark-color);
+
+        path {
+            fill: #ffe600;
+        }
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --client-say-stars-gap: 0.8rem;
+        --client-say-star-size: 3rem;
+        --client-say-star-padding: 0.6rem;
+    }
+}

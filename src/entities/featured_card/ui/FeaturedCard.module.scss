@@ -1,7 +1,6 @@
 ._ {
     --feature-card-padding: 4rem;
     --feature-card-gap: 3rem;
-    --feature-card-border-radius: 1.2rem;
     --feature-card-text-container-gap: 1rem;
     --feature-card-image-height: 31.8rem;
     --feature-card-option-list-gap: 1rem;
@@ -16,7 +15,7 @@
     padding: var(--feature-card-padding);
     gap: var(--feature-card-gap);
     border: var(--border);
-    border-radius: var(--feature-card-border-radius);
+    border-radius: var(--border-radius);
 }
 
 .image {

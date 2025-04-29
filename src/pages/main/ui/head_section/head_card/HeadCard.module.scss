@@ -1,6 +1,5 @@
 ._ {
     --head-card-padding: 4rem 1.6rem;
-    --head-card-border-radius: 1rem;
     --head-card-gap: 1.8rem;
     --head-card-icon-size: 8.2rem;
     --head-card-font-size: 2rem;
@@ -14,7 +13,7 @@
     align-items: center;
     padding: var(--head-card-padding);
     border: var(--border);
-    border-radius: var(--head-card-border-radius);
+    border-radius: var(--border-radius);
     background: var(--dark-color);
     text-align: center;
     gap: var(--head-card-gap);
