@@ -2,6 +2,7 @@ import Arrow from './svg/arrow.svg?react'
 import Email from './svg/email.svg?react'
 import Logo from './svg/logo.svg?react'
 import Send from './svg/send.svg?react'
+import Star from './svg/star.svg?react'
 import Stars from './svg/stars.svg?react'
 
 export const Icon = {
@@ -10,4 +11,5 @@ export const Icon = {
     Send,
     Arrow,
     Stars,
+    Star,
 }

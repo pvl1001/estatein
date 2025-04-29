@@ -17,19 +17,25 @@
 }
 
 ._ {
+    --button-border-radius: 1rem;
+    --button-padding: 1.8rem 2.4rem;
+    --button-font-size: 1.8rem;
+
     box-sizing: content-box;
     flex-shrink: 0;
-    padding: 1.8rem 2.4rem;
+    padding: var(--button-padding);
     border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: var(--button-border-radius);
     border-color: var(--border-color);
     background: var(--background);
     color: var(--default-text-color);
-    font-size: 1.8rem;
+    font-size: var(--button-font-size);
+}
 
-    @include media($media-s) {
-        padding: 1.5rem 2rem;
-        border-radius: var(--border-radius-s);
-        font-size: 1.4rem;
+@include media($media-s) {
+    ._ {
+        --button-border-radius: 0.8rem;
+        --button-padding: 1.5rem 2rem;
+        --button-font-size: 1.4rem;
     }
 }
