@@ -52,8 +52,12 @@
     aspect-ratio: 1;
     background-color: var(--dark-color);
 
-    svg path {
-        fill: var(--default-text-color);
+    svg {
+        width: 100%;
+
+        path {
+            fill: var(--default-text-color);
+        }
     }
 
     &._prev {
