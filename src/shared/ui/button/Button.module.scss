@@ -32,6 +32,15 @@
     font-size: var(--button-font-size);
 }
 
+.link {
+    display: flex;
+    flex-shrink: 0;
+
+    button {
+        flex-grow: 1;
+    }
+}
+
 @include media($media-s) {
     ._ {
         --button-border-radius: 0.8rem;

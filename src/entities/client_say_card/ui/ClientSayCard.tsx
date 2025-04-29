@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { Rating } from 'shared/ui/rating'
+import { Text } from 'shared/ui/text'
 import { ClientReview } from '../types'
 import s from './ClientSayCard.module.scss'
 
@@ -16,7 +17,9 @@ export const ClientSayCard: FC<Props> = ({
             <Rating rating={rating} />
 
             <div className={s.text_container}>
-                <h5 className={s.title}>{title}</h5>
+                <Text.Title as={'h5'} className={s.title}>
+                    {title}
+                </Text.Title>
                 <p>{message}</p>
             </div>
 

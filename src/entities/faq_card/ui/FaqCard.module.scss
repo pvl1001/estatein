@@ -1,0 +1,32 @@
+._ {
+    --faq-card-padding: 5rem;
+    --faq-card-gap: 3rem;
+    --faq-card-button-width: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    padding: var(--faq-card-padding);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    gap: var(--faq-card-gap);
+}
+
+.question::first-letter {
+    text-transform: uppercase;
+}
+
+.answer {
+    flex: 1;
+}
+
+.button {
+    width: var(--faq-card-button-width);
+}
+
+@include media($media-s) {
+    ._ {
+        --faq-card-padding: 3rem;
+        --faq-card-gap: 2rem;
+        --faq-card-button-width: auto;
+    }
+}
