@@ -22,7 +22,9 @@ $wrapper: 159.6rem;
     --description-color: rgb(153, 153, 153);
     --dark-color: rgb(26, 26, 26);
 
+    --border: 0.1rem solid var(--border-color);
     --border-radius: 1.2rem;
     --border-radius-s: 0.8rem;
-    --border: 0.1rem solid var(--border-color);
+
+    --button-transition: 0.2s ease-out;
 }

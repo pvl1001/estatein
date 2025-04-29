@@ -9,6 +9,13 @@ $media-s: 767px;
     }
 }
 
+@mixin button-hover($contrast: 0.95) {
+    transition: var(--button-transition);
+    @include hover {
+        filter: contrast($contrast);
+    }
+}
+
 @mixin media($px) {
     @media (max-width: $px) {
         @content;

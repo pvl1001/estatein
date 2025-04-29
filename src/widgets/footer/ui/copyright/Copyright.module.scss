@@ -29,12 +29,14 @@
 }
 
 .icon {
+    @include button-hover;
+
     display: grid;
     width: var(--copyright-icon-size);
     height: var(--copyright-icon-size);
     padding: var(--copyright-icon-padding);
     border-radius: 50%;
-    background-color: rgb(20, 20, 20);
+    background-color: var(--main-bg-color);
 }
 
 @include media($media-s) {
