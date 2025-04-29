@@ -1,22 +1,5 @@
-._default {
-    --background: rgb(20, 20, 20);
-}
-
-._primary {
-    --background: var(--primary-color);
-    --border-color: transparent;
-}
-
-._link {
-    --border-color: transparent;
-    --background: none;
-}
-
-._dark {
-    --background: var(--dark-color);
-}
-
 ._ {
+    @include button-hover;
     --button-border-radius: 1rem;
     --button-padding: 1.8rem 2.4rem;
     --button-font-size: 1.8rem;
@@ -30,6 +13,34 @@
     background: var(--background);
     color: var(--default-text-color);
     font-size: var(--button-font-size);
+
+    &._default {
+        --background: var(--main-bg-color);
+    }
+
+    &._primary {
+        @include button-hover(1.5);
+        --background: var(--primary-color);
+        --border-color: transparent;
+    }
+
+    &._link {
+        --border-color: transparent;
+        --background: none;
+    }
+
+    &._dark {
+        --background: var(--dark-color);
+    }
+}
+
+.link {
+    display: flex;
+    flex-shrink: 0;
+
+    button {
+        flex-grow: 1;
+    }
 }
 
 @include media($media-s) {

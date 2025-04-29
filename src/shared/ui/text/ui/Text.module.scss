@@ -21,6 +21,7 @@ h1.title {
 
 h5.title {
     font-size: 2.4rem;
+    line-height: 150%;
 
     @include media($media-s) {
         font-size: 1.8rem;

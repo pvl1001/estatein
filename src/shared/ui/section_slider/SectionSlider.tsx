@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react'
-import { Link } from 'react-router'
 import cn from 'classnames'
 import { Paths } from '../../lib/const'
 import { Button } from '../button'
@@ -24,9 +23,9 @@ export const SectionSlider: FC<Props> = ({
     buttonViewAllProps,
 }) => {
     const viewAllButton = buttonViewAllProps ? (
-        <Link to={buttonViewAllProps.to} className={s.button}>
-            <Button theme={'dark'}>{buttonViewAllProps.name}</Button>
-        </Link>
+        <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
+            {buttonViewAllProps.name}
+        </Button>
     ) : null
 
     return (

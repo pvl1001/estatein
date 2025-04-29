@@ -23,7 +23,7 @@ export const FeaturedCard: FC<Props> = ({
 
     return (
         <article className={s._}>
-            <img src={img} alt="feature" className={s.image} />
+            <img src={img} alt="feature" className={s.image} loading={'lazy'} />
 
             <div className={s.text_container}>
                 <Text.Title as={'h5'}>{name}</Text.Title>
