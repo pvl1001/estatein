@@ -2,7 +2,7 @@
 
 <a href="https://www.figma.com/design/8vHMJxW5Ou0oQ0DEIqo7cC/Real-Estate-Business-Website-UI-Template---Dark-Theme-%7C-Produce-UI--Community-?node-id=46-304&t=itxwKJCuRdNAiJW7-0">Макет</a>
 |
-<a href="https://pvl1001.github.io/estatein/">Сайт</a>
+<a href="https://pvl1001.github.io/estatein/">Стенд</a>
 
 Запустить проект локально:
 
@@ -13,6 +13,8 @@
 ```
 Стек:
 - React
+- Redux-toolkit
+- RTK-query
 - Scss modules
 - Swiper
 - FSD

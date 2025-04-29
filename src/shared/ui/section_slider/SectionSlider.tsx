@@ -14,6 +14,8 @@ type Props = {
         to: Paths
         name: string
     }
+    isLoading?: boolean
+    isError?: boolean
 }
 
 export const SectionSlider: FC<Props> = ({
@@ -21,6 +23,8 @@ export const SectionSlider: FC<Props> = ({
     title,
     description,
     buttonViewAllProps,
+    isError,
+    isLoading,
 }) => {
     const viewAllButton = buttonViewAllProps ? (
         <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
@@ -41,6 +45,8 @@ export const SectionSlider: FC<Props> = ({
                     {viewAllButton}
                 </div>
 
+                {isLoading && 'Loading...'}
+                {isError && 'Error!'}
                 <Slider slideList={slideList} viewButton={viewAllButton} />
             </div>
         </section>

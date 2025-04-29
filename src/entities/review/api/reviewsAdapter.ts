@@ -1,5 +1,4 @@
-import { ClientReview } from 'entities/client_say_card'
-import { ReviewsResponse } from '../types'
+import { ClientReview, ReviewsResponse } from '../types'
 
 function getRandomInt(max: number): number {
     return Math.floor(Math.random() * max) + 1
@@ -11,7 +10,7 @@ export const reviewsAdapter = async (
     return await Promise.all(
         data.map(async (el) => {
             const imgModule = await import(
-                `../../img/profile_${getRandomInt(3)}.webp`
+                `../images/profile_${getRandomInt(3)}.webp`
             )
             return {
                 rating: el.rating,
