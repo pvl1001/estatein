@@ -2,16 +2,11 @@ import { FC } from 'react'
 import { Rating } from 'shared/ui/rating'
 import { Text } from 'shared/ui/text'
 import { ClientReview } from '../types'
-import s from './ClientSayCard.module.scss'
+import s from './ReviewCard.module.scss'
 
 type Props = ClientReview
 
-export const ClientSayCard: FC<Props> = ({
-    rating,
-    title,
-    message,
-    client,
-}) => {
+export const ReviewCard: FC<Props> = ({ rating, title, message, client }) => {
     return (
         <article className={s._}>
             <Rating rating={rating} />

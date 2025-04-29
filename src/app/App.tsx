@@ -1,3 +1,4 @@
+import { Provider } from 'react-redux'
 import { RouterProvider, createHashRouter } from 'react-router'
 import { AboutPage } from 'pages/about'
 import { ContactPage } from 'pages/contact'
@@ -6,6 +7,7 @@ import { PropertiesPage } from 'pages/properties'
 import { ServicesPage } from 'pages/services'
 import { Paths } from 'shared/lib/const'
 import { Layout } from './Layout'
+import { store } from './lib/store.ts'
 
 const router = createHashRouter([
     {
@@ -36,7 +38,11 @@ const router = createHashRouter([
 ])
 
 function App() {
-    return <RouterProvider router={router} />
+    return (
+        <Provider store={store}>
+            <RouterProvider router={router} />
+        </Provider>
+    )
 }
 
 export default App
