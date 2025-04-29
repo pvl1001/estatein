@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useId, useState } from 'react'
 import cn from 'classnames'
 import { useSliderSpaceBetween } from '../../lib/hooks'
 import { useWindowResize } from '../../lib/hooks'
@@ -14,6 +14,7 @@ type Props = {
 }
 
 export const Slider: FC<Props> = ({ slideList, viewButton }) => {
+    const swiperId: string = useId()
     const pageRem: number = useSliderSpaceBetween(20)
     const { mobile } = getBreakpoints()
     const [slidesPerView, setSlidesPerView] = useState(1)
@@ -36,8 +37,8 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                 slidesPerView={slidesPerView}
                 modules={[Navigation]}
                 navigation={{
-                    nextEl: `.${s.nav_button}.${s._next}`,
-                    prevEl: `.${s.nav_button}.${s._prev}`,
+                    nextEl: `#${swiperId}.${s._next}`,
+                    prevEl: `#${swiperId}.${s._prev}`,
                 }}
             >
                 {slideList.map((slide, i) => (
@@ -59,10 +60,10 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                     of {slideList.length}
                 </div>
 
-                <button className={cn(s.nav_button, s._prev)}>
+                <button id={swiperId} className={cn(s.nav_button, s._prev)}>
                     <Icon.Arrow />
                 </button>
-                <button className={cn(s.nav_button, s._next)}>
+                <button id={swiperId} className={cn(s.nav_button, s._next)}>
                     <Icon.Arrow />
                 </button>
             </div>
