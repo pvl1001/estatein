@@ -1,6 +1,6 @@
-import { ClientSay } from './client_say/ClientSay'
-import { Faq } from './faq/FAQ'
-import { FeaturedProperties } from './featured_properties/FeaturedProperties'
+import { ClientSay } from './ClientSay.tsx'
+import { Faq } from './FAQ.tsx'
+import { FeaturedProperties } from './FeaturedProperties.tsx'
 import { HeadSection } from './head_section/HeadSection'
 
 export const MainPage = () => {

@@ -80,7 +80,9 @@
 }
 
 .read_more {
+    color: var(--default-text-color);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 @include media($media-s) {

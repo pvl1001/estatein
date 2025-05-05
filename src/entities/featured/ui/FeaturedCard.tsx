@@ -1,10 +1,11 @@
 import { FC } from 'react'
 import { Button } from 'shared/ui/button'
 import { Text } from 'shared/ui/text'
-import BathroomIcon from '../icons/bathroom.svg?react'
-import BedroomIcon from '../icons/bedroom.svg?react'
-import VillaIcon from '../icons/villa.svg?react'
+import BathroomIcon from '../assets/icons/bathroom.svg?react'
+import BedroomIcon from '../assets/icons/bedroom.svg?react'
+import VillaIcon from '../assets/icons/villa.svg?react'
 import { TFeaturedItem } from '../types'
+import { TruncatedText } from './TruncatedText'
 import s from './FeaturedCard.module.scss'
 
 type Props = TFeaturedItem
@@ -18,9 +19,6 @@ export const FeaturedCard: FC<Props> = ({
     price,
     description,
 }) => {
-    const shortDescription: string = description.slice(0, 70)
-    const hasReadMore: boolean = description !== shortDescription
-
     return (
         <article className={s._}>
             <img src={img} alt="feature" className={s.image} loading={'lazy'} />
@@ -28,15 +26,7 @@ export const FeaturedCard: FC<Props> = ({
             <div className={s.text_container}>
                 <Text.Title as={'h5'}>{name}</Text.Title>
                 <Text.Description>
-                    {shortDescription}
-                    {hasReadMore && (
-                        <>
-                            ...{' '}
-                            <a href="/" className={s.read_more}>
-                                Read More
-                            </a>
-                        </>
-                    )}
+                    <TruncatedText>{description}</TruncatedText>
                 </Text.Description>
             </div>
 

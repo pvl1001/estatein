@@ -1,5 +1,6 @@
 import { resolve } from 'path'
 import { UserConfig, defineConfig, loadEnv } from 'vite'
+import { VitePWA } from 'vite-plugin-pwa'
 import svgr from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
 
@@ -9,7 +10,15 @@ export default ({ mode }: UserConfig) => {
 
     return defineConfig({
         base: process.env.VITE_BASEPATH,
-        plugins: [react(), svgr()],
+        plugins: [
+            react(),
+            svgr(),
+            VitePWA({
+                workbox: {
+                    globPatterns: ['**/*.{js,css,html,svg,webp}'],
+                },
+            }),
+        ],
         server: {
             port: 3000,
             open: true,

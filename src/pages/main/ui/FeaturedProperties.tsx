@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { FeaturedCard, useGetFeaturedQuery } from 'entities/featured'
-import { Paths } from 'shared/lib/const'
-import { SectionSlider } from 'shared/ui/section_slider'
+import { FeaturedCard, useGetFeaturedQuery } from '../../../entities/featured'
+import { Paths } from '../../../shared/lib/const'
+import { SectionSlider } from '../../../shared/ui/section_slider'
 
 type Props = {}
 

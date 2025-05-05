@@ -44,8 +44,6 @@
 }
 
 .nav_button {
-    @include button-hover;
-
     display: flex;
     width: var(--slider-button-size);
     padding: var(--slider-button-padding);
@@ -53,13 +51,11 @@
     border-radius: 50%;
     background-color: var(--dark-color);
     aspect-ratio: 1;
+    @include button-hover;
 
     svg {
         width: 100%;
-
-        path {
-            fill: var(--default-text-color);
-        }
+        color: var(--default-text-color);
     }
 
     &._prev {
@@ -74,8 +70,8 @@
         background-color: transparent;
         pointer-events: none;
 
-        svg path {
-            fill: #808080;
+        svg {
+            color: #808080;
         }
     }
 }

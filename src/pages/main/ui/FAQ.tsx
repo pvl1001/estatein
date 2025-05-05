@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { FaqCard, useGetFaqQuery } from 'entities/faq'
-import { Paths } from 'shared/lib/const'
-import { SectionSlider } from 'shared/ui/section_slider'
+import { FaqCard, useGetFaqQuery } from '../../../entities/faq'
+import { Paths } from '../../../shared/lib/const'
+import { SectionSlider } from '../../../shared/ui/section_slider'
 
 type Props = {}
 
