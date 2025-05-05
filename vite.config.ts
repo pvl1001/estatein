@@ -14,6 +14,22 @@ export default ({ mode }: UserConfig) => {
             react(),
             svgr(),
             VitePWA({
+                manifest: {
+                    theme_color: '1A1A1AFF',
+                    background_color: '#000000',
+                    icons: [
+                        {
+                            src: 'city192.png',
+                            sizes: '192x192',
+                            type: 'image/svg',
+                        },
+                        {
+                            src: 'city512.png',
+                            sizes: '512x512',
+                            type: 'image/png',
+                        },
+                    ],
+                },
                 workbox: {
                     globPatterns: ['**/*.{js,css,html,svg,webp}'],
                 },
