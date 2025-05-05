@@ -61,10 +61,10 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                 </div>
 
                 <button id={swiperId} className={cn(s.nav_button, s._prev)}>
-                    <Icon.Arrow />
+                    <Icon.ArrowStrong />
                 </button>
                 <button id={swiperId} className={cn(s.nav_button, s._next)}>
-                    <Icon.Arrow />
+                    <Icon.ArrowStrong />
                 </button>
             </div>
         </>

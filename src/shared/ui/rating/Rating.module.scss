@@ -17,13 +17,14 @@
 
     svg {
         width: 100%;
+        color: var(--description-color);
     }
 
     &._active {
         background-color: var(--dark-color);
 
-        path {
-            fill: #ffe600;
+        svg {
+            color: #ffe600;
         }
     }
 }

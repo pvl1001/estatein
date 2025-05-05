@@ -10,7 +10,7 @@ export const reviewsAdapter = async (
     return await Promise.all(
         data.map(async (el) => {
             const imgModule = await import(
-                `../images/profile_${getRandomInt(3)}.webp`
+                `../assets/images/profile_${getRandomInt(3)}.webp`
             )
             return {
                 rating: el.rating,

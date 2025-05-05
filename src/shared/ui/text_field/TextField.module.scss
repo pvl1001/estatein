@@ -5,8 +5,9 @@
     place-items: center;
     aspect-ratio: 1;
 
-    svg path {
-        transition: var(--text-field-tranition);
+    svg {
+        transition: var(--text-field-transition);
+        color: #999;
     }
 }
 
@@ -18,14 +19,14 @@
     --text-field-font-size: 1.8rem;
     --text-field-icon-margin-right: 1rem;
     --text-field-send-button-width: 3rem;
-    --text-field-tranition: 0.1s ease-out;
+    --text-field-transition: 0.1s ease-out;
     --text-field-bgc: transparent;
 
     display: flex;
     align-items: center;
     height: var(--text-field-height);
     padding-inline: var(--text-field-padding-inline);
-    transition: var(--text-field-tranition);
+    transition: var(--text-field-transition);
     border: var(--border);
     border-radius: var(--text-field-border-radius);
     background-color: var(--text-field-bgc);
@@ -52,8 +53,8 @@
     &:has(input:active) {
         border-color: var(--default-text-color);
 
-        svg path {
-            fill: var(--default-text-color);
+        svg {
+            color: var(--default-text-color);
         }
     }
 }

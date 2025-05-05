@@ -6,7 +6,7 @@ export const featuredAdapter = async (
     return await Promise.all(
         data.map(async (el: any) => {
             const imgModule = await import(
-                `../images/feature_card_${el.img}.webp`
+                `../assets/images/feature_card_${el.img}.webp`
             )
             el.img = imgModule.default
             return el

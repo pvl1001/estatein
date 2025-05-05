@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import { Button } from 'shared/ui/button'
+import { CounterContainer } from 'shared/ui/counter_container'
+import { HeadCard } from 'shared/ui/head_card'
+import { Icon } from 'shared/ui/icon'
 import { Text } from 'shared/ui/text'
-import { CountItem } from './CountItem'
-import { HeadCard } from './head_card/HeadCard'
-import DiscoverArrowIcon from './icons/arrow.svg?react'
-import DiscoverIcon from './icons/discover.svg?react'
-import cityImg from './img/city.webp'
-import { countCards } from './lib/countCards'
-import { headCards } from './lib/headCards'
+import DiscoverIcon from '../../assets/icons/discover.svg?react'
+import cityImg from '../../assets/images/city.webp'
+import { countCards } from '../../lib/countCards'
+import { headCards } from '../../lib/headCards'
 import s from './HeadSection.module.scss'
 
 type Props = {}
@@ -36,7 +36,7 @@ export const HeadSection: FC<Props> = ({}) => {
                                 <DiscoverIcon
                                     className={s.discover_icon__round}
                                 />
-                                <DiscoverArrowIcon
+                                <Icon.ArrowLight
                                     className={s.discover_icon__arrow}
                                 />
                             </div>
@@ -50,7 +50,7 @@ export const HeadSection: FC<Props> = ({}) => {
                         <ul className={s.count_list}>
                             {countCards.map((item) => (
                                 <li key={item.text}>
-                                    <CountItem {...item} />
+                                    <CounterContainer {...item} />
                                 </li>
                             ))}
                         </ul>

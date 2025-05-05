@@ -1,0 +1,27 @@
+._ {
+    --counter-container-padding: 1.6rem 2.4rem;
+    --counter-container-border-radius: var(--border-radius);
+    --counter-container-count-font-size: 4rem;
+
+    display: grid;
+    padding: var(--counter-container-padding);
+    border: var(--border);
+    border-radius: var(--counter-container-border-radius);
+    background: var(--dark-color);
+}
+
+.count {
+    font-size: var(--counter-container-count-font-size);
+    font-weight: 700;
+    line-height: 150%;
+}
+
+@include media($media-s) {
+    ._ {
+        --counter-container-padding: 1.6rem;
+        --counter-container-border-radius: var(--border-radius-s);
+        --counter-container-count-font-size: 2.4rem;
+
+        text-align: center;
+    }
+}
