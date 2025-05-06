@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Text } from '../text'
+import { Text } from '../../text'
 import s from './CounterContainer.module.scss'
 
 type Props = {

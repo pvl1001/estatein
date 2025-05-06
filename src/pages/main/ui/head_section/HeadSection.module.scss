@@ -115,25 +115,6 @@
     }
 }
 
-.count_list {
-    display: flex;
-    gap: 2rem;
-
-    li {
-        flex: 1;
-    }
-
-    @include media($media-s) {
-        flex-wrap: wrap;
-        gap: 1.2rem;
-
-        & > li:nth-child(3) {
-            flex: initial;
-            width: 100%;
-        }
-    }
-}
-
 .head_card_list {
     display: flex;
     padding: var(--head-section-card-list-gap);

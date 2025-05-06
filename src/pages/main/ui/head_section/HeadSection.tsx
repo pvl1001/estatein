@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import cn from 'classnames'
+import { countCards } from 'shared/lib/const/countCards'
 import { Button } from 'shared/ui/button'
-import { CounterContainer } from 'shared/ui/counter_container'
+import { CounterList } from 'shared/ui/counter_list'
 import { HeadCard } from 'shared/ui/head_card'
 import { Icon } from 'shared/ui/icon'
 import { Text } from 'shared/ui/text'
 import DiscoverIcon from '../../assets/icons/discover.svg?react'
 import cityImg from '../../assets/images/city.webp'
-import { countCards } from '../../lib/countCards'
 import { headCards } from '../../lib/headCards'
 import s from './HeadSection.module.scss'
 
@@ -47,13 +47,7 @@ export const HeadSection: FC<Props> = ({}) => {
                             <Button theme={'primary'}>Browse Properties</Button>
                         </div>
 
-                        <ul className={s.count_list}>
-                            {countCards.map((item) => (
-                                <li key={item.text}>
-                                    <CounterContainer {...item} />
-                                </li>
-                            ))}
-                        </ul>
+                        <CounterList counterList={countCards} />
                     </div>
                 </div>
             </div>
