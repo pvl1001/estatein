@@ -1,5 +1,9 @@
 import { FC } from 'react'
-import { ReviewCard, useGetReviewsQuery } from 'entities/review'
+import {
+    ReviewCard,
+    ReviewCardSkeleton,
+    useGetReviewsQuery,
+} from 'entities/review'
 import { Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
 
@@ -16,6 +20,7 @@ export const ClientSay: FC<Props> = () => {
             description={
                 'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.'
             }
+            skeletonComponent={<ReviewCardSkeleton />}
             slideList={reviewList.map((review) => (
                 <ReviewCard {...review} />
             ))}
