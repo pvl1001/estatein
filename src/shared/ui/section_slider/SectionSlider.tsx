@@ -10,6 +10,7 @@ type Props = {
     title: string
     description: string
     slideList: ReactNode[]
+    skeletonComponent?: ReactNode
     buttonViewAllProps?: {
         to: Paths
         name: string
@@ -25,12 +26,14 @@ export const SectionSlider: FC<Props> = ({
     buttonViewAllProps,
     isError,
     isLoading,
+    skeletonComponent,
 }) => {
     const viewAllButton = buttonViewAllProps ? (
         <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
             {buttonViewAllProps.name}
         </Button>
     ) : null
+    slideList = isLoading ? Array(3).fill(skeletonComponent) : slideList
 
     return (
         <section className={s._}>
@@ -45,7 +48,6 @@ export const SectionSlider: FC<Props> = ({
                     {viewAllButton}
                 </div>
 
-                {isLoading && 'Loading...'}
                 {isError && 'Error!'}
                 <Slider slideList={slideList} viewButton={viewAllButton} />
             </div>

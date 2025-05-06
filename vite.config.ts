@@ -21,7 +21,7 @@ export default ({ mode }: UserConfig) => {
                         {
                             src: 'city192.png',
                             sizes: '192x192',
-                            type: 'image/svg',
+                            type: 'image/png',
                         },
                         {
                             src: 'city512.png',
