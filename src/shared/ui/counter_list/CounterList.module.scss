@@ -1,0 +1,21 @@
+._ {
+    --counter-list-gap: 2rem;
+
+    display: flex;
+    gap: var(--counter-list-gap);
+
+    li {
+        flex: 1;
+    }
+
+    @include media($media-s) {
+        --counter-list-gap: 1.2rem;
+
+        flex-wrap: wrap;
+
+        & > li:nth-child(3) {
+            flex: initial;
+            width: 100%;
+        }
+    }
+}

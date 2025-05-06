@@ -1,7 +1,4 @@
-type TCountItem = {
-    count: string
-    text: string
-}
+import { TCountItem } from '../../ui/counter_list'
 
 export const countCards: TCountItem[] = [
     {
