@@ -1,0 +1,36 @@
+._ {
+    --card-gap: 2rem;
+    --card-top-container-gap: 1.4rem;
+    --card-icon-size: 7.4rem;
+    --card-icon-padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-gap);
+}
+
+.top_container {
+    display: flex;
+    align-items: center;
+    gap: var(--card-top-container-gap);
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: var(--card-icon-size);
+    padding: var(--card-icon-padding);
+    border: 0.1rem solid var(--color-primary);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    color: var(--color-primary-75);
+}
+
+@include media($media-s) {
+    ._ {
+        --card-gap: 1.4rem;
+        --card-icon-size: 5.2rem;
+        --card-icon-padding: 1.4rem;
+        --card-top-container-gap: 0.8rem;
+    }
+}

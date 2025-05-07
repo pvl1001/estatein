@@ -1,0 +1,19 @@
+._ {
+    --values-section-gap: 8rem;
+
+    display: flex;
+    gap: var(--values-section-gap);
+    align-items: center;
+}
+
+.text_box {
+    max-width: 51.7rem;
+}
+
+@include media($media-s) {
+    ._ {
+        --values-section-gap: 4rem;
+
+        flex-direction: column;
+    }
+}

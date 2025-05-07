@@ -30,7 +30,7 @@
     border: var(--border);
     border-radius: var(--text-field-border-radius);
     background-color: var(--text-field-bgc);
-    color: var(--default-text-color);
+    color: var(--color-text-default);
     font-size: var(--text-field-font-size);
     cursor: text;
 
@@ -41,7 +41,7 @@
         font-size: inherit;
 
         ::placeholder {
-            color: var(--description-color);
+            color: var(--color-description);
         }
 
         &:focus-visible {
@@ -51,10 +51,10 @@
 
     &:has(input:focus),
     &:has(input:active) {
-        border-color: var(--default-text-color);
+        border-color: var(--color-text-default);
 
         svg {
-            color: var(--default-text-color);
+            color: var(--color-text-default);
         }
     }
 }

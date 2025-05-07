@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import { countCards } from 'shared/lib/const/countCards'
+import { countCards } from 'shared/lib/const'
 import { CounterList } from 'shared/ui/counter_list'
 import { TextBox } from 'shared/ui/text_box'
 import houseImg from '../../assets/images/house.webp'

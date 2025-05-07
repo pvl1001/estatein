@@ -30,7 +30,7 @@
 
     &__title {
         margin-bottom: var(--footer-category-title-margin-bottom);
-        color: var(--description-color);
+        color: var(--color-description);
         font-size: var(--footer-category-title-font-size);
         font-weight: 500;
         line-height: 2.4rem;
@@ -75,7 +75,7 @@
                 position: absolute;
                 inset: 2rem auto 0 -2rem;
                 width: 0.1rem;
-                background-color: var(--border-color);
+                background-color: var(--color-border);
             }
         }
 

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import { countCards } from 'shared/lib/const/countCards'
+import { countCards } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { CounterList } from 'shared/ui/counter_list'
 import { HeadCard } from 'shared/ui/head_card'

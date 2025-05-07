@@ -1,7 +1,7 @@
 $z-index: 10;
 
 ._ {
-    background: var(--dark-color);
+    background: var(--color-dark);
 
     :global .wrapper {
         display: grid;
@@ -54,7 +54,7 @@ $z-index: 10;
         align-items: center;
         justify-content: center;
         transform: rotateY(90deg);
-        background-color: var(--dark-color);
+        background-color: var(--color-dark);
         inset: 0;
     }
 
