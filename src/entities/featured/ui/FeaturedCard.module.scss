@@ -46,7 +46,7 @@
         padding: var(--feature-card-option-padding);
         border: var(--border);
         border-radius: 2.8rem;
-        background-color: var(--dark-color);
+        background-color: var(--color-dark);
         gap: 0.4rem;
 
         svg {
@@ -72,7 +72,7 @@
 }
 
 .price_title {
-    color: var(--description-color);
+    color: var(--color-description);
     font-size: var(--feature-card-option-list-font-size);
 }
 
@@ -82,7 +82,7 @@
 }
 
 .read_more {
-    color: var(--default-text-color);
+    color: var(--color-text-default);
     text-decoration: underline;
     cursor: pointer;
 }

@@ -1,0 +1,72 @@
+._ {
+    --card-list-gap: 6rem;
+    --card-list-padding: 6rem;
+    --card-list-box-shadow: 0 0 0 1rem rgb(25, 25, 25);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--card-list-padding);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 0 1rem rgb(25, 25, 25);
+    gap: var(--card-list-gap);
+
+    > li {
+        position: relative;
+
+        &:nth-child(even)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(var(--card-list-gap) / -2);
+            width: 0.1rem;
+            background-color: var(--color-border);
+        }
+
+        &:nth-child(2n + 1)::after {
+            right: calc(var(--card-list-gap) / -2);
+            left: 0;
+        }
+
+        &:nth-child(2n + 2)::after {
+            right: 0;
+            left: calc(var(--card-list-gap) / -2);
+        }
+
+        &:nth-child(2n + 1):not(:nth-child(1))::after,
+        &:nth-child(2n + 2):not(:nth-child(2))::after {
+            content: '';
+            position: absolute;
+            top: calc(var(--card-list-gap) / -2);
+            height: 0.1rem;
+            background-color: var(--color-border);
+        }
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --card-list-padding: 2.4rem;
+        --card-list-gap: 4rem;
+        --card-list-box-shadow: 0 0 0 0.6rem rgb(25, 25, 25);
+
+        grid-template-columns: repeat(1, 1fr);
+
+        > li {
+            &::before {
+                display: none;
+            }
+
+            &:not(:first-child)::after {
+                content: '';
+                position: absolute;
+                top: calc(var(--card-list-gap) / -2);
+                right: 0;
+                left: 0;
+                height: 0.1rem;
+                background-color: var(--color-border);
+            }
+        }
+    }
+}

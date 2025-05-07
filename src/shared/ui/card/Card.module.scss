@@ -1,0 +1,49 @@
+._ {
+    --card-gap: 2rem;
+    --card-top-container-gap: 1.4rem;
+    --card-icon-size: 7.4rem;
+    --card-icon-padding: 2rem;
+    --card-box-shadow: 0 0 0 0.8rem rgb(25, 25, 25);
+    --card-border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-gap);
+
+    &._border {
+        border: var(--border);
+        border-radius: var(--card-border-radius);
+    }
+
+    &._box_shadow {
+        box-shadow: var(--card-box-shadow);
+    }
+}
+
+.top_container {
+    display: flex;
+    align-items: center;
+    gap: var(--card-top-container-gap);
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: var(--card-icon-size);
+    padding: var(--card-icon-padding);
+    border: 0.1rem solid var(--color-primary);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    color: var(--color-primary-75);
+}
+
+@include media($media-s) {
+    ._ {
+        --card-gap: 1.4rem;
+        --card-icon-size: 5.2rem;
+        --card-icon-padding: 1.4rem;
+        --card-top-container-gap: 0.8rem;
+        --card-box-shadow: 0 0 0 0.4rem rgb(25, 25, 25);
+        --card-border-radius: 1rem;
+    }
+}

@@ -8,29 +8,29 @@
     padding: var(--button-padding);
     border: var(--border);
     border-radius: var(--button-border-radius);
-    border-color: var(--border-color);
+    border-color: var(--color-border);
     background: var(--background);
-    color: var(--default-text-color);
+    color: var(--color-text-default);
     font-size: var(--button-font-size);
     @include button-hover;
 
     &._default {
-        --background: var(--main-bg-color);
+        --background: var(--color-main-bg);
     }
 
     &._primary {
-        --background: var(--primary-color);
-        --border-color: transparent;
+        --background: var(--color-primary);
+        --color-border: transparent;
         @include button-hover(1.5);
     }
 
     &._link {
-        --border-color: transparent;
+        --color-border: transparent;
         --background: none;
     }
 
     &._dark {
-        --background: var(--dark-color);
+        --background: var(--color-dark);
     }
 }
 

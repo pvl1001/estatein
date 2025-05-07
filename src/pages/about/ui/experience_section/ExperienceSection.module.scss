@@ -1,0 +1,96 @@
+._ {
+    --experience-section-gap: 8rem;
+    --experience-section-card-list-gap: 5rem 3rem;
+    --experience-section-card-title-font-size: 2.6rem;
+    --experience-section-card-border-size: 0.1rem;
+    --experience-section-card-padding: 5rem;
+    --experience-section-card-border-gradient-size: 20rem;
+    --experience-section-card-header-padding: 1.6rem 2rem;
+    --experience-section-card-header-font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--experience-section-gap);
+}
+
+.card_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--experience-section-card-list-gap);
+
+    > li {
+        display: flex;
+        flex: 1 1 32%;
+        flex-direction: column;
+    }
+
+    .card_top_container h5 {
+        font-size: var(--experience-section-card-title-font-size);
+    }
+
+    .card {
+        position: relative;
+        flex: 1;
+        height: 100%;
+        padding: var(--experience-section-card-padding);
+        border-top-left-radius: 0;
+        background: linear-gradient(
+            156.17deg,
+            var(--color-primary) -49.397%,
+            var(--color-main-bg) 13.589%
+        );
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: calc(var(--experience-section-card-border-size) * -1);
+            left: calc(var(--experience-section-card-border-size) * -1);
+        }
+
+        &::before {
+            width: var(--experience-section-card-border-size);
+            height: var(--experience-section-card-border-gradient-size);
+            max-height: 90%;
+            background: linear-gradient(
+                to bottom,
+                var(--color-primary) 0%,
+                var(--color-border) 100%
+            );
+        }
+
+        &::after {
+            width: var(--experience-section-card-border-gradient-size);
+            max-width: 90%;
+            height: var(--experience-section-card-border-size);
+            background: linear-gradient(
+                to right,
+                var(--color-primary) 0%,
+                var(--color-border) 100%
+            );
+        }
+
+        &__header {
+            padding: var(--experience-section-card-header-padding);
+            border-left: var(--border);
+            border-color: var(--color-primary);
+            font-size: var(--experience-section-card-header-font-size);
+        }
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --experience-section-gap: 4rem;
+        --experience-section-card-list-gap: 3rem;
+        --experience-section-card-title-font-size: 1.8rem;
+        --experience-section-card-padding: 3rem;
+        --experience-section-card-border-gradient-size: 15rem;
+        --experience-section-card-header-padding: 1.4rem 1.6rem;
+        --experience-section-card-header-font-size: 1.6rem;
+    }
+
+    .card_list > li {
+        flex: 1 1 100%;
+    }
+}

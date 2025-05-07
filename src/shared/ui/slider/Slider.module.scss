@@ -35,11 +35,11 @@
 
 .counter {
     margin-right: auto;
-    color: var(--description-color);
+    color: var(--color-description);
     font-size: var(--slider-counter-font-size);
 
     &__active {
-        color: var(--default-text-color);
+        color: var(--color-text-default);
     }
 }
 
@@ -49,13 +49,13 @@
     padding: var(--slider-button-padding);
     border: var(--border);
     border-radius: 50%;
-    background-color: var(--dark-color);
+    background-color: var(--color-dark);
     aspect-ratio: 1;
     @include button-hover;
 
     svg {
         width: 100%;
-        color: var(--default-text-color);
+        color: var(--color-text-default);
     }
 
     &._prev {
