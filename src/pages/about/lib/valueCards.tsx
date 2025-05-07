@@ -1,7 +1,7 @@
 import { TCard } from 'shared/lib/types.ts'
 import { Icon } from 'shared/ui/icon'
 
-export const aboutValueCards: TCard[] = [
+export const valueCards: TCard[] = [
     {
         icon: <Icon.Star2 />,
         title: 'Trust',

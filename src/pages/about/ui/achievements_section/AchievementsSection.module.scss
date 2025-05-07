@@ -1,0 +1,33 @@
+._ {
+    --achievements-section-gap: 8rem;
+    --achievements-section-card-list-gap: 4rem;
+    --achievements-section-card-gap: 3rem;
+    --achievements-section-card-padding: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--achievements-section-gap);
+}
+
+.card_list {
+    display: flex;
+    gap: var(--achievements-section-card-list-gap);
+
+    .card {
+        padding: var(--achievements-section-card-padding);
+        gap: var(--achievements-section-card-gap);
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --achievements-section-gap: 4rem;
+        --achievements-section-card-list-gap: 2rem;
+        --achievements-section-card-gap: 1.6rem;
+        --achievements-section-card-padding: 3rem;
+    }
+
+    .card_list {
+        flex-direction: column;
+    }
+}

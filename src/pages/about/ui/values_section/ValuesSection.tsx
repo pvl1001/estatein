@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import { TextBox } from 'shared/ui/text_box'
-import { aboutValueCards } from '../../lib/aboutValueCards.tsx'
+import { valueCards } from '../../lib/valueCards.tsx'
 import { ValuesCardList } from './values_card_list/ValuesCardList.tsx'
 import s from './ValuesSection.module.scss'
 
@@ -18,7 +18,7 @@ export const ValuesSection: FC<Props> = () => {
                     'Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.'
                 }
             />
-            <ValuesCardList cardList={aboutValueCards} />
+            <ValuesCardList cardList={valueCards} />
         </section>
     )
 }

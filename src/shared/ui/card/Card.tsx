@@ -5,6 +5,8 @@ import { Text } from '../text'
 import s from './Card.module.scss'
 
 type Props = TCard & {
+    withBorder?: boolean
+    withBoxShadow?: boolean
     classes?: Partial<{
         container: string
         topContainer: string
@@ -12,9 +14,23 @@ type Props = TCard & {
     }>
 }
 
-export const Card: FC<Props> = ({ icon, title, description, classes }) => {
+export const Card: FC<Props> = ({
+    icon,
+    title,
+    description,
+    classes,
+    withBorder,
+    withBoxShadow,
+}) => {
     return (
-        <article className={cn(s._, classes?.container)}>
+        <article
+            className={cn(
+                s._,
+                classes?.container,
+                withBorder && s._border,
+                withBoxShadow && s._box_shadow
+            )}
+        >
             <div className={cn(s.top_container, classes?.topContainer)}>
                 {icon && (
                     <div className={cn(s.icon, classes?.icon)}>{icon}</div>
