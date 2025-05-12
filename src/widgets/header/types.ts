@@ -1,4 +1,6 @@
+import { LanguageStore } from 'shared/i18n'
+
 export type NavListItem = {
-    name: string
+    name: LanguageStore<'nav'>
     path: string
 }

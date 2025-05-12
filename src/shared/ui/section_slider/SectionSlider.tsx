@@ -13,7 +13,7 @@ type Props = {
     skeletonComponent?: ReactNode
     buttonViewAllProps?: {
         to: Paths
-        name: string
+        text: string
     }
     isLoading?: boolean
     isError?: boolean
@@ -30,7 +30,7 @@ export const SectionSlider: FC<Props> = ({
 }) => {
     const viewAllButton = buttonViewAllProps ? (
         <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
-            {buttonViewAllProps.name}
+            {buttonViewAllProps.text}
         </Button>
     ) : null
     slideList = isLoading ? Array(3).fill(skeletonComponent) : slideList

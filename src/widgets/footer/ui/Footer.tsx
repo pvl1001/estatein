@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import cn from 'classnames'
 import { FooterLinks as TFooterLinks } from 'app/lib/footerLinks'
 import { Icon } from 'shared/ui/icon'
@@ -13,6 +14,8 @@ type Props = {
 }
 
 export function Footer({ links }: Props) {
+    const { t } = useTranslation()
+
     function onSubmit(e: React.UIEvent<HTMLFormElement>) {
         e.preventDefault()
         console.log(e)
@@ -29,7 +32,7 @@ export function Footer({ links }: Props) {
                             buttonIcon={<Icon.Send />}
                             inputProps={{
                                 type: 'email',
-                                placeholder: 'Enter Your Email',
+                                placeholder: t('footer.email'),
                             }}
                         />
                     </form>

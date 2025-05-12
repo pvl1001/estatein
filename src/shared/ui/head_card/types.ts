@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
+import { LanguageStore } from '../../i18n'
 
 export type THeadCard = {
     icon: ReactNode
-    text: string
+    textKey: LanguageStore<'head_card'>
 }

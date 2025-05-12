@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { Paths } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
@@ -10,6 +11,8 @@ type Props = {
 }
 
 export const FaqCard: FC<Props> = ({ question, answer }) => {
+    const { t } = useTranslation()
+
     return (
         <article className={s._}>
             <Text.Title as={'h5'} className={s.question}>
@@ -19,7 +22,7 @@ export const FaqCard: FC<Props> = ({ question, answer }) => {
             <Text.Description className={s.answer}>{answer}.</Text.Description>
 
             <Button to={Paths.MAIN} className={s.button}>
-                Read More
+                {t('common.read_more', { postProcess: 'uppAll' })}
             </Button>
         </article>
     )

@@ -91,10 +91,12 @@
 
     .view_button {
         display: block;
+        flex-shrink: 0;
         margin-right: auto;
     }
 
     .counter {
+        flex-shrink: 0;
         order: 1;
         margin-right: 0;
     }

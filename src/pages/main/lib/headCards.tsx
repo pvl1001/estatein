@@ -7,18 +7,18 @@ import ValueIcon from '../assets/icons/value.svg?react'
 export const headCards: THeadCard[] = [
     {
         icon: <HomeIcon />,
-        text: 'Find Your Dream Home',
+        textKey: 'home',
     },
     {
         icon: <ValueIcon />,
-        text: 'Unlock Property Value',
+        textKey: 'value',
     },
     {
         icon: <ManagementIcon />,
-        text: 'Effortless Property Management',
+        textKey: 'management',
     },
     {
         icon: <InvestmentsIcon />,
-        text: 'Smart Investments, Informed Decisions',
+        textKey: 'investments',
     },
 ]

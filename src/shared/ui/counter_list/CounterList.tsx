@@ -11,7 +11,7 @@ export const CounterList: FC<Props> = ({ counterList }) => {
     return (
         <ul className={s._}>
             {counterList.map((item) => (
-                <li key={item.text}>
+                <li key={item.textKey}>
                     <CounterContainer {...item} />
                 </li>
             ))}

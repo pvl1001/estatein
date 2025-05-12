@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import {
     ReviewCard,
@@ -10,23 +11,26 @@ import { SectionSlider } from 'shared/ui/section_slider'
 type Props = {}
 
 export const ClientSay: FC<Props> = () => {
+    const { t } = useTranslation()
     const { data: reviewList = [], isLoading, isError } = useGetReviewsQuery()
 
     return (
         <SectionSlider
             isLoading={isLoading}
             isError={isError}
-            title={'What Our Clients Say'}
-            description={
-                'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.'
-            }
+            title={t('page.main.section.client.title', {
+                postProcess: 'uppAll',
+            })}
+            description={t('page.main.section.client.description')}
             skeletonComponent={<ReviewCardSkeleton />}
             slideList={reviewList.map((review) => (
                 <ReviewCard {...review} />
             ))}
             buttonViewAllProps={{
                 to: Paths.MAIN,
-                name: 'View All Testimonials',
+                text: t('page.main.section.client.view_all_button', {
+                    postProcess: 'uppAll',
+                }),
             }}
         />
     )

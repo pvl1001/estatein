@@ -3,23 +3,23 @@ import { Paths } from 'shared/lib/const'
 
 export const routes: NavListItem[] = [
     {
-        name: 'Home',
+        name: 'home',
         path: Paths.MAIN,
     },
     {
-        name: 'About Us',
+        name: 'about_us',
         path: Paths.ABOUT,
     },
     {
-        name: 'Properties',
+        name: 'properties',
         path: Paths.PROPERTIES,
     },
     {
-        name: 'Services',
+        name: 'services',
         path: Paths.SERVICES,
     },
     {
-        name: 'Contact Us',
+        name: 'contact_us',
         path: Paths.CONTACT,
     },
 ]

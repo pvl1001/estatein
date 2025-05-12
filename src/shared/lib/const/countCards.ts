@@ -3,14 +3,14 @@ import { TCountItem } from '../../ui/counter_list'
 export const countCards: TCountItem[] = [
     {
         count: '200+',
-        text: 'Happy Customers',
+        textKey: 'customers',
     },
     {
         count: '10k+',
-        text: 'Properties For Clients',
+        textKey: 'properties',
     },
     {
         count: '16+',
-        text: 'Years of Experience',
+        textKey: 'experience',
     },
 ]

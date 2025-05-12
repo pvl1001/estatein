@@ -1,4 +1,6 @@
+import { LanguageStore } from '../../i18n'
+
 export type TCountItem = {
     count: string
-    text: string
+    textKey: LanguageStore<'counter_card'>
 }

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { Button } from 'shared/ui/button'
 import { Text } from 'shared/ui/text'
@@ -19,6 +20,8 @@ export const FeaturedCard: FC<Props> = ({
     price,
     description,
 }) => {
+    const { t } = useTranslation()
+
     return (
         <article className={s._}>
             <img src={img} alt="feature" className={s.image} loading={'lazy'} />
@@ -53,10 +56,16 @@ export const FeaturedCard: FC<Props> = ({
 
             <div className={s.footer}>
                 <div className={s.price_container}>
-                    <span className={s.price_title}>Price</span>
+                    <span className={s.price_title}>
+                        {t('common.price', { postProcess: 'uppFirst' })}
+                    </span>
                     <span className={s.price}>{price.toCurrency()}</span>
                 </div>
-                <Button theme={'primary'}>View Property Details</Button>
+                <Button theme={'primary'}>
+                    {t('button.view_property_details', {
+                        postProcess: 'uppAll',
+                    })}
+                </Button>
             </div>
         </article>
     )
