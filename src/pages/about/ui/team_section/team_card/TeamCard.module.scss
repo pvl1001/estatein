@@ -1,0 +1,81 @@
+._ {
+    --team-card-padding: 3rem;
+    --team-card-photo-height: 25.3rem;
+    --team-card-twitter-width: 7.6rem;
+    --team-card-twitter-padding: 1.4rem 2.6rem;
+    --team-card-position-margin-bottom: 2.4rem;
+    --team-card-say-hello-padding: 1.4rem 1.4rem 1.4rem 2.4rem;
+    --team-card-say-hello-height: 7.2rem;
+    --team-card-say-hello-bitton-padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--team-card-padding);
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.photo_container {
+    position: relative;
+    margin-bottom: 4.6rem;
+}
+
+.photo {
+    width: 100%;
+    height: var(--team-card-photo-height);
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.position {
+    margin-bottom: var(--team-card-position-margin-bottom);
+}
+
+.twitter {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: var(--team-card-twitter-width);
+    padding: var(--team-card-twitter-padding);
+    border-radius: 4.3rem;
+    background: var(--color-primary);
+    translate: -50% 50%;
+    @include button-hover(1.7);
+}
+
+.say_hello {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: var(--team-card-say-hello-height);
+    padding: var(--team-card-say-hello-padding);
+    border: var(--border);
+    border-radius: 10rem;
+    background: var(--color-dark);
+
+    &__button {
+        display: flex;
+        height: 100%;
+        aspect-ratio: 1;
+        padding: var(--team-card-say-hello-bitton-padding);
+        border-radius: 50%;
+        background: var(--color-primary);
+        @include button-hover(1.7);
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --team-card-padding: 2rem;
+        --team-card-photo-height: 26.9rem;
+        --team-card-twitter-width: 6rem;
+        --team-card-twitter-padding: 1rem 2rem;
+        --team-card-position-margin-bottom: 1.7rem;
+        --team-card-say-hello-padding: 0.8rem 0.8rem 0.8rem 2.4rem;
+        --team-card-say-hello-height: 6.4rem;
+        --team-card-say-hello-bitton-padding: 1.4rem;
+    }
+}
