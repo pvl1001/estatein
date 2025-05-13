@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { Link } from 'react-router'
 import cn from 'classnames'
@@ -9,12 +10,16 @@ type Props = {
 }
 
 export const Copyright: FC<Props> = ({ socials }) => {
+    const { t } = useTranslation()
     return (
         <div className={s._}>
             <div className={cn('wrapper', s.container)}>
                 <div className={s.text_container}>
-                    <span>@2023 Estatein. All Rights Reserved.</span>
-                    <Link to={'/'}>Terms & Conditions</Link>
+                    <span>
+                        @{new Date().getFullYear()}{' '}
+                        {t('footer.rights', { postProcess: 'uppAll' })}
+                    </span>
+                    <Link to={'/'}>{t('footer.terms')}</Link>
                 </div>
 
                 <ul className={s.icon_list}>

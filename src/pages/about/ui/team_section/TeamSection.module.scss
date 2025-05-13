@@ -1,0 +1,28 @@
+._ {
+    --team-section-gap: 8rem;
+    --team-section-team-list-gap: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--team-section-gap);
+}
+
+.team_list {
+    display: flex;
+    gap: var(--team-section-team-list-gap);
+
+    > li {
+        flex: 1;
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --team-section-gap: 4rem;
+        --team-section-team-list-gap: 2rem;
+    }
+
+    .team_list {
+        flex-direction: column;
+    }
+}

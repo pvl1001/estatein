@@ -7,6 +7,7 @@ import { PropertiesPage } from 'pages/properties'
 import { ServicesPage } from 'pages/services'
 import { Paths } from 'shared/lib/const'
 import { Layout } from './Layout'
+import './i18n/config.ts'
 import { store } from './lib/store.ts'
 
 const router = createHashRouter([

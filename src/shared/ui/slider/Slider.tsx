@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC, ReactNode, useId, useState } from 'react'
 import cn from 'classnames'
 import { useSliderSpaceBetween } from '../../lib/hooks'
@@ -14,6 +15,7 @@ type Props = {
 }
 
 export const Slider: FC<Props> = ({ slideList, viewButton }) => {
+    const { t } = useTranslation()
     const swiperId: string = useId()
     const pageRem: number = useSliderSpaceBetween(20)
     const { mobile } = getBreakpoints()
@@ -57,7 +59,7 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                     <span className={s.counter__active}>
                         {String(index).padStart(2, '0')}
                     </span>{' '}
-                    of {String(slideList.length).padStart(2, '0')}
+                    {t('common.of')} {String(slideList.length).padStart(2, '0')}
                 </div>
 
                 <button id={swiperId} className={cn(s.nav_button, s._prev)}>

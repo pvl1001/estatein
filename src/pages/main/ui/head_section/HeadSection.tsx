@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { countCards } from 'shared/lib/const'
@@ -14,6 +15,7 @@ import s from './HeadSection.module.scss'
 type Props = {}
 
 export const HeadSection: FC<Props> = ({}) => {
+    const { t } = useTranslation()
     return (
         <section className={s._}>
             <div className={s.top_container}>
@@ -25,12 +27,12 @@ export const HeadSection: FC<Props> = ({}) => {
                     <div className={s.container}>
                         <div className={s.text_container}>
                             <Text.Title as={'h1'} className={s.title}>
-                                Discover Your Dream Property with Estatein
+                                {t('page.main.section.head.title', {
+                                    postProcess: 'uppAll',
+                                })}
                             </Text.Title>
                             <Text.Description>
-                                Your journey to finding the perfect property
-                                begins here. Explore our listings to find the
-                                home that matches your dreams.
+                                {t('page.main.section.head.description')}
                             </Text.Description>
                             <div className={s.discover_icon}>
                                 <DiscoverIcon
@@ -43,8 +45,10 @@ export const HeadSection: FC<Props> = ({}) => {
                         </div>
 
                         <div className={s.buttons}>
-                            <Button>Learn More</Button>
-                            <Button theme={'primary'}>Browse Properties</Button>
+                            <Button> {t('button.learn_more')}</Button>
+                            <Button theme={'primary'}>
+                                {t('button.browse_properties')}
+                            </Button>
                         </div>
 
                         <CounterList counterList={countCards} />
@@ -55,7 +59,7 @@ export const HeadSection: FC<Props> = ({}) => {
             <div className={cn('wrapper', s.head_card_list_wrapper)}>
                 <ul className={s.head_card_list}>
                     {headCards.map((card) => (
-                        <li key={card.text}>
+                        <li key={card.textKey}>
                             <HeadCard {...card} />
                         </li>
                     ))}

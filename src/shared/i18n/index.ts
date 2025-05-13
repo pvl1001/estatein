@@ -1,0 +1,5 @@
+export { en } from './languages/en'
+export { ru } from './languages/ru'
+export { enGlossary } from './languages/glossary/en'
+export { ruGlossary } from './languages/glossary/ru'
+export type { LanguageStore } from './languages/en'

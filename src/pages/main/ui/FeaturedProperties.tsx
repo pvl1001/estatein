@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import {
     FeaturedCard,
@@ -10,6 +11,7 @@ import { SectionSlider } from 'shared/ui/section_slider'
 type Props = {}
 
 export const FeaturedProperties: FC<Props> = () => {
+    const { t } = useTranslation()
     const {
         data: featuredList = [],
         isLoading,
@@ -20,17 +22,19 @@ export const FeaturedProperties: FC<Props> = () => {
         <SectionSlider
             isError={isError}
             isLoading={isLoading}
-            title={'Featured Properties'}
-            description={
-                'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.'
-            }
+            title={t('page.main.section.featured.title', {
+                postProcess: 'uppAll',
+            })}
+            description={t('page.main.section.featured.description')}
             skeletonComponent={<FeaturedCardSkeleton />}
             slideList={featuredList.map((item) => (
                 <FeaturedCard {...item} />
             ))}
             buttonViewAllProps={{
                 to: Paths.MAIN,
-                name: 'View All Properties',
+                text: t('page.main.section.featured.view_all_button', {
+                    postProcess: 'uppAll',
+                }),
             }}
         />
     )

@@ -1,45 +1,42 @@
-type LinkCategory =
-    | 'Home'
-    | 'About Us'
-    | 'Properties'
-    | 'Services'
-    | 'Contact Us'
+import { LanguageStore } from 'shared/i18n'
+
+type LinkCategory = LanguageStore<'nav'>
 
 type Link = {
-    name: string
+    name: LanguageStore<'footer'>
     link: string
 }
 
 export type FooterLinks = Record<LinkCategory, Link[]>
 
 export const footerLinks: FooterLinks = {
-    Home: [
-        { name: 'Hero Section', link: '/hero_section' },
-        { name: 'Features', link: '/features' },
-        { name: 'Properties', link: '/properties' },
-        { name: 'Testimonials', link: '/testimonials' },
-        { name: 'FAQ’s', link: '/faq' },
+    home: [
+        { name: 'hero_section', link: '/hero_section' },
+        { name: 'features', link: '/features' },
+        { name: 'properties', link: '/properties' },
+        { name: 'testimonials', link: '/testimonials' },
+        { name: 'faq', link: '/faq' },
     ],
-    'About Us': [
-        { name: 'Our Story', link: '/our_story' },
-        { name: 'Our Works', link: '/our_works' },
-        { name: 'How It Works', link: '/how_it_works' },
-        { name: 'Our Team', link: '/our_team' },
-        { name: 'Our Clients', link: '/our_clients' },
+    about_us: [
+        { name: 'our_story', link: '/our_story' },
+        { name: 'our_works', link: '/our_works' },
+        { name: 'how_it_works', link: '/how_it_works' },
+        { name: 'our_team', link: '/our_team' },
+        { name: 'our_clients', link: '/our_clients' },
     ],
-    Properties: [
-        { name: 'Portfolio', link: '/portfolio' },
-        { name: 'Categories', link: '/categories' },
+    properties: [
+        { name: 'portfolio', link: '/portfolio' },
+        { name: 'categories', link: '/categories' },
     ],
-    Services: [
-        { name: 'Valuation Mastery', link: '/valuation_mastery' },
-        { name: 'Strategic Marketing', link: '/strategic_marketing' },
-        { name: 'Negotiation Wizardry', link: '/negotiation_wizardry' },
-        { name: 'Closing Success', link: '/closing_success' },
-        { name: 'Property Managements', link: '/property_management' },
+    services: [
+        { name: 'valuation_mastery', link: '/valuation_mastery' },
+        { name: 'strategic_marketing', link: '/strategic_marketing' },
+        { name: 'negotiation_wizardry', link: '/negotiation_wizardry' },
+        { name: 'closing_success', link: '/closing_success' },
+        { name: 'property_management', link: '/property_management' },
     ],
-    'Contact Us': [
-        { name: 'Contact Form', link: '/contact_form' },
-        { name: 'Our Offices', link: '/our_offices' },
+    contact_us: [
+        { name: 'contact_form', link: '/contact_form' },
+        { name: 'our_offices', link: '/our_offices' },
     ],
 }

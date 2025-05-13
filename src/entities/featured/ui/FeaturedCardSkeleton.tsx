@@ -32,11 +32,13 @@ export const FeaturedCardSkeleton: FC<Props> = () => {
             </div>
 
             <ul className={s.option_list}>
-                {Array(3).fill(
-                    <Skeleton>
-                        <li style={{ flex: 1 }} />
-                    </Skeleton>
-                )}
+                {Array(3)
+                    .fill({})
+                    .map((_, i) => (
+                        <Skeleton key={i}>
+                            <li style={{ flex: 1 }} />
+                        </Skeleton>
+                    ))}
             </ul>
 
             <div className={s.footer}>

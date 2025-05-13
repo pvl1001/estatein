@@ -3,7 +3,9 @@
     --counter-container-border-radius: var(--border-radius);
     --counter-container-count-font-size: 4rem;
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     padding: var(--counter-container-padding);
     border: var(--border);
     border-radius: var(--counter-container-border-radius);

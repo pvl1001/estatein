@@ -1,8 +1,5 @@
 import { ReactNode } from 'react'
-import FacebookIcon from '../ui/copyright/icons/facebook.svg?react'
-import LnkedinIcon from '../ui/copyright/icons/linkedin.svg?react'
-import TwitterIcon from '../ui/copyright/icons/twitter.svg?react'
-import YoutubeIcon from '../ui/copyright/icons/youtube.svg?react'
+import { Icon } from 'shared/ui/icon'
 
 export type Social = {
     icon: ReactNode
@@ -11,19 +8,19 @@ export type Social = {
 
 export const socials: Social[] = [
     {
-        icon: <FacebookIcon />,
+        icon: <Icon.Facebook />,
         link: 'https://www.facebook.com/',
     },
     {
-        icon: <LnkedinIcon />,
+        icon: <Icon.LinkedIn />,
         link: 'https://www.linkedin.com/',
     },
     {
-        icon: <TwitterIcon />,
+        icon: <Icon.Twitter />,
         link: 'https://www.twitter.com/',
     },
     {
-        icon: <YoutubeIcon />,
+        icon: <Icon.YouTube />,
         link: 'https://www.youtube.com/',
     },
 ]
