@@ -43,6 +43,10 @@
     background: var(--color-primary);
     translate: -50% 50%;
     @include button-hover(1.7);
+
+    svg {
+        width: 100%;
+    }
 }
 
 .say_hello {
@@ -64,6 +68,10 @@
         border-radius: 50%;
         background: var(--color-primary);
         @include button-hover(1.7);
+
+        svg {
+            width: 100%;
+        }
     }
 }
 
