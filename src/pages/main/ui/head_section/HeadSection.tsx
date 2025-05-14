@@ -15,39 +15,38 @@ import s from './HeadSection.module.scss'
 type Props = {}
 
 export const HeadSection: FC<Props> = ({}) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['mainPage', 'translation'])
     return (
         <section className={s._}>
             <div className={s.top_container}>
                 <div className={s.image_container}>
                     <img src={cityImg} alt="city" />
+
+                    <div className={s.discover_icon}>
+                        <DiscoverIcon className={s.discover_icon__round} />
+                        <Icon.ArrowLight className={s.discover_icon__arrow} />
+                    </div>
                 </div>
 
                 <div className={'wrapper'}>
                     <div className={s.container}>
                         <div className={s.text_container}>
                             <Text.Title as={'h1'} className={s.title}>
-                                {t('page.main.section.head.title', {
+                                {t('section.head.title', {
                                     postProcess: 'uppAll',
                                 })}
                             </Text.Title>
                             <Text.Description>
-                                {t('page.main.section.head.description')}
+                                {t('section.head.description')}
                             </Text.Description>
-                            <div className={s.discover_icon}>
-                                <DiscoverIcon
-                                    className={s.discover_icon__round}
-                                />
-                                <Icon.ArrowLight
-                                    className={s.discover_icon__arrow}
-                                />
-                            </div>
                         </div>
 
                         <div className={s.buttons}>
-                            <Button> {t('button.learn_more')}</Button>
+                            <Button>
+                                {t('translation:button.learn_more')}
+                            </Button>
                             <Button theme={'primary'}>
-                                {t('button.browse_properties')}
+                                {t('translation:button.browse_properties')}
                             </Button>
                         </div>
 

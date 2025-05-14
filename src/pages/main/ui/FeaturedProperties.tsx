@@ -11,7 +11,7 @@ import { SectionSlider } from 'shared/ui/section_slider'
 type Props = {}
 
 export const FeaturedProperties: FC<Props> = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['mainPage'])
     const {
         data: featuredList = [],
         isLoading,
@@ -22,17 +22,17 @@ export const FeaturedProperties: FC<Props> = () => {
         <SectionSlider
             isError={isError}
             isLoading={isLoading}
-            title={t('page.main.section.featured.title', {
+            title={t('section.featured.title', {
                 postProcess: 'uppAll',
             })}
-            description={t('page.main.section.featured.description')}
+            description={t('section.featured.description')}
             skeletonComponent={<FeaturedCardSkeleton />}
             slideList={featuredList.map((item) => (
                 <FeaturedCard {...item} />
             ))}
             buttonViewAllProps={{
                 to: Paths.MAIN,
-                text: t('page.main.section.featured.view_all_button', {
+                text: t('section.featured.view_all_button', {
                     postProcess: 'uppAll',
                 }),
             }}

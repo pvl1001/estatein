@@ -11,7 +11,8 @@ type Props = {
 }
 
 export const NavList: FC<Props> = ({ routeList, onClick }) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['nav'])
+
     return (
         <ul className={s._}>
             {routeList.map((route) => (
@@ -23,7 +24,7 @@ export const NavList: FC<Props> = ({ routeList, onClick }) => {
                                 theme={isActive ? 'default' : 'link'}
                                 className={s.button}
                             >
-                                {t(`nav.${route.name}`, {
+                                {t(route.name, {
                                     postProcess: 'uppAll',
                                 })}
                             </Button>

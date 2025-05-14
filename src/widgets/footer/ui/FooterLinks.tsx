@@ -9,13 +9,13 @@ type Props = {
 }
 
 export const FooterLinks: FC<Props> = ({ links }) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['footer', 'nav'])
     return (
         <ul className={s.category_list}>
             {Object.keys(links).map((categoryName) => (
                 <li key={categoryName}>
                     <h5 className={s.category_list__title}>
-                        {t(`nav.${categoryName as LanguageStore<'nav'>}`, {
+                        {t(`nav:${categoryName as LanguageStore<'nav'>}`, {
                             postProcess: 'uppAll',
                         })}
                     </h5>
@@ -29,7 +29,7 @@ export const FooterLinks: FC<Props> = ({ links }) => {
                                         href={item.link}
                                         className={s.link}
                                     >
-                                        {t(`footer.${item.name}`, {
+                                        {t(item.name, {
                                             postProcess: 'uppAll',
                                         })}
                                     </a>

@@ -1,6 +1,7 @@
 import { ComponentProps, FC } from 'react'
 import { Link } from 'react-router'
 import cn from 'classnames'
+import { usePostProcessUppAll } from '../../lib/hooks'
 import s from './Button.module.scss'
 
 type Props = ComponentProps<'button'> & {
@@ -15,6 +16,7 @@ export const Button: FC<Props> = ({
     ...props
 }) => {
     const buttonClassName = cn(s._, s[`_${theme}`])
+    props.children = usePostProcessUppAll(props.children)
 
     return to ? (
         <Link to={to} className={cn(s.link, className)}>

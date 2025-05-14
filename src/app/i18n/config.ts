@@ -1,26 +1,41 @@
 import { initReactI18next } from 'react-i18next'
 import i18next from 'i18next'
+import { enAboutPage, ruAboutPage } from 'pages/about'
+import { enMainPage, ruMainPage } from 'pages/main'
+import { enFooter, ruFooter } from 'widgets/footer'
+import { enNav, ruNav } from 'widgets/header'
+import { enJourney, ruJourney } from 'widgets/journey_section'
 import { en, enGlossary, ru, ruGlossary } from 'shared/i18n'
-import { uppAll, uppAllModule } from './modules/uppAll.ts'
-import { uppFirst, uppFirstModule } from './modules/uppFirst.ts'
+import { uppAllModule } from './modules/uppAll.ts'
+import { uppFirstModule } from './modules/uppFirst.ts'
 
 export const resources = {
-    en: { translation: en, glossary: enGlossary },
-    ru: { translation: ru, glossary: ruGlossary },
+    en: {
+        translation: en,
+        glossary: enGlossary,
+        nav: enNav,
+        mainPage: enMainPage,
+        aboutPage: enAboutPage,
+        journey: enJourney,
+        footer: enFooter,
+    },
+    ru: {
+        translation: ru,
+        glossary: ruGlossary,
+        nav: ruNav,
+        mainPage: ruMainPage,
+        aboutPage: ruAboutPage,
+        journey: ruJourney,
+        footer: ruFooter,
+    },
 } as const
 
-i18next
+void i18next
     .use(initReactI18next)
     .use(uppFirstModule)
     .use(uppAllModule)
     .init({
-        lng: 'en',
         fallbackLng: ['en', 'ru'],
-        ns: ['translation', 'glossary'],
         resources,
         debug: false,
-    })
-    .finally(() => {
-        i18next.services.formatter?.add('uppFirst', uppFirst)
-        i18next.services.formatter?.add('uppAll', uppAll)
     })

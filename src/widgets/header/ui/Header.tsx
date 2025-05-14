@@ -16,10 +16,10 @@ type Props = {
 }
 
 export const Header: FC<Props> = ({ routes }) => {
+    const { t } = useTranslation(['nav'])
     const [isNavActive, setIsNavActive] = useState(false)
     const contactRoute: NavListItem = routes[routes.length - 1]
     const navRoutes: NavListItem[] = routes.slice(0, -1)
-    const { t } = useTranslation()
     useDisabledBodyScroll(isNavActive)
 
     return (
@@ -39,7 +39,7 @@ export const Header: FC<Props> = ({ routes }) => {
                             className={s.contact_button}
                         >
                             <Button onClick={() => setIsNavActive(false)}>
-                                {t(`nav.${contactRoute.name}`, {
+                                {t(contactRoute.name, {
                                     postProcess: 'uppAll',
                                 })}
                             </Button>

@@ -22,7 +22,7 @@ export const FaqCard: FC<Props> = ({ question, answer }) => {
             <Text.Description className={s.answer}>{answer}.</Text.Description>
 
             <Button to={Paths.MAIN} className={s.button}>
-                {t('common.read_more', { postProcess: 'uppAll' })}
+                {t('read_more', { postProcess: 'uppAll' })}
             </Button>
         </article>
     )

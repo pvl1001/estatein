@@ -10,16 +10,17 @@ type Props = {
 }
 
 export const Copyright: FC<Props> = ({ socials }) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['footer'])
+
     return (
         <div className={s._}>
             <div className={cn('wrapper', s.container)}>
                 <div className={s.text_container}>
                     <span>
                         @{new Date().getFullYear()}{' '}
-                        {t('footer.rights', { postProcess: 'uppAll' })}
+                        {t('rights', { postProcess: 'uppAll' })}
                     </span>
-                    <Link to={'/'}>{t('footer.terms')}</Link>
+                    <Link to={'/'}>{t('terms')}</Link>
                 </div>
 
                 <ul className={s.icon_list}>

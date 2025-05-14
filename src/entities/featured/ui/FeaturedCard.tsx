@@ -57,7 +57,7 @@ export const FeaturedCard: FC<Props> = ({
             <div className={s.footer}>
                 <div className={s.price_container}>
                     <span className={s.price_title}>
-                        {t('common.price', { postProcess: 'uppFirst' })}
+                        {t('price', { postProcess: 'uppFirst' })}
                     </span>
                     <span className={s.price}>{price.toCurrency()}</span>
                 </div>
