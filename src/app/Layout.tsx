@@ -2,8 +2,8 @@ import { FC } from 'react'
 import { Outlet } from 'react-router'
 import { Footer } from 'widgets/footer'
 import { Header } from 'widgets/header'
-import IconSprite from '../shared/assets/sprite.svg?react'
-import { Properties } from '../widgets/properties'
+import { JourneySection } from 'widgets/journey_section'
+import IconSprite from 'shared/assets/sprite.svg?react'
 import { footerLinks } from './lib/footerLinks'
 import { routes } from './lib/routes'
 
@@ -17,7 +17,7 @@ export const Layout: FC<Props> = () => {
             <main>
                 <Outlet />
             </main>
-            <Properties />
+            <JourneySection />
             <Footer links={footerLinks} />
         </>
     )

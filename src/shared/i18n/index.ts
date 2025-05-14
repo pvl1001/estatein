@@ -1,5 +1,5 @@
-export { en } from './languages/en'
-export { ru } from './languages/ru'
+export { en } from './languages/en.ts'
+export { ru } from './languages/ru.ts'
 export { enGlossary } from './languages/glossary/en'
 export { ruGlossary } from './languages/glossary/ru'
-export type { LanguageStore } from './languages/en'
+export type { LanguageStore } from './languages/en.ts'

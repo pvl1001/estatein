@@ -14,7 +14,7 @@ type Props = {
 }
 
 export function Footer({ links }: Props) {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['footer'])
 
     function onSubmit(e: React.UIEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -32,7 +32,7 @@ export function Footer({ links }: Props) {
                             buttonIcon={<Icon.Send />}
                             inputProps={{
                                 type: 'email',
-                                placeholder: t('footer.email'),
+                                placeholder: t('email'),
                             }}
                         />
                     </form>

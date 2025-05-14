@@ -59,7 +59,7 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                     <span className={s.counter__active}>
                         {String(index).padStart(2, '0')}
                     </span>{' '}
-                    {t('common.of')} {String(slideList.length).padStart(2, '0')}
+                    {t('of')} {String(slideList.length).padStart(2, '0')}
                 </div>
 
                 <button id={swiperId} className={cn(s.nav_button, s._prev)}>

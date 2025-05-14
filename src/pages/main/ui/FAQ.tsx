@@ -7,24 +7,24 @@ import { SectionSlider } from 'shared/ui/section_slider'
 type Props = {}
 
 export const Faq: FC<Props> = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['mainPage'])
     const { data: faqList = [], isLoading, isError } = useGetFaqQuery()
 
     return (
         <SectionSlider
             isLoading={isLoading}
             isError={isError}
-            title={t('page.main.section.faq.title', {
+            title={t('section.faq.title', {
                 postProcess: 'uppAll',
             })}
-            description={t('page.main.section.faq.description')}
+            description={t('section.faq.description')}
             skeletonComponent={<FaqCardSkeleton />}
             slideList={faqList.map((faq) => (
                 <FaqCard {...faq} />
             ))}
             buttonViewAllProps={{
                 to: Paths.MAIN,
-                text: t('page.main.section.faq.view_all_button', {
+                text: t('section.faq.view_all_button', {
                     postProcess: 'uppAll',
                 }),
             }}

@@ -20,7 +20,7 @@ export const TruncatedText: FC<Props> = ({ children: text }) => {
                 <>
                     ...{' '}
                     <span className={s.read_more} onClick={showMore}>
-                        {t('common.read_more', { postProcess: 'uppAll' })}
+                        {t('read_more', { postProcess: 'uppAll' })}
                     </span>
                 </>
             )}
