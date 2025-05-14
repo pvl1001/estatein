@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     padding-block: var(--footer-padding-block);
-    gap: 10rem;
+    gap: 19.5rem;
 }
 
 .email_container {
@@ -27,7 +27,8 @@
 
 .category_list {
     display: flex;
-    gap: var(--footer-category-list-gap);
+    flex: 1;
+    justify-content: space-between;
 
     &__title {
         margin-bottom: var(--footer-category-title-margin-bottom);
@@ -49,7 +50,6 @@
         --footer-form-width: 100%;
         --footer-padding-block: 5rem;
         --footer-category-title-margin-bottom: 1.5rem;
-        --footer-category-list-gap: 8.7rem;
         --footer-link-list-gap: 1.1rem;
         --footer-email-container-gap: 1.9rem;
     }

@@ -4,7 +4,7 @@ export const enFooter = {
     features: 'features',
     properties: 'properties',
     testimonials: 'testimonials',
-    faq: 'faq',
+    faq: "FAQ's",
     our_story: 'our story',
     our_works: 'our works',
     how_it_works: 'how it works',

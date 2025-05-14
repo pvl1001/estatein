@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { countCards } from 'shared/lib/const'
@@ -9,15 +10,14 @@ import s from './JourneySection.module.scss'
 type Props = {}
 
 export const JourneySection: FC<Props> = () => {
+    const { t } = useTranslation(['aboutPage'])
     return (
         <section className={cn(s._, 'wrapper')}>
             <div className={s.text_container}>
                 <TextBox
                     withStars
-                    title={'Our Journey'}
-                    description={
-                        "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients."
-                    }
+                    title={t('section.head.title', { postProcess: 'uppAll' })}
+                    description={t('section.head.description')}
                 />
                 <CounterList counterList={countCards} />
             </div>

@@ -21,6 +21,11 @@ export const HeadSection: FC<Props> = ({}) => {
             <div className={s.top_container}>
                 <div className={s.image_container}>
                     <img src={cityImg} alt="city" />
+
+                    <div className={s.discover_icon}>
+                        <DiscoverIcon className={s.discover_icon__round} />
+                        <Icon.ArrowLight className={s.discover_icon__arrow} />
+                    </div>
                 </div>
 
                 <div className={'wrapper'}>
@@ -34,14 +39,6 @@ export const HeadSection: FC<Props> = ({}) => {
                             <Text.Description>
                                 {t('section.head.description')}
                             </Text.Description>
-                            <div className={s.discover_icon}>
-                                <DiscoverIcon
-                                    className={s.discover_icon__round}
-                                />
-                                <Icon.ArrowLight
-                                    className={s.discover_icon__arrow}
-                                />
-                            </div>
                         </div>
 
                         <div className={s.buttons}>

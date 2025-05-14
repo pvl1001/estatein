@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 
-export type TCard = {
+export type TCard<T extends string = string> = {
     icon?: ReactNode
-    title: string
-    description: string
+    textKey: T
 }

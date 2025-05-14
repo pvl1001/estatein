@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { Card } from 'shared/ui/card'
@@ -8,21 +9,29 @@ import s from './AchievementsSection.module.scss'
 type Props = {}
 
 export const AchievementsSection: FC<Props> = () => {
+    const { t } = useTranslation(['aboutPage'])
+
     return (
         <section className={cn(s._, 'wrapper')}>
             <TextBox
                 withStars
-                title={'Our Achievements'}
-                description={
-                    'Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.'
-                }
+                title={t('section.achievements.title', {
+                    postProcess: 'uppAll',
+                })}
+                description={t('section.achievements.description')}
             />
 
             <ul className={s.card_list}>
-                {achievementCards.map((card) => (
-                    <li key={card.title}>
+                {achievementCards.map(({ textKey }) => (
+                    <li key={textKey}>
                         <Card
-                            {...card}
+                            title={t(
+                                `section.achievements.card.${textKey}.title`,
+                                { postProcess: 'uppAll' }
+                            )}
+                            description={t(
+                                `section.achievements.card.${textKey}.description`
+                            )}
                             withBorder
                             withBoxShadow
                             classes={{ container: s.card }}

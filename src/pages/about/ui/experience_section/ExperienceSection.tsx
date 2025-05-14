@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { Card } from 'shared/ui/card'
@@ -8,23 +9,30 @@ import s from './ExperienceSection.module.scss'
 type Props = {}
 
 export const ExperienceSection: FC<Props> = () => {
+    const { t } = useTranslation(['aboutPage', 'translation'])
+
     return (
         <section className={cn(s._, 'wrapper')}>
             <TextBox
-                title={'Navigating the Estatein Experience'}
-                description={
-                    "At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works."
-                }
+                title={t('section.experience.title', { postProcess: 'uppAll' })}
+                description={t('section.experience.description')}
             />
 
             <ul className={s.card_list}>
-                {experienceCards.map((card, i) => (
-                    <li key={card.title}>
+                {experienceCards.map(({ textKey }, i) => (
+                    <li key={textKey}>
                         <div className={s.card__header}>
-                            Step {String(++i).padStart(2, '0')}
+                            {t('translation:step', { postProcess: 'uppFirst' })}{' '}
+                            {String(++i).padStart(2, '0')}
                         </div>
                         <Card
-                            {...card}
+                            title={t(
+                                `section.experience.card.${textKey}.title`,
+                                { postProcess: 'uppAll' }
+                            )}
+                            description={t(
+                                `section.experience.card.${textKey}.description`
+                            )}
                             withBorder
                             classes={{
                                 container: s.card,

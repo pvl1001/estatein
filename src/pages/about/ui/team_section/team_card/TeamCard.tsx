@@ -4,7 +4,9 @@ import { Text } from 'shared/ui/text'
 import { TTeamCard } from '../../../lib/teamCards.ts'
 import s from './TeamCard.module.scss'
 
-type Props = TTeamCard
+type Props = Omit<TTeamCard, 'positionKey'> & {
+    position: string
+}
 
 export const TeamCard: FC<Props> = ({ name, photo, position }) => {
     return (
@@ -20,10 +22,10 @@ export const TeamCard: FC<Props> = ({ name, photo, position }) => {
                 </a>
             </div>
 
-            <Text.Title as={'h5'}>{name}</Text.Title>
-            <Text.Description className={s.position}>
-                {position}
-            </Text.Description>
+            <div className={s.text_container}>
+                <Text.Title as={'h5'}>{name}</Text.Title>
+                <Text.Description>{position}</Text.Description>
+            </div>
 
             <div className={s.say_hello}>
                 <span>Say Hello 👋</span>

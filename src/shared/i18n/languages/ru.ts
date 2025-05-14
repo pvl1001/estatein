@@ -4,6 +4,7 @@ export const ru: typeof en = {
     price: 'цена',
     of: 'из',
     read_more: 'читать далее',
+    step: 'шаг',
     button: {
         learn_more: 'Подробнее',
         browse_properties: 'Посмотреть $t(glossary:property_acc)',

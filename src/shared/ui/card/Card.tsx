@@ -4,7 +4,9 @@ import { TCard } from '../../lib/types.ts'
 import { Text } from '../text'
 import s from './Card.module.scss'
 
-type Props = TCard & {
+type Props = Omit<TCard, 'textKey'> & {
+    title: string
+    description: string
     withBorder?: boolean
     withBoxShadow?: boolean
     classes?: Partial<{

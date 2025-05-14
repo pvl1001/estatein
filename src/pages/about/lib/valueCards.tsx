@@ -1,29 +1,22 @@
 import { TCard } from 'shared/lib/types.ts'
 import { Icon } from 'shared/ui/icon'
+import { TValueCardKeys } from '../i18n/en.ts'
 
-export const valueCards: TCard[] = [
+export const valueCards: TCard<TValueCardKeys>[] = [
     {
         icon: <Icon.Star2 />,
-        title: 'Trust',
-        description:
-            'Trust is the cornerstone of every successful real estate transaction.',
+        textKey: 'trust',
     },
     {
         icon: <Icon.Hat />,
-        title: 'Excellence',
-        description:
-            'We set the bar high for ourselves. From the properties we list to the services we provide.',
+        textKey: 'excellence',
     },
     {
         icon: <Icon.Clients />,
-        title: 'Client-Centric',
-        description:
-            'Your dreams and needs are at the center of our universe. We listen, understand.',
+        textKey: 'client',
     },
     {
         icon: <Icon.Star2 />,
-        title: 'Our Commitment',
-        description:
-            'We are dedicated to providing you with the highest level of service, professionalism, and support.',
+        textKey: 'commitment',
     },
 ]

@@ -1,5 +1,6 @@
 import { initReactI18next } from 'react-i18next'
 import i18next from 'i18next'
+import { enAboutPage, ruAboutPage } from 'pages/about'
 import { enMainPage, ruMainPage } from 'pages/main'
 import { enFooter, ruFooter } from 'widgets/footer'
 import { enNav, ruNav } from 'widgets/header'
@@ -14,6 +15,7 @@ export const resources = {
         glossary: enGlossary,
         nav: enNav,
         mainPage: enMainPage,
+        aboutPage: enAboutPage,
         journey: enJourney,
         footer: enFooter,
     },
@@ -22,6 +24,7 @@ export const resources = {
         glossary: ruGlossary,
         nav: ruNav,
         mainPage: ruMainPage,
+        aboutPage: ruAboutPage,
         journey: ruJourney,
         footer: ruFooter,
     },
