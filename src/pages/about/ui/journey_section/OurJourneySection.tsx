@@ -5,11 +5,11 @@ import { countCards } from 'shared/lib/const'
 import { CounterList } from 'shared/ui/counter_list'
 import { TextBox } from 'shared/ui/text_box'
 import houseImg from '../../assets/images/house.webp'
-import s from './JourneySection.module.scss'
+import s from './OurJourneySection.module.scss'
 
 type Props = {}
 
-export const JourneySection: FC<Props> = () => {
+export const OurJourneySection: FC<Props> = () => {
     const { t } = useTranslation(['aboutPage'])
     return (
         <section className={cn(s._, 'wrapper')}>
