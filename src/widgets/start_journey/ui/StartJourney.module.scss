@@ -1,34 +1,34 @@
 ._ {
-    --properties-padding-block: 10rem;
-    --properties-title-margin-bottom: 2.1rem;
-    --properties-container-gap: 25rem;
-    --properties-bg:
+    --start-journey-padding-block: 10rem;
+    --start-journey-title-margin-bottom: 2.1rem;
+    --start-journey-container-gap: 25rem;
+    --start-journey-bg:
         url('../img/abstract_left.webp') left bottom / 54.6rem no-repeat,
         url('../img/abstract_right.webp') right bottom / 63.5rem no-repeat;
 
     border-top: var(--border);
     border-bottom: var(--border);
-    background: var(--properties-bg);
+    background: var(--start-journey-bg);
 }
 
 .container {
     display: flex;
-    gap: var(--properties-container-gap);
+    gap: var(--start-journey-container-gap);
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--properties-padding-block);
+    padding-block: var(--start-journey-padding-block);
 }
 
 .title {
-    margin-bottom: var(--properties-title-margin-bottom);
+    margin-bottom: var(--start-journey-title-margin-bottom);
 }
 
 @include media($media-s) {
     ._ {
-        --properties-padding-block: 5rem;
-        --properties-title-margin-bottom: 0.5rem;
-        --properties-container-gap: 3rem;
-        --properties-bg: url('../img/abstract_right.webp') right
+        --start-journey-padding-block: 5rem;
+        --start-journey-title-margin-bottom: 0.5rem;
+        --start-journey-container-gap: 3rem;
+        --start-journey-bg: url('../img/abstract_right.webp') right
             calc(100% + 1.4rem) / 34.5rem no-repeat;
 
         position: relative;
