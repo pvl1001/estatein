@@ -1,9 +1,10 @@
 import { LanguageStore } from 'shared/i18n'
+import { Ns } from 'shared/lib/const'
 
-type LinkCategory = LanguageStore<'nav'>
+type LinkCategory = LanguageStore<Ns.NAV>
 
 type Link = {
-    name: LanguageStore<'footer'>
+    name: LanguageStore<Ns.FOOTER>
     link: string
 }
 

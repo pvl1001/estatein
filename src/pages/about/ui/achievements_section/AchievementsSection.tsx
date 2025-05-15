@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
+import { Ns } from 'shared/lib/const'
 import { Card } from 'shared/ui/card'
 import { TextBox } from 'shared/ui/text_box'
 import { achievementCards } from '../../lib/achievementCards.ts'
@@ -9,7 +10,7 @@ import s from './AchievementsSection.module.scss'
 type Props = {}
 
 export const AchievementsSection: FC<Props> = () => {
-    const { t } = useTranslation(['aboutPage'])
+    const { t } = useTranslation([Ns.ABOUT_PAGE])
 
     return (
         <section className={cn(s._, 'wrapper')}>

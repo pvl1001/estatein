@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import cn from 'classnames'
 import { FooterLinks as TFooterLinks } from 'app/lib/footerLinks'
+import { Ns } from 'shared/lib/const'
 import { Icon } from 'shared/ui/icon'
 import { Logo } from 'shared/ui/logo'
 import { TextField } from 'shared/ui/text_field'
@@ -14,7 +15,7 @@ type Props = {
 }
 
 export function Footer({ links }: Props) {
-    const { t } = useTranslation(['footer'])
+    const { t } = useTranslation([Ns.FOOTER])
 
     function onSubmit(e: React.UIEvent<HTMLFormElement>) {
         e.preventDefault()

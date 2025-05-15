@@ -3,13 +3,14 @@ import { FC } from 'react'
 import cn from 'classnames'
 import { Card } from 'shared/ui/card'
 import { TextBox } from 'shared/ui/text_box'
+import { Ns } from '../../../../shared/lib/const'
 import { experienceCards } from '../../lib/experienceCards.ts'
 import s from './ExperienceSection.module.scss'
 
 type Props = {}
 
 export const ExperienceSection: FC<Props> = () => {
-    const { t } = useTranslation(['aboutPage', 'translation'])
+    const { t } = useTranslation([Ns.ABOUT_PAGE, Ns.TRANSLATION])
 
     return (
         <section className={cn(s._, 'wrapper')}>

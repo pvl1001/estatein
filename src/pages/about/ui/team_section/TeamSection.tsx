@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
+import { Ns } from 'shared/lib/const'
 import { TextBox } from 'shared/ui/text_box'
 import { teamCards } from '../../lib/teamCards.ts'
 import { TeamCard } from './team_card/TeamCard.tsx'
@@ -9,7 +10,7 @@ import s from './TeamSection.module.scss'
 type Props = {}
 
 export const TeamSection: FC<Props> = () => {
-    const { t } = useTranslation(['aboutPage'])
+    const { t } = useTranslation([Ns.ABOUT_PAGE])
 
     return (
         <section className={cn(s._, 'wrapper')}>

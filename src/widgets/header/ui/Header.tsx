@@ -5,6 +5,7 @@ import cn from 'classnames'
 import { Button } from 'shared/ui/button'
 import { LanguageSwitch } from 'shared/ui/language_switch'
 import { Logo } from 'shared/ui/logo'
+import { Ns } from '../../../shared/lib/const'
 import { useDisabledBodyScroll } from '../lib/useDisabledBodyScroll'
 import { NavListItem } from '../types'
 import { Burger } from './Burger/Burger'
@@ -16,7 +17,7 @@ type Props = {
 }
 
 export const Header: FC<Props> = ({ routes }) => {
-    const { t } = useTranslation(['nav'])
+    const { t } = useTranslation([Ns.NAV])
     const [isNavActive, setIsNavActive] = useState(false)
     const contactRoute: NavListItem = routes[routes.length - 1]
     const navRoutes: NavListItem[] = routes.slice(0, -1)

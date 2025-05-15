@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { FaqCard, FaqCardSkeleton, useGetFaqQuery } from 'entities/faq'
-import { Paths } from 'shared/lib/const'
+import { Ns, Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
 
 type Props = {}
 
 export const Faq: FC<Props> = () => {
-    const { t } = useTranslation(['mainPage'])
+    const { t } = useTranslation([Ns.MAIN_PAGE])
     const { data: faqList = [], isLoading, isError } = useGetFaqQuery()
 
     return (

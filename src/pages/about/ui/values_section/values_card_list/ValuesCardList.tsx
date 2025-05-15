@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
+import { Ns } from 'shared/lib/const'
 import { TCard } from 'shared/lib/types.ts'
 import { Card } from 'shared/ui/card'
 import { TValueCardKeys } from '../../../i18n/en.ts'
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export const ValuesCardList: FC<Props> = ({ cardList }) => {
-    const { t } = useTranslation(['aboutPage'])
+    const { t } = useTranslation([Ns.ABOUT_PAGE])
 
     return (
         <ul className={s._}>

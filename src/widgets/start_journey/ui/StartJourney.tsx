@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
+import { Ns } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { TextBox } from 'shared/ui/text_box'
 import s from './StartJourney.module.scss'
@@ -8,7 +9,7 @@ import s from './StartJourney.module.scss'
 type Props = {}
 
 export const StartJourney: FC<Props> = () => {
-    const { t } = useTranslation(['journey'])
+    const { t } = useTranslation([Ns.JOURNEY])
 
     return (
         <div className={s._}>
