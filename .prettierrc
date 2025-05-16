@@ -1,20 +1,23 @@
 {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 80,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
-    "importOrder": [
-        "^(react|react-router|react-router-dom)$",
-        "^(?!.*(react|react-router|react-router-dom|/)).*$",
-        "^app/(.*)$",
-        "^pages/(.*)$",
-        "^widgets/(.*)$",
-        "^entities/(.*)$",
-        "^shared/(.*)$",
-        "^.+/(?!.*[.]s?css$).*$",
-        "[.]s?css$"
-    ],
-    "importOrderSortSpecifiers": true
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 80,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "^(react|react-router|react-router-dom)$",
+    "^(?!.*(react|react-router|react-router-dom|/)).*$",
+    "^app/(.*)$",
+    "^pages/(.*)$",
+    "^widgets/(.*)$",
+    "^features/(.*)$",
+    "^entities/(.*)$",
+    "^shared/(.*)$",
+    "^.+/(?!.*[.]s?css$).*$",
+    "[.]s?css$"
+  ],
+  "importOrderSortSpecifiers": true
 }

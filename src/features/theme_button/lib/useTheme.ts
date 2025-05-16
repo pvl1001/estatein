@@ -20,8 +20,8 @@ function setThemeAttribute(currentTheme: Theme): void {
     document.documentElement.setAttribute('theme', getTheme())
 }
 
-export const useTheme = () => {
-    const storageTheme = localStorage.getItem('theme') ?? 'auto'
+export const useTheme = (initialTheme: Theme = 'dark') => {
+    const storageTheme = localStorage.getItem('theme') ?? initialTheme
     const storageIndexTheme = themes.findIndex((t) => t === storageTheme)
     const [getIndexTheme] = useState(() =>
         createGetIndexTheme(storageIndexTheme)

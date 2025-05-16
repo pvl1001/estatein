@@ -33,6 +33,7 @@ void i18next
     .use(uppFirstModule)
     .use(uppAllModule)
     .init({
+        lng: localStorage.lng,
         fallbackLng: ['en', 'ru'],
         resources,
         debug: false,
