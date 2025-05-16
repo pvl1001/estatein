@@ -20,7 +20,9 @@ export const HeadSection: FC<Props> = ({}) => {
         <section className={s._}>
             <div className={s.top_container}>
                 <div className={s.image_container}>
-                    <img src={cityImg} alt="city" />
+                    <div className={s.image}>
+                        <img src={cityImg} alt="city" />
+                    </div>
 
                     <div className={s.discover_icon}>
                         <DiscoverIcon className={s.discover_icon__round} />

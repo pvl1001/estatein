@@ -2,10 +2,11 @@ import { useTranslation } from 'react-i18next'
 import { FC, useState } from 'react'
 import { NavLink } from 'react-router'
 import cn from 'classnames'
+import { Ns } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { LanguageSwitch } from 'shared/ui/language_switch'
 import { Logo } from 'shared/ui/logo'
-import { Ns } from '../../../shared/lib/const'
+import { ThemeButton } from '../../../shared/ui/theme_button'
 import { useDisabledBodyScroll } from '../lib/useDisabledBodyScroll'
 import { NavListItem } from '../types'
 import { Burger } from './Burger/Burger'
@@ -45,9 +46,12 @@ export const Header: FC<Props> = ({ routes }) => {
                                 })}
                             </Button>
                         </NavLink>
-                        <LanguageSwitch />
                     </div>
                 </nav>
+                <div className={s.tools}>
+                    <ThemeButton />
+                    <LanguageSwitch />
+                </div>
 
                 <Burger
                     className={s.burger_button}

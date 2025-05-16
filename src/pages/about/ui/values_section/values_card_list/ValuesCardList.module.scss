@@ -1,14 +1,14 @@
 ._ {
     --card-list-gap: 6rem;
     --card-list-padding: 6rem;
-    --card-list-box-shadow: 0 0 0 1rem rgb(25, 25, 25);
+    --card-list-box-shadow: 0 0 0 1rem var(--color-shadow);
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: var(--card-list-padding);
     border: var(--border);
     border-radius: var(--border-radius);
-    box-shadow: 0 0 0 1rem rgb(25, 25, 25);
+    box-shadow: 0 0 0 1rem var(--color-shadow);
     gap: var(--card-list-gap);
 
     > li {
@@ -49,7 +49,7 @@
     ._ {
         --card-list-padding: 2.4rem;
         --card-list-gap: 4rem;
-        --card-list-box-shadow: 0 0 0 0.6rem rgb(25, 25, 25);
+        --card-list-box-shadow: 0 0 0 0.6rem var(--color-shadow);
 
         grid-template-columns: repeat(1, 1fr);
 

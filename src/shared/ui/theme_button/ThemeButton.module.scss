@@ -1,0 +1,11 @@
+._ {
+    display: grid;
+    place-items: center;
+    width: 2.3rem;
+    padding: 1rem;
+    color: var(--color-text-default);
+
+    svg {
+        width: 100%;
+    }
+}

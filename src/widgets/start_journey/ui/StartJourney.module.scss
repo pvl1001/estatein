@@ -2,21 +2,42 @@
     --start-journey-padding-block: 10rem;
     --start-journey-title-margin-bottom: 2.1rem;
     --start-journey-container-gap: 25rem;
-    --start-journey-bg:
-        url('../img/abstract_left.webp') left bottom / 54.6rem no-repeat,
-        url('../img/abstract_right.webp') right bottom / 63.5rem no-repeat;
 
+    --start-journey-abstract-left-inset: auto auto 0 -2rem;
+    --start-journey-abstract-left-width: 56.6rem;
+
+    --start-journey-abstract-right-width: 72.5rem;
+    --start-journey-abstract-right-inset: auto -9rem -6rem auto;
+
+    position: relative;
+    overflow: hidden;
     border-top: var(--border);
     border-bottom: var(--border);
     background: var(--start-journey-bg);
 }
 
+.abstract {
+    position: absolute;
+    z-index: -1;
+    color: var(--color-dark);
+
+    &._left {
+        inset: var(--start-journey-abstract-left-inset);
+        width: var(--start-journey-abstract-left-width);
+    }
+
+    &._right {
+        inset: var(--start-journey-abstract-right-inset);
+        width: var(--start-journey-abstract-right-width);
+    }
+}
+
 .container {
     display: flex;
-    gap: var(--start-journey-container-gap);
     align-items: center;
     justify-content: space-between;
     padding-block: var(--start-journey-padding-block);
+    gap: var(--start-journey-container-gap);
 }
 
 .title {
@@ -28,26 +49,19 @@
         --start-journey-padding-block: 5rem;
         --start-journey-title-margin-bottom: 0.5rem;
         --start-journey-container-gap: 3rem;
-        --start-journey-bg: url('../img/abstract_right.webp') right
-            calc(100% + 1.4rem) / 34.5rem no-repeat;
 
-        position: relative;
-        overflow: hidden;
+        --start-journey-abstract-left-inset: 1rem auto auto -14.5rem;
+        --start-journey-abstract-left-width: 53rem;
 
-        &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            top: 2.5rem;
-            right: 0.5rem;
-            width: 52.2rem;
-            height: 28.4rem;
-            transform: rotate(90deg);
-            background: url('../img/abstract_left.webp') 0 0 / cover no-repeat;
-        }
+        --start-journey-abstract-right-width: 40rem;
+        --start-journey-abstract-right-inset: auto -5rem -5rem auto;
     }
 
     .container {
         display: grid;
+    }
+
+    .abstract._left {
+        transform: rotate(90deg);
     }
 }

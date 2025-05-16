@@ -3,7 +3,7 @@
     --card-top-container-gap: 1.4rem;
     --card-icon-size: 7.4rem;
     --card-icon-padding: 2rem;
-    --card-box-shadow: 0 0 0 0.8rem rgb(25, 25, 25);
+    --card-box-shadow: 0 0 0 0.8rem var(--color-shadow);
     --card-border-radius: var(--border-radius);
 
     display: flex;
@@ -43,7 +43,7 @@
         --card-icon-size: 5.2rem;
         --card-icon-padding: 1.4rem;
         --card-top-container-gap: 0.8rem;
-        --card-box-shadow: 0 0 0 0.4rem rgb(25, 25, 25);
+        --card-box-shadow: 0 0 0 0.4rem var(--color-shadow);
         --card-border-radius: 1rem;
     }
 }

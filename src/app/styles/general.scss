@@ -37,6 +37,7 @@ body,
 }
 
 body {
+    transition: 0.2s ease-out background-color;
     background-color: var(--color-main-bg);
     color: var(--color-text-default);
     font-family: var(--font-urbanist);
