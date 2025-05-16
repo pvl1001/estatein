@@ -5,13 +5,13 @@ import {
     ReviewCardSkeleton,
     useGetReviewsQuery,
 } from 'entities/review'
-import { Paths } from 'shared/lib/const'
+import { Ns, Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
 
 type Props = {}
 
 export const ClientSay: FC<Props> = () => {
-    const { t } = useTranslation(['mainPage'])
+    const { t } = useTranslation([Ns.MAIN_PAGE])
     const { data: reviewList = [], isLoading, isError } = useGetReviewsQuery()
 
     return (

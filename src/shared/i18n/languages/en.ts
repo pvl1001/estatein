@@ -1,4 +1,4 @@
-import { resources } from 'app/i18n/config.ts'
+import { TResources } from 'app/i18n/config.ts'
 
 export const en = {
     price: 'price',
@@ -23,5 +23,4 @@ export const en = {
     },
 }
 
-export type LanguageStore<Key extends keyof typeof resources.en> =
-    keyof (typeof resources.en)[Key]
+export type LanguageStore<Key extends keyof TResources> = keyof TResources[Key]

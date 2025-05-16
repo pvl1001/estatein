@@ -3,6 +3,7 @@
     --our-journey-padding-top: 10rem;
     --our-journey-text-container-gap: 8rem;
     --our-journey-banner-container-height: 54.6rem;
+    --our-journey-abstract-width: 155rem;
 
     display: flex;
     align-items: center;
@@ -26,6 +27,8 @@
     object-fit: cover;
     border: var(--border);
     border-radius: var(--border-radius);
+    background: url('shared/assets/images/abstract.webp') center /
+        var(--our-journey-abstract-width) no-repeat;
 }
 
 @include media($media-s) {
@@ -33,6 +36,7 @@
         --our-journey-padding-top: 5rem;
         --our-journey-banner-container-height: 31rem;
         --our-journey-text-container-gap: 4rem;
+        --our-journey-abstract-width: 65rem;
 
         flex-direction: column-reverse;
     }

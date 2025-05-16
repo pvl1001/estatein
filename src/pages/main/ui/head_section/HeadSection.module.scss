@@ -1,7 +1,7 @@
 ._ {
     --head-section-card-list-gap: 2rem;
     --head-section-card-list-border-radius: 0;
-    --head-section-card-list-box-shadow: 0 0 0 1rem rgb(25, 25, 25);
+    --head-section-card-list-box-shadow: 0 0 0 1rem var(--color-shadow);
     --head-section-card-list-wrapper-padding-top: 0;
     --head-section-buttons-gap: 2rem;
     --head-section-image-container-inset: 0 0 0 52%;
@@ -10,6 +10,7 @@
     --head-section-discover-icon-translate: -50%, 0;
     --head-section-container-gap: 6rem;
     --head-section-title-margin-bottom: 2.4rem;
+    --head-section-image-background-width: 192rem;
 }
 
 .top_container {
@@ -32,6 +33,13 @@
 .image_container {
     position: absolute;
     inset: var(--head-section-image-container-inset);
+}
+
+.image {
+    position: relative;
+    height: 100%;
+    background: url('shared/assets/images/abstract.webp') center /
+        var(--head-section-image-background-width) no-repeat;
 
     img {
         width: 100%;
@@ -99,7 +107,7 @@
 @include media($media-s) {
     ._ {
         --head-section-card-list-border-radius: 1.2rem;
-        --head-section-card-list-box-shadow: 0 0 0 0.4rem rgb(25, 25, 25);
+        --head-section-card-list-box-shadow: 0 0 0 0.4rem var(--color-shadow);
         --head-section-card-list-wrapper-padding-top: 4rem;
         --head-section-card-list-gap: 1rem;
         --head-section-buttons-gap: 1.5rem;
@@ -109,6 +117,7 @@
         --head-section-discover-icon-translate: 0, -100%;
         --head-section-container-gap: 4rem;
         --head-section-title-margin-bottom: 1.6rem;
+        --head-section-image-background-width: 72rem;
     }
 
     .container {
@@ -126,7 +135,8 @@
         padding-block: 4rem;
         padding-inline: var(--wrapper-padding-inline-s);
 
-        img {
+        .image {
+            overflow: hidden;
             border: var(--border);
             border-radius: 1rem;
         }

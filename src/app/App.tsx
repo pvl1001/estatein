@@ -1,10 +1,6 @@
 import { Provider } from 'react-redux'
 import { RouterProvider, createHashRouter } from 'react-router'
-import { AboutPage } from 'pages/about'
-import { ContactPage } from 'pages/contact'
 import { MainPage } from 'pages/main'
-import { PropertiesPage } from 'pages/properties'
-import { ServicesPage } from 'pages/services'
 import { Paths } from 'shared/lib/const'
 import { Layout } from './Layout'
 import './i18n/config.ts'
@@ -20,19 +16,31 @@ const router = createHashRouter([
             },
             {
                 path: Paths.ABOUT,
-                element: <AboutPage />,
+                lazy: async () => {
+                    const { AboutPage } = await import('pages/about')
+                    return { Component: AboutPage }
+                },
             },
             {
                 path: Paths.PROPERTIES,
-                element: <PropertiesPage />,
+                lazy: async () => {
+                    const { PropertiesPage } = await import('pages/properties')
+                    return { Component: PropertiesPage }
+                },
             },
             {
                 path: Paths.SERVICES,
-                element: <ServicesPage />,
+                lazy: async () => {
+                    const { ServicesPage } = await import('pages/services')
+                    return { Component: ServicesPage }
+                },
             },
             {
                 path: Paths.CONTACT,
-                element: <ContactPage />,
+                lazy: async () => {
+                    const { ContactPage } = await import('pages/contact')
+                    return { Component: ContactPage }
+                },
             },
         ],
     },

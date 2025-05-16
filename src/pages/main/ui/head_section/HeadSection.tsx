@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
-import { countCards } from 'shared/lib/const'
+import { Ns, countCards } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { CounterList } from 'shared/ui/counter_list'
 import { HeadCard } from 'shared/ui/head_card'
@@ -15,12 +15,14 @@ import s from './HeadSection.module.scss'
 type Props = {}
 
 export const HeadSection: FC<Props> = ({}) => {
-    const { t } = useTranslation(['mainPage', 'translation'])
+    const { t } = useTranslation([Ns.MAIN_PAGE, Ns.TRANSLATION])
     return (
         <section className={s._}>
             <div className={s.top_container}>
                 <div className={s.image_container}>
-                    <img src={cityImg} alt="city" />
+                    <div className={s.image}>
+                        <img src={cityImg} alt="city" />
+                    </div>
 
                     <div className={s.discover_icon}>
                         <DiscoverIcon className={s.discover_icon__round} />
@@ -43,10 +45,12 @@ export const HeadSection: FC<Props> = ({}) => {
 
                         <div className={s.buttons}>
                             <Button>
-                                {t('translation:button.learn_more')}
+                                {t(`${Ns.TRANSLATION}:button.learn_more`)}
                             </Button>
                             <Button theme={'primary'}>
-                                {t('translation:button.browse_properties')}
+                                {t(
+                                    `${Ns.TRANSLATION}:button.browse_properties`
+                                )}
                             </Button>
                         </div>
 

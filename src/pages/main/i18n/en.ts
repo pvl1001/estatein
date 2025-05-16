@@ -1,7 +1,7 @@
 export const enMainPage = {
     section: {
         head: {
-            title: 'discover your dream $t(glossary:property, upp) with estatein',
+            title: 'discover your dream $t(glossary:property, upp) with Estatein',
             description:
                 'Your journey to finding the perfect $t(glossary:property) begins here. Explore our listings to find the home that matches your dreams.',
         },

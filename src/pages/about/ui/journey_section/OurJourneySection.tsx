@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
-import { countCards } from 'shared/lib/const'
+import { Ns, countCards } from 'shared/lib/const'
 import { CounterList } from 'shared/ui/counter_list'
 import { TextBox } from 'shared/ui/text_box'
 import houseImg from '../../assets/images/house.webp'
@@ -10,7 +10,7 @@ import s from './OurJourneySection.module.scss'
 type Props = {}
 
 export const OurJourneySection: FC<Props> = () => {
-    const { t } = useTranslation(['aboutPage'])
+    const { t } = useTranslation([Ns.ABOUT_PAGE])
     return (
         <section className={cn(s._, 'wrapper')}>
             <div className={s.text_container}>

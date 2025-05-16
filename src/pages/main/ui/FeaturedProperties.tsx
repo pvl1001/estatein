@@ -5,13 +5,13 @@ import {
     FeaturedCardSkeleton,
     useGetFeaturedQuery,
 } from 'entities/featured'
-import { Paths } from 'shared/lib/const'
+import { Ns, Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
 
 type Props = {}
 
 export const FeaturedProperties: FC<Props> = () => {
-    const { t } = useTranslation(['mainPage'])
+    const { t } = useTranslation([Ns.MAIN_PAGE])
     const {
         data: featuredList = [],
         isLoading,

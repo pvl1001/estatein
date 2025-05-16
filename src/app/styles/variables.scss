@@ -17,6 +17,7 @@ $wrapper: 159.6rem;
 
     --color-text-default: #fff;
     --color-main-bg: rgb(20, 20, 20);
+    --color-shadow: rgb(25, 25, 25);
     --color-primary: rgb(112, 59, 247);
     --color-border: rgb(38, 38, 38);
     --color-description: rgb(153, 153, 153);
@@ -28,4 +29,15 @@ $wrapper: 159.6rem;
     --border-radius-s: 0.8rem;
 
     --button-transition: filter 0.2s ease-out;
+}
+
+[theme='light'] {
+    --color-text-default: #000;
+    --color-main-bg: #ebebeb;
+    --color-border: #d9d9d9;
+    --color-description: #666;
+    --color-dark: #e5e5e5;
+    --color-primary: rgb(167, 130, 246);
+    --color-primary-75: rgb(189, 165, 250);
+    --color-shadow: rgba(25, 25, 25, 7%);
 }

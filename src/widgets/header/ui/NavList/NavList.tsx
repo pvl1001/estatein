@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { NavLink } from 'react-router'
+import { Ns } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { NavListItem } from '../../types'
 import s from './NavList.module.scss'
@@ -11,7 +12,7 @@ type Props = {
 }
 
 export const NavList: FC<Props> = ({ routeList, onClick }) => {
-    const { t } = useTranslation(['nav'])
+    const { t } = useTranslation([Ns.NAV])
 
     return (
         <ul className={s._}>

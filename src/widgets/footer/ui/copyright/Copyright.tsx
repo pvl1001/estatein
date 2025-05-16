@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { Link } from 'react-router'
 import cn from 'classnames'
+import { Ns } from 'shared/lib/const'
 import { Social } from '../../lib/socials'
 import s from './Copyright.module.scss'
 
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export const Copyright: FC<Props> = ({ socials }) => {
-    const { t } = useTranslation(['footer'])
+    const { t } = useTranslation([Ns.FOOTER])
 
     return (
         <div className={s._}>

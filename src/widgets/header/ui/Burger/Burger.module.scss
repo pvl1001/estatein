@@ -41,7 +41,7 @@
             transition-duration: 0.15s;
             transition-timing-function: ease;
             border-radius: 0.4rem;
-            background-color: #fff;
+            background-color: var(--color-text-default);
         }
 
         &::after {
@@ -90,7 +90,7 @@
     &.active .inner,
     ._.active .inner::after,
     ._.active .inner::before {
-        background-color: #fff;
+        background-color: var(--color-text-default);
     }
 }
 
