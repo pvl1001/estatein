@@ -1,5 +1,5 @@
 import { FC, memo } from 'react'
-import { Button } from '../../../shared/ui/button'
+import { Button } from 'shared/ui/button'
 import ThemeAuto from '../assets/icons/theme_auto.svg?react'
 import ThemeDark from '../assets/icons/theme_dark.svg?react'
 import ThemeLight from '../assets/icons/theme_light.svg?react'
