@@ -12,7 +12,7 @@ export const ru: typeof en = {
     },
     counter_card: {
         customers: 'довольных клиентов',
-        properties: '$t(glossary:property_gen) для клиентов',
+        properties: '$t(glossary:property_gen)',
         experience: 'лет опыта',
     },
     head_card: {

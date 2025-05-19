@@ -16,10 +16,10 @@ export const FaqCard: FC<Props> = ({ question, answer }) => {
     return (
         <article className={s._}>
             <Text.Title as={'h5'} className={s.question}>
-                {question}?
+                {question}
             </Text.Title>
 
-            <Text.Description className={s.answer}>{answer}.</Text.Description>
+            <Text.Description className={s.answer}>{answer}</Text.Description>
 
             <Button to={Paths.MAIN} className={s.button}>
                 {t('read_more', { postProcess: 'uppAll' })}
