@@ -13,6 +13,10 @@
     display: flex;
     gap: var(--achievements-section-card-list-gap);
 
+    > li {
+        flex: 1;
+    }
+
     .card {
         padding: var(--achievements-section-card-padding);
         gap: var(--achievements-section-card-gap);

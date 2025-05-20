@@ -21,7 +21,7 @@ export const ReviewCard: FC<Props> = ({ rating, title, message, client }) => {
             <div className={s.client}>
                 <img
                     className={s.client__avatar}
-                    src={client.img}
+                    src={client.avatar}
                     alt="avatar"
                 />
                 <span className={s.client__name}>{client.name}</span>

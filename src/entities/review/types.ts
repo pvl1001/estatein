@@ -3,7 +3,7 @@ export type ClientReview = {
     title: string
     message: string
     client: {
-        img: string
+        avatar: string
         name: string
         location: string
     }
@@ -12,6 +12,7 @@ export type ClientReview = {
 export type ReviewsResponse = {
     id: string
     name: string
+    avatar: string
     country: string
     title: string
     message: string
