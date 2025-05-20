@@ -9,8 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky install",
-    "typecheck": "tsc --noEmit",
-    "server": "json-server --watch db.json --port 4000 --delay 2000"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.7.0",

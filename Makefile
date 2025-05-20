@@ -6,13 +6,8 @@ build: # Build
 lint: # Lint
 	npm run lint
 
-.PHONY: server
-server: # Run json-server
-	npm run server
-
 .PHONY: start
 start: # Run for development
-	make server
 	npm run dev
 
 .PHONY: preview
