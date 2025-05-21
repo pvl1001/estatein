@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux'
-import { RouterProvider, createHashRouter } from 'react-router'
+import { RouterProvider, createBrowserRouter } from 'react-router'
 import { MainPage } from 'pages/main'
 import { Paths } from 'shared/lib/const'
 import { Layout } from './Layout'
 import './i18n/config.ts'
 import { store } from './lib/store.ts'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
     {
         Component: Layout,
         children: [
