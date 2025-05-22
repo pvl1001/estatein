@@ -1,10 +1,11 @@
 import { LanguageStore } from 'shared/i18n'
 import { Ns } from 'shared/lib/const'
+import { enFooter } from '../../widgets/footer'
 
 type LinkCategory = LanguageStore<Ns.NAV>
 
 type Link = {
-    name: LanguageStore<Ns.FOOTER>
+    name: keyof typeof enFooter.sections
     link: string
 }
 
