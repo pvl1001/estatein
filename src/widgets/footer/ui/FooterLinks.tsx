@@ -33,7 +33,7 @@ export const FooterLinks: FC<Props> = ({ links }) => {
                                         href={item.link}
                                         className={s.link}
                                     >
-                                        {t(item.name, {
+                                        {t(`sections.${item.name}`, {
                                             postProcess: 'uppAll',
                                         })}
                                     </a>
