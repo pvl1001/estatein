@@ -32,7 +32,9 @@ describe('Button', () => {
     })
 
     it('should render with link theme when "to" prop is provided', () => {
-        const { getByRole } = render(<Button to="/some-path">Test</Button>)
+        const { getByRole } = render(<Button to="/some-path">Test</Button>, {
+            route: '/some-path',
+        })
         const link = getByRole('link')
         expect(link).toBeInTheDocument()
         expect(link).toHaveClass(/link/)
