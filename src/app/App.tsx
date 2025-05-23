@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux'
 import { RouterProvider, createHashRouter } from 'react-router'
 import { MainPage } from 'pages/main'
+import 'shared/i18n/config.ts'
 import { Paths } from 'shared/lib/const'
 import { Layout } from './Layout'
-import './i18n/config.ts'
 import { store } from './lib/store.ts'
 
 const router = createHashRouter([

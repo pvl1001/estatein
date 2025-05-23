@@ -1,4 +1,4 @@
-import { TResources } from 'app/i18n/config.ts'
+import { TResources } from '../config.ts'
 
 export const en = {
     price: 'price',
