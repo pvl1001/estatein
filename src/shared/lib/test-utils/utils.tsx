@@ -7,16 +7,17 @@ import { RenderOptions, render } from '@testing-library/react'
 
 interface TestProviderOptions {
     language?: string
+    route?: string
 }
 
-const TestWrapper = ({ language = 'en' }: TestProviderOptions) => {
+const TestWrapper = ({ language = 'en', route = '/' }: TestProviderOptions) => {
     return function Wrapper({ children }: { children: ReactNode }) {
         if (language) {
             void i18nForTests.changeLanguage(language)
         }
 
         return (
-            <MemoryRouter>
+            <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTests}>
                     {children}
                 </I18nextProvider>
@@ -31,6 +32,7 @@ const customRender = (
 ) => {
     const wrapper = TestWrapper({
         language: options?.language,
+        route: options?.route,
     })
 
     return render(ui, { wrapper, ...options })
