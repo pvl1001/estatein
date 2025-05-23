@@ -1,10 +1,10 @@
+/// <reference types="vitest" />
 import { resolve } from 'path'
 import { UserConfig, defineConfig, loadEnv } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import svgr from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default ({ mode }: UserConfig) => {
     process.env = { ...process.env, ...loadEnv(mode ?? '', process.cwd()) }
 
@@ -38,6 +38,11 @@ export default ({ mode }: UserConfig) => {
         server: {
             port: 3000,
             open: true,
+        },
+        test: {
+            globals: true,
+            environment: 'jsdom',
+            setupFiles: './src/setupTests.ts',
         },
         css: {
             transformer: 'postcss',
