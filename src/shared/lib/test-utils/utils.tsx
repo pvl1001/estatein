@@ -10,7 +10,10 @@ interface TestProviderOptions {
     route?: string
 }
 
-const TestWrapper = ({ language = 'en', route = '/' }: TestProviderOptions) => {
+const TestWrapper = ({
+    language = 'en',
+    route = process.env.VITE_BASEPATH || '/',
+}: TestProviderOptions) => {
     return function Wrapper({ children }: { children: ReactNode }) {
         if (language) {
             void i18nForTests.changeLanguage(language)
