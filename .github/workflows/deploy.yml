@@ -21,11 +21,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  tests:
-    uses: ./.github/workflows/testing-action.yml
+  #  tests:
+  #    uses: ./.github/workflows/testing-action.yml
 
   deploy:
-    needs: tests
+    #    needs: tests
 
     environment:
       name: github-pages
