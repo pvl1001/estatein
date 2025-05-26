@@ -4,7 +4,7 @@ import { Text } from 'shared/ui/text'
 import { ClientReview } from '../types'
 import s from './ReviewCard.module.scss'
 
-type Props = ClientReview
+export type Props = ClientReview
 
 export const ReviewCard: FC<Props> = ({ rating, title, message, client }) => {
     return (

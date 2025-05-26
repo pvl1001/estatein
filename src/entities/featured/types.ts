@@ -1,6 +1,6 @@
 export type TFeaturedItem = {
     id: string
-    img: string
+    img: string | undefined
     name: string
     description: string
     type: string

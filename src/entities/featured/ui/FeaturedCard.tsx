@@ -6,10 +6,10 @@ import BathroomIcon from '../assets/icons/bathroom.svg?react'
 import BedroomIcon from '../assets/icons/bedroom.svg?react'
 import VillaIcon from '../assets/icons/villa.svg?react'
 import { TFeaturedItem } from '../types'
-import { TruncatedText } from './TruncatedText'
+import { TruncatedText } from './truncated_text/TruncatedText.tsx'
 import s from './FeaturedCard.module.scss'
 
-type Props = TFeaturedItem
+type Props = Omit<TFeaturedItem, 'id'>
 
 export const FeaturedCard: FC<Props> = ({
     img,
@@ -34,13 +34,13 @@ export const FeaturedCard: FC<Props> = ({
             </div>
 
             <ul className={s.option_list}>
-                {bedroomCount && (
+                {!!bedroomCount && (
                     <li>
                         <BedroomIcon />
                         {bedroomCount}-bedroom
                     </li>
                 )}
-                {bathroomCount && (
+                {!!bathroomCount && (
                     <li>
                         <BathroomIcon />
                         {bathroomCount}-bathroom

@@ -3,7 +3,7 @@ export type ClientReview = {
     title: string
     message: string
     client: {
-        avatar: string
+        avatar: string | undefined
         name: string
         location: string
     }
