@@ -1,0 +1,15 @@
+name: Testing
+
+on:
+  push:
+    branches: [ develop ]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    name: lint-and-test
+    uses: ./.github/workflows/testing-action.yml
