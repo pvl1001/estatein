@@ -10,7 +10,7 @@ type Props = {
     buttonIcon?: ReactNode
     inputProps?: ComponentProps<'input'>
     className?: string
-    register: UseFormRegisterReturn
+    register?: UseFormRegisterReturn
     error?: string
     message?: string
     pending?: boolean

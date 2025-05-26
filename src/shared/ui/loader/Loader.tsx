@@ -7,5 +7,5 @@ type Props = {
 }
 
 export const Loader: FC<Props> = ({ className }) => {
-    return <div className={cn(s._, className)} />
+    return <div className={cn(s._, className)} data-testid={'loader'} />
 }
