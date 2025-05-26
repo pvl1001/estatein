@@ -17,7 +17,7 @@ const TestWrapper = ({ language = 'en', route = '/' }: TestProviderOptions) => {
         }
 
         return (
-            <MemoryRouter basename={'/'} initialEntries={[route]}>
+            <MemoryRouter initialEntries={[route]}>
                 <I18nextProvider i18n={i18nForTests}>
                     {children}
                 </I18nextProvider>
