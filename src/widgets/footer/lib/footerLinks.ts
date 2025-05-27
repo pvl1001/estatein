@@ -1,6 +1,6 @@
-import { LanguageStore } from 'shared/i18n'
-import { Ns } from 'shared/lib/const'
-import { enFooter } from '../../widgets/footer'
+import { LanguageStore } from '../../../shared/i18n'
+import { Ns } from '../../../shared/lib/const'
+import { enFooter } from '../index.ts'
 
 type LinkCategory = LanguageStore<Ns.NAV>
 
