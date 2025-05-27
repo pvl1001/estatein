@@ -7,17 +7,17 @@ function createGetIndexTheme(index = 0): (c: number) => number {
     return (length: number) => (index + 1 < length ? (index += 1) : (index = 0))
 }
 
-function setThemeAttribute(currentTheme: Theme): void {
-    function getTheme(): Theme {
-        if (currentTheme !== 'auto') {
-            return currentTheme
-        }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
+export function getCurrentTheme(theme: Theme): Exclude<Theme, 'auto'> {
+    if (theme !== 'auto') {
+        return theme
     }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+}
 
-    document.documentElement.setAttribute('theme', getTheme())
+export function setThemeAttribute(theme: Theme): void {
+    document.documentElement.setAttribute('theme', getCurrentTheme(theme))
 }
 
 export const useTheme = (initialTheme: Theme = 'dark') => {
