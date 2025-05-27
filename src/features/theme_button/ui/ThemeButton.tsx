@@ -14,11 +14,11 @@ export const ThemeButton: FC<Props> = memo(() => {
     function renderThemeIcon() {
         switch (theme) {
             case 'dark':
-                return <ThemeDark />
+                return <ThemeDark data-testid={'theme-dark'} />
             case 'light':
-                return <ThemeLight />
+                return <ThemeLight data-testid={'theme-light'} />
             default:
-                return <ThemeAuto />
+                return <ThemeAuto data-testid={'theme-auto'} />
         }
     }
 

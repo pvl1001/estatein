@@ -4,7 +4,7 @@ import { Ns } from '../const'
 
 void i18nForTest.use(initReactI18next).init({
     lng: 'en',
-    fallbackLng: 'en',
+    fallbackLng: ['en', 'ru'],
     ns: [Ns.TRANSLATION],
     defaultNS: Ns.TRANSLATION,
     interpolation: {
