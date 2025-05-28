@@ -1,4 +1,5 @@
 import { FC, memo } from 'react'
+import { TestId } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import ThemeAuto from '../assets/icons/theme_auto.svg?react'
 import ThemeDark from '../assets/icons/theme_dark.svg?react'
@@ -14,11 +15,11 @@ export const ThemeButton: FC<Props> = memo(() => {
     function renderThemeIcon() {
         switch (theme) {
             case 'dark':
-                return <ThemeDark data-testid={'theme-dark'} />
+                return <ThemeDark data-testid={TestId.THEME_DARK} />
             case 'light':
-                return <ThemeLight data-testid={'theme-light'} />
+                return <ThemeLight data-testid={TestId.THEME_LIGHT} />
             default:
-                return <ThemeAuto data-testid={'theme-auto'} />
+                return <ThemeAuto data-testid={TestId.THEME_AUTO} />
         }
     }
 

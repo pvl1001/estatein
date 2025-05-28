@@ -1,4 +1,5 @@
 import { describe, it } from 'vitest'
+import { TestId } from '../../lib/const'
 import { render } from '../../lib/test-utils'
 import { Icon } from '../icon'
 import { TextField } from './TextField.tsx'
@@ -25,7 +26,7 @@ describe('TextField', () => {
         const input = getByRole('textbox')
 
         if (isPending) {
-            expect(getByTestId('loader')).toBeInTheDocument()
+            expect(getByTestId(TestId.LOADER)).toBeInTheDocument()
             expect(input).toHaveAttribute('disabled')
             return
         }
