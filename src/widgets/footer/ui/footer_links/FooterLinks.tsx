@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
-import { FooterLinks as TFooterLinks } from 'app/lib/footerLinks'
-import { LanguageStore } from 'shared/i18n'
-import { Ns } from 'shared/lib/const'
-import s from './Footer.module.scss'
+import { LanguageStore } from '../../../../shared/i18n'
+import { Ns } from '../../../../shared/lib/const'
+import { FooterLinks as TFooterLinks } from '../../lib/footerLinks.ts'
+import s from '../Footer.module.scss'
 
 type Props = {
     links: TFooterLinks

@@ -1,7 +1,9 @@
 import { I18nextProvider } from 'react-i18next'
+import { Provider } from 'react-redux'
 import { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router'
-import '../utils/globalUtils.ts'
+import { store } from 'app/lib/store'
+import '../utils/globalUtils'
 import i18nForTest from './i18nForTest'
 import { RenderOptions, render } from '@testing-library/react'
 
@@ -17,9 +19,13 @@ const TestWrapper = ({ language = 'en', route = '/' }: TestProviderOptions) => {
         }
 
         return (
-            <MemoryRouter initialEntries={[route]}>
-                <I18nextProvider i18n={i18nForTest}>{children}</I18nextProvider>
-            </MemoryRouter>
+            <Provider store={store}>
+                <MemoryRouter initialEntries={[route]}>
+                    <I18nextProvider i18n={i18nForTest}>
+                        {children}
+                    </I18nextProvider>
+                </MemoryRouter>
+            </Provider>
         )
     }
 }

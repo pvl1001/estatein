@@ -7,17 +7,16 @@ import { ThemeButton } from 'features/theme_button'
 import { Ns } from 'shared/lib/const'
 import { Button } from 'shared/ui/button'
 import { Logo } from 'shared/ui/logo'
+import { routes } from '../lib/routes.ts'
 import { useDisabledBodyScroll } from '../lib/useDisabledBodyScroll'
 import { NavListItem } from '../types'
 import { Burger } from './Burger/Burger'
 import { NavList } from './NavList/NavList'
 import s from './Header.module.scss'
 
-type Props = {
-    routes: NavListItem[]
-}
+type Props = {}
 
-export const Header: FC<Props> = ({ routes }) => {
+export const Header: FC<Props> = ({}) => {
     const { t } = useTranslation([Ns.NAV])
     const [isNavActive, setIsNavActive] = useState(false)
     const contactRoute: NavListItem = routes[routes.length - 1]

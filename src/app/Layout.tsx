@@ -5,8 +5,6 @@ import { Footer } from 'widgets/footer'
 import { Header } from 'widgets/header'
 import { StartJourney } from 'widgets/start_journey'
 import IconSprite from 'shared/assets/sprite.svg?react'
-import { footerLinks } from './lib/footerLinks'
-import { routes } from './lib/routes'
 
 type Props = {}
 
@@ -15,12 +13,12 @@ export const Layout: FC<Props> = () => {
         <>
             <ScrollRestoration />
             <IconSprite />
-            <Header routes={routes} />
+            <Header />
             <main>
                 <Outlet />
             </main>
             <StartJourney />
-            <Footer links={footerLinks} />
+            <Footer />
         </>
     )
 }

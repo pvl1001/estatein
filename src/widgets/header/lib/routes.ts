@@ -1,5 +1,5 @@
-import { NavListItem } from 'widgets/header'
 import { Paths } from 'shared/lib/const'
+import { NavListItem } from '../types'
 
 export const routes: NavListItem[] = [
     {

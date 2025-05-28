@@ -1,5 +1,6 @@
 import { Mock, vi } from 'vitest'
 import { request } from 'shared/api/request'
+import { TestId } from 'shared/lib/const'
 import {
     RenderResult,
     UserEvent,
@@ -70,11 +71,11 @@ describe('EmailSubscriptionForm', () => {
         await user.click(submitButton)
 
         // Проверяем что лоадер появился
-        expect(getByTestId('loader')).toBeInTheDocument()
+        expect(getByTestId(TestId.LOADER)).toBeInTheDocument()
 
         // Ждем завершения запроса и проверяем что лоадер исчез
         await waitFor(() => {
-            expect(queryByTestId('loader')).not.toBeInTheDocument()
+            expect(queryByTestId(TestId.LOADER)).not.toBeInTheDocument()
         })
     })
 

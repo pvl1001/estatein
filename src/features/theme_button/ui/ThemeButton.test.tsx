@@ -1,4 +1,5 @@
 import { vi } from 'vitest'
+import { TestId } from 'shared/lib/const'
 import { render, userEvent } from 'shared/lib/test-utils'
 import { getCurrentTheme } from '../lib/useTheme.ts'
 import { ThemeButton } from './ThemeButton.tsx'
@@ -27,7 +28,7 @@ describe('ThemeButton', () => {
 
     it('should render with dark theme icon initially', () => {
         const { getByTestId } = render(<ThemeButton />)
-        expect(getByTestId('theme-dark')).toBeInTheDocument()
+        expect(getByTestId(TestId.THEME_DARK)).toBeInTheDocument()
     })
 
     it('should call toggleTheme on button click', async () => {
@@ -38,11 +39,11 @@ describe('ThemeButton', () => {
         const htmlElement = document.querySelector('html')!
         const themes = [
             {
-                testId: 'theme-auto',
+                testId: TestId.THEME_AUTO,
                 theme: getCurrentTheme('auto'),
             },
-            { testId: 'theme-light', theme: 'light' },
-            { testId: 'theme-dark', theme: 'dark' },
+            { testId: TestId.THEME_LIGHT, theme: 'light' },
+            { testId: TestId.THEME_DARK, theme: 'dark' },
         ]
 
         for (const { theme, testId } of themes) {

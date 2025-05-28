@@ -1,17 +1,16 @@
+import { FC } from 'react'
 import cn from 'classnames'
-import { FooterLinks as TFooterLinks } from 'app/lib/footerLinks'
 import { EmailSubscriptionForm } from 'features/email_subscription'
 import { Logo } from 'shared/ui/logo'
+import { footerLinks } from '../lib/footerLinks'
 import { socials } from '../lib/socials'
-import { FooterLinks } from './FooterLinks'
 import { Copyright } from './copyright/Copyright'
+import { FooterLinks } from './footer_links/FooterLinks'
 import s from './Footer.module.scss'
 
-type Props = {
-    links: TFooterLinks
-}
+type Props = {}
 
-export function Footer({ links }: Props) {
+export const Footer: FC<Props> = ({}) => {
     return (
         <footer className={s._}>
             <div className={cn('wrapper', s.container)}>
@@ -19,7 +18,7 @@ export function Footer({ links }: Props) {
                     <Logo />
                     <EmailSubscriptionForm className={s.form} />
                 </div>
-                <FooterLinks links={links} />
+                <FooterLinks links={footerLinks} />
             </div>
             <Copyright socials={socials} />
         </footer>
