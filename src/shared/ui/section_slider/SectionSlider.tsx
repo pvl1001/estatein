@@ -3,6 +3,7 @@ import cn from 'classnames'
 import { Paths } from '../../lib/const'
 import { Button } from '../button'
 import { Slider } from '../slider'
+import { SliderConfig } from '../slider/types.ts'
 import { TextBox } from '../text_box'
 import s from './SectionSlider.module.scss'
 
@@ -17,6 +18,8 @@ type Props = {
     }
     isLoading?: boolean
     isError?: boolean
+    sliderConfig?: SliderConfig
+    className?: string
 }
 
 export const SectionSlider: FC<Props> = ({
@@ -27,6 +30,8 @@ export const SectionSlider: FC<Props> = ({
     isError,
     isLoading,
     skeletonComponent,
+    sliderConfig,
+    className,
 }) => {
     const viewAllButton = buttonViewAllProps ? (
         <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
@@ -36,7 +41,7 @@ export const SectionSlider: FC<Props> = ({
     slideList = isLoading ? Array(3).fill(skeletonComponent) : slideList
 
     return (
-        <section className={s._}>
+        <section className={cn(s._, className)}>
             <div className={cn('wrapper', s.wrapper)}>
                 <div className={s.text_container}>
                     <TextBox
@@ -49,7 +54,11 @@ export const SectionSlider: FC<Props> = ({
                 </div>
 
                 {isError && 'Error!'}
-                <Slider slideList={slideList} viewButton={viewAllButton} />
+                <Slider
+                    slideList={slideList}
+                    viewButton={viewAllButton}
+                    config={sliderConfig}
+                />
             </div>
         </section>
     )

@@ -5,25 +5,32 @@ import { useSliderSpaceBetween } from '../../lib/hooks'
 import { useWindowResize } from '../../lib/hooks'
 import { getBreakpoints } from '../../lib/utils'
 import { Icon } from '../icon'
-import { Navigation } from 'swiper/modules'
+import { SliderConfig } from './types.ts'
+import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import s from './Slider.module.scss'
 
 type Props = {
     slideList: ReactNode[]
     viewButton: ReactNode
+    config?: SliderConfig
 }
 
-export const Slider: FC<Props> = ({ slideList, viewButton }) => {
+export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
     const { t } = useTranslation()
     const swiperId: string = useId()
-    const pageRem: number = useSliderSpaceBetween(20)
+    const pageRem: number = useSliderSpaceBetween(config?.spaceBetween ?? 20)
     const { mobile } = getBreakpoints()
-    const [slidesPerView, setSlidesPerView] = useState(1)
+    const [slidesPerView, setSlidesPerView] = useState(
+        (config?.slidesPerView as number) ?? 3
+    )
     const [index, setIndex] = useState(slidesPerView)
 
     useWindowResize(() => {
-        const activeIndex = window.innerWidth > mobile ? 3 : 1
+        const activeIndex =
+            window.innerWidth > mobile
+                ? Math.min(slidesPerView, slideList.length)
+                : 1
         setSlidesPerView(activeIndex)
         setIndex(activeIndex)
     })
@@ -35,13 +42,14 @@ export const Slider: FC<Props> = ({ slideList, viewButton }) => {
                     setIndex(activeIndex + slidesPerView)
                 }}
                 className={s._}
-                spaceBetween={pageRem}
-                slidesPerView={slidesPerView}
-                modules={[Navigation]}
+                modules={[Navigation, Autoplay]}
                 navigation={{
                     nextEl: `#${swiperId}.${s._next}`,
                     prevEl: `#${swiperId}.${s._prev}`,
                 }}
+                {...config}
+                slidesPerView={slidesPerView}
+                spaceBetween={pageRem}
             >
                 {slideList.map((slide, i) => (
                     <SwiperSlide key={i} className={s.slide}>

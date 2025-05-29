@@ -1,0 +1,29 @@
+$offset: 1rem;
+
+._ {
+    :global {
+        .swiper {
+            --slider-border-bottom-inset: auto #{$offset} 0;
+
+            margin: #{-$offset} #{-$offset} 0;
+        }
+
+        .swiper-slide {
+            padding: #{$offset} #{$offset} 0;
+        }
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        :global {
+            .swiper {
+                padding-bottom: $offset;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

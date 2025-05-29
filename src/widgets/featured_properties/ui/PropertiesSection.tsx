@@ -1,17 +1,26 @@
-import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import {
     FeaturedCard,
     FeaturedCardSkeleton,
     useGetFeaturedQuery,
 } from 'entities/featured'
-import { Ns, Paths } from 'shared/lib/const'
+import { Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
 
-type Props = {}
+export type Props = {
+    title: string
+    description: string
+    buttonViewAllProps?: {
+        to: Paths
+        text: string
+    }
+}
 
-export const FeaturedProperties: FC<Props> = () => {
-    const { t } = useTranslation([Ns.MAIN_PAGE])
+export const PropertiesSection: FC<Props> = ({
+    title,
+    description,
+    buttonViewAllProps,
+}) => {
     const {
         data: featuredList = [],
         isLoading,
@@ -22,20 +31,13 @@ export const FeaturedProperties: FC<Props> = () => {
         <SectionSlider
             isError={isError}
             isLoading={isLoading}
-            title={t('section.featured.title', {
-                postProcess: 'uppAll',
-            })}
-            description={t('section.featured.description')}
+            title={title}
+            description={description}
             skeletonComponent={<FeaturedCardSkeleton />}
             slideList={featuredList.map((item) => (
                 <FeaturedCard {...item} />
             ))}
-            buttonViewAllProps={{
-                to: Paths.MAIN,
-                text: t('section.featured.view_all_button', {
-                    postProcess: 'uppAll',
-                }),
-            }}
+            buttonViewAllProps={buttonViewAllProps}
         />
     )
 }

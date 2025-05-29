@@ -32,6 +32,12 @@ export const ClientSay: FC<Props> = () => {
                     postProcess: 'uppAll',
                 }),
             }}
+            sliderConfig={{
+                speed: 1000,
+                autoplay: {
+                    delay: 5000,
+                },
+            }}
         />
     )
 }

@@ -102,6 +102,18 @@ export const enAboutPage = {
                 counsel: 'legal counsel',
             },
         },
+        clients: {
+            title: 'our valued clients',
+            description:
+                "At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we've had the pleasure of serving",
+            card: {
+                since: 'Since',
+                visit_button: 'Visit Website',
+                domain: 'Domain',
+                category: 'Category',
+                say: 'What They Said',
+            },
+        },
     },
 }
 
