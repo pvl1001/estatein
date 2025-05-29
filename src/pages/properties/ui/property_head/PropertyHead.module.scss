@@ -1,0 +1,17 @@
+._ {
+    --head-propperty-padding: 15rem 39.5rem 16rem 16.2rem;
+
+    padding: var(--head-propperty-padding);
+    border-bottom: var(--border);
+    background: linear-gradient(
+        154.12deg,
+        rgb(38, 38, 38) -27.695%,
+        rgba(38, 38, 38, 0%) 40.055%
+    );
+}
+
+@include media($media-s) {
+    ._ {
+        --head-propperty-padding: 5rem 1.6rem;
+    }
+}

@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import cn from 'classnames'
-import { EmailSubscriptionForm } from 'features/email_subscription'
 import { Logo } from 'shared/ui/logo'
 import { footerLinks } from '../lib/footerLinks'
 import { socials } from '../lib/socials'
 import { Copyright } from './copyright/Copyright'
+import { EmailSubscriptionForm } from './email_subscription'
 import { FooterLinks } from './footer_links/FooterLinks'
 import s from './Footer.module.scss'
 

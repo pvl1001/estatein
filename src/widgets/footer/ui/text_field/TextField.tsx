@@ -1,8 +1,8 @@
 import { UseFormRegisterReturn } from 'react-hook-form'
 import { ComponentProps, ReactNode } from 'react'
 import cn from 'classnames'
-import { Loader } from '../loader/Loader.tsx'
-import { Text } from '../text'
+import { Loader } from 'shared/ui/loader'
+import { Text } from 'shared/ui/text'
 import s from './TextField.module.scss'
 
 type Props = {

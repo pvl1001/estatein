@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest'
-import { TestId } from '../../lib/const'
-import { render } from '../../lib/test-utils'
-import { Icon } from '../icon'
+import { TestId } from 'shared/lib/const'
+import { render } from 'shared/lib/test-utils'
+import { Icon } from 'shared/ui/icon'
 import { TextField } from './TextField.tsx'
 import s from './TextField.module.scss'
 

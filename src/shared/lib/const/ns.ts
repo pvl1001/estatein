@@ -6,4 +6,5 @@ export enum Ns {
     FOOTER = 'footer',
     MAIN_PAGE = 'mainPage',
     ABOUT_PAGE = 'aboutPage',
+    PROPERTIES_PAGE = 'propertiesPage',
 }
