@@ -1,0 +1,5 @@
+export { ClientCard } from './ui/ClientCard'
+export { ClientCardSkeleton } from './ui/ClientCardSkeleton.tsx'
+export type { TClient } from './types'
+export { clientApi, useGetClientsQuery } from './api/clientApi'
+export { mockClientApi } from './api/mockClientApi.ts'

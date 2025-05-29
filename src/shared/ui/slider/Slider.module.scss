@@ -1,8 +1,16 @@
 :global(.swiper)._ {
     --slider-padding-bottom: 5rem;
+    --slider-border-bottom-inset: auto 0 0;
 
     padding-bottom: var(--slider-padding-bottom);
-    border-bottom: var(--border);
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: var(--slider-border-bottom-inset);
+        height: 0.1rem;
+        background: var(--color-border);
+    }
 
     .slide {
         height: auto;

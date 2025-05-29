@@ -104,5 +104,17 @@ export const ruAboutPage: typeof enAboutPage = {
                 counsel: 'юрист',
             },
         },
+        clients: {
+            title: 'наши уважаемые клиенты',
+            description:
+                'В Estatein мы имели честь работать с разными клиентами из разных отраслей. Вот некоторые из клиентов, которым мы имели удовольствие служить',
+            card: {
+                since: 'С',
+                visit_button: 'Посетить сайт',
+                domain: 'Сфера',
+                category: 'Категория',
+                say: 'Что они говорят',
+            },
+        },
     },
 }
