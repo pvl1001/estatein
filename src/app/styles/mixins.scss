@@ -29,3 +29,45 @@ $media-s: 767px;
         font-size: var(--default-font-size-s);
     }
 }
+
+@mixin input-wrapper-style {
+    --input-border-radius: 1.2rem;
+    --input-transition: 0.1s ease-out;
+
+    transition: var(--input-transition);
+    border: var(--border);
+    border-radius: var(--input-border-radius);
+
+    svg {
+        transition: var(--input-transition);
+        color: var(--color-grey-40);
+    }
+
+    &:has(input:focus) {
+        border-color: var(--color-text-default);
+
+        svg {
+            color: var(--color-text-default);
+        }
+    }
+
+    input {
+        width: 100%;
+        height: inherit;
+        background-color: inherit;
+        color: inherit;
+        font-size: inherit;
+
+        ::placeholder {
+            color: var(--color-grey-40);
+        }
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    @include media($media-s) {
+        --input-border-radius: 0.8rem;
+    }
+}

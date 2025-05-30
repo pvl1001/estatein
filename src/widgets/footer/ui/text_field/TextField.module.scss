@@ -4,11 +4,6 @@
     margin-right: var(--text-field-icon-margin-right);
     place-items: center;
     aspect-ratio: 1;
-
-    svg {
-        transition: var(--text-field-transition);
-        color: #999;
-    }
 }
 
 ._ {
@@ -19,39 +14,14 @@
     --text-field-font-size: 1.8rem;
     --text-field-icon-margin-right: 1rem;
     --text-field-send-button-width: 3rem;
-    --text-field-transition: 0.1s ease-out;
     --text-field-bgc: transparent;
 
     display: flex;
     align-items: center;
     height: var(--text-field-height);
     padding-inline: var(--text-field-padding-inline);
-    transition: var(--text-field-transition);
-    border: var(--border);
-    border-radius: var(--text-field-border-radius);
-    background-color: var(--text-field-bgc);
-    color: var(--color-text-default);
-    font-size: var(--text-field-font-size);
     cursor: text;
-
-    input {
-        width: 100%;
-        background-color: inherit;
-        color: inherit;
-        font-size: inherit;
-
-        ::placeholder {
-            color: var(--color-description);
-        }
-
-        &:focus-visible {
-            outline: none;
-        }
-    }
-
-    &:has(input:focus) {
-        border-color: var(--color-text-default);
-    }
+    @include input-wrapper-style;
 }
 
 .send_button {

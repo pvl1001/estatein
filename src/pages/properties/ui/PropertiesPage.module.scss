@@ -1,0 +1,9 @@
+.search_property {
+    margin-top: calc(var(--main-page-gap) * -1 - 5.4rem);
+}
+
+@include media($media-s) {
+    .search_property {
+        margin-top: -4rem;
+    }
+}

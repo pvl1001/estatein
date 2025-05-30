@@ -1,6 +1,6 @@
 import { render, userEvent } from 'shared/lib/test-utils'
 import { TruncatedText } from './TruncatedText.tsx'
-import s from '../FeaturedCard.module.scss'
+import s from '../PropertyCard.module.scss'
 
 describe('TruncatedText', () => {
     const text =
