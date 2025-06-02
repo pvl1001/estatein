@@ -1,0 +1,75 @@
+._ {
+    --search-input-margin: 0 14.8rem 1rem;
+    --search-input-padding: 2rem;
+    --search-input-font-size: 2.4rem;
+    --search-input-shadow-width: 1rem;
+    --search-input-border-radius: var(--border-radius) var(--border-radius) 0 0;
+    --search-button-gap: 0.8rem;
+    --search-button-icon-size: 2.4rem;
+    --search-fieldset-padding: 1.2rem;
+}
+
+.search_input {
+    @include input-wrapper-style;
+
+    display: flex;
+    margin: var(--search-input-margin);
+    padding: var(--search-input-padding);
+    border-radius: var(--search-input-border-radius);
+    background-color: var(--color-main-bg);
+    box-shadow: 0 0 0 var(--search-input-shadow-width) var(--color-shadow);
+    font-size: var(--search-input-font-size);
+    gap: 2rem;
+}
+
+.submit_button {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: var(--search-button-gap);
+
+    &__icon {
+        width: var(--search-button-icon-size);
+        height: var(--search-button-icon-size);
+        padding: 0.3rem;
+
+        svg {
+            color: var(--color-text-default);
+        }
+    }
+}
+
+.fieldset {
+    display: flex;
+    padding: var(--search-fieldset-padding);
+    border-radius: var(--border-radius);
+    background-color: var(--color-shadow);
+    gap: 2rem;
+
+    > * {
+        flex: 1;
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --search-input-margin: 0 0 2rem;
+        --search-input-padding: 1rem 1rem 1rem 1.8rem;
+        --search-input-border-radius: var(--border-radius);
+        --search-input-font-size: 1.6rem;
+        --search-input-shadow-width: 0.4rem;
+        --search-fieldset-padding: 2rem;
+    }
+
+    .fieldset {
+        flex-direction: column;
+    }
+
+    .submit_button {
+        padding: 1.1rem 1.7rem;
+
+        &__text {
+            display: none;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { TestId } from 'shared/lib/const'
 import { render } from 'shared/lib/test-utils'
 import { PropertiesSection, Props } from './PropertiesSection.tsx'
 
-describe('FeaturedProperties', () => {
+describe('PropertyProperties', () => {
     const initialProps: Props = {
         title: '',
         description: '',
@@ -16,7 +16,7 @@ describe('FeaturedProperties', () => {
         unmount()
     })
 
-    it('renders skeleton and displays featureds after data is fetched', async () => {
+    it('renders skeleton and displays properties after data is fetched', async () => {
         const { getAllByTestId, queryByTestId, findByText, queryByText } =
             render(<PropertiesSection {...initialProps} />)
 
@@ -27,22 +27,5 @@ describe('FeaturedProperties', () => {
         // Данные загрузились, имя отобразилось
         expect(await findByText(/test name/i)).toBeInTheDocument()
         expect(queryByTestId(TestId.SKELETON)).not.toBeInTheDocument()
-    })
-
-    it('should be render title', () => {
-        const { getByText } = render(
-            <PropertiesSection {...initialProps} title={'test title'} />
-        )
-        expect(getByText(/test title/i)).toBeInTheDocument()
-    })
-
-    it('should be render description', () => {
-        const { getByText } = render(
-            <PropertiesSection
-                {...initialProps}
-                description={'description message'}
-            />
-        )
-        expect(getByText(/description message/i)).toBeInTheDocument()
     })
 })

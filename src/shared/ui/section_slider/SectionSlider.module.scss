@@ -1,14 +1,14 @@
 ._ {
-    --featured-text-container-gap: 20rem;
-    --featured-text-container-margin-bottom: 8rem;
+    --property-text-container-gap: 20rem;
+    --property-text-container-margin-bottom: 8rem;
 }
 
 .text_container {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    gap: var(--featured-text-container-gap);
-    margin-bottom: var(--featured-text-container-margin-bottom);
+    gap: var(--property-text-container-gap);
+    margin-bottom: var(--property-text-container-margin-bottom);
 }
 
 .button {
@@ -17,8 +17,8 @@
 
 @include media($media-s) {
     ._ {
-        --featured-text-container-margin-bottom: 4rem;
-        --featured-text-container-gap: 4rem;
+        --property-text-container-margin-bottom: 4rem;
+        --property-text-container-gap: 4rem;
     }
 
     .text_container {

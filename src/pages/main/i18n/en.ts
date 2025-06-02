@@ -6,9 +6,9 @@ export const enMainPage = {
                 'Your journey to finding the perfect $t(glossary:property) begins here. Explore our listings to find the home that matches your dreams.',
         },
         properties: {
-            title: 'featured properties',
+            title: 'property properties',
             description:
-                'Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.',
+                'Explore our handpicked selection of property properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click "View Details" for more information.',
             view_all_button: 'view all properties',
         },
         client: {

@@ -5,13 +5,22 @@ import { Text } from 'shared/ui/text'
 import BathroomIcon from '../assets/icons/bathroom.svg?react'
 import BedroomIcon from '../assets/icons/bedroom.svg?react'
 import VillaIcon from '../assets/icons/villa.svg?react'
-import { TFeaturedItem } from '../types'
+import { TPropertyItem } from '../types'
 import { TruncatedText } from './truncated_text/TruncatedText.tsx'
-import s from './FeaturedCard.module.scss'
+import s from './PropertyCard.module.scss'
 
-type Props = Omit<TFeaturedItem, 'id'>
+type Props = Pick<
+    TPropertyItem,
+    | 'img'
+    | 'type'
+    | 'bathroomCount'
+    | 'name'
+    | 'price'
+    | 'bedroomCount'
+    | 'description'
+>
 
-export const FeaturedCard: FC<Props> = ({
+export const PropertyCard: FC<Props> = ({
     img,
     type,
     bathroomCount,

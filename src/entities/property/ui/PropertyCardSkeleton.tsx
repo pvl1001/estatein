@@ -3,11 +3,11 @@ import cn from 'classnames'
 import { Button } from 'shared/ui/button'
 import { Skeleton } from 'shared/ui/skeleton'
 import { Text } from 'shared/ui/text'
-import s from './FeaturedCard.module.scss'
+import s from './PropertyCard.module.scss'
 
 type Props = {}
 
-export const FeaturedCardSkeleton: FC<Props> = () => {
+export const PropertyCardSkeleton: FC<Props> = () => {
     return (
         <article className={cn(s._)}>
             <Skeleton>

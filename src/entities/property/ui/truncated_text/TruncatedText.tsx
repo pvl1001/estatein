@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { FC, useState } from 'react'
-import s from '../FeaturedCard.module.scss'
+import s from '../PropertyCard.module.scss'
 
 type Props = {
     children: string
