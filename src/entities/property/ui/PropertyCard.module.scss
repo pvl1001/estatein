@@ -9,6 +9,7 @@
     --feature-card-option-icon-width: 2.4rem;
     --feature-card-button-width: 23rem;
     --feature-card-price-font-size: 2.4rem;
+    --feature-card-category-padding: 0.8rem 1.4rem;
 
     display: flex;
     flex-direction: column;
@@ -88,6 +89,14 @@
     cursor: pointer;
 }
 
+.category {
+    width: fit-content;
+    padding: var(--feature-card-category-padding);
+    border: var(--border);
+    border-radius: 2.8rem;
+    background: var(--color-dark);
+}
+
 @include media($media-s) {
     ._ {
         --feature-card-gap: 2rem;
@@ -100,6 +109,7 @@
         --feature-card-button-width: 16rem;
         --feature-card-option-icon-width: 2rem;
         --feature-card-price-font-size: 1.8rem;
+        --feature-card-category-padding: 0.6rem 1.2rem;
     }
 
     .button {

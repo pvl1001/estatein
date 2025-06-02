@@ -9,16 +9,17 @@ import { TPropertyItem } from '../types'
 import { TruncatedText } from './truncated_text/TruncatedText.tsx'
 import s from './PropertyCard.module.scss'
 
-type Props = Pick<
-    TPropertyItem,
-    | 'img'
-    | 'type'
-    | 'bathroomCount'
-    | 'name'
-    | 'price'
-    | 'bedroomCount'
-    | 'description'
->
+type Props = Pick<TPropertyItem, 'img' | 'name' | 'price' | 'description'> &
+    (
+        | (Pick<TPropertyItem, 'bathroomCount' | 'bedroomCount' | 'type'> & {
+              category?: never
+          })
+        | (Pick<TPropertyItem, 'category'> & {
+              bathroomCount?: never
+              bedroomCount?: never
+              type?: never
+          })
+    )
 
 export const PropertyCard: FC<Props> = ({
     img,
@@ -28,12 +29,15 @@ export const PropertyCard: FC<Props> = ({
     name,
     price,
     description,
+    category,
 }) => {
     const { t } = useTranslation()
 
     return (
         <article className={s._}>
             <img src={img} alt="feature" className={s.image} loading={'lazy'} />
+
+            {category && <p className={s.category}>{category}</p>}
 
             <div className={s.text_container}>
                 <Text.Title as={'h5'}>{name}</Text.Title>
@@ -42,26 +46,28 @@ export const PropertyCard: FC<Props> = ({
                 </Text.Description>
             </div>
 
-            <ul className={s.option_list}>
-                {!!bedroomCount && (
-                    <li>
-                        <BedroomIcon />
-                        {bedroomCount}-bedroom
-                    </li>
-                )}
-                {!!bathroomCount && (
-                    <li>
-                        <BathroomIcon />
-                        {bathroomCount}-bathroom
-                    </li>
-                )}
-                {type && (
-                    <li>
-                        <VillaIcon />
-                        {type}
-                    </li>
-                )}
-            </ul>
+            {(!!bedroomCount || !!bathroomCount || type) && (
+                <ul className={s.option_list}>
+                    {bedroomCount && (
+                        <li>
+                            <BedroomIcon />
+                            {bedroomCount}-bedroom
+                        </li>
+                    )}
+                    {bathroomCount && (
+                        <li>
+                            <BathroomIcon />
+                            {bathroomCount}-bathroom
+                        </li>
+                    )}
+                    {type && (
+                        <li>
+                            <VillaIcon />
+                            {type}
+                        </li>
+                    )}
+                </ul>
+            )}
 
             <div className={s.footer}>
                 <div className={s.price_container}>

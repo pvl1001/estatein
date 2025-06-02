@@ -29,4 +29,10 @@ export type TPropertyItem = {
         insurance: number
         total_monthly_costs: number
     }
+    category: TPropertyCategory
 }
+
+export type TPropertyCategory =
+    | 'Coastal Escapes'
+    | 'Urban Oasis'
+    | 'Countryside Charm'
