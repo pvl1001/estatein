@@ -56,6 +56,19 @@ describe('PropertyCard', () => {
         expect(getByRole('img')).toHaveAttribute('src', image)
     })
 
+    it('should be render category', () => {
+        const { getByText } = render(
+            <PropertyCard
+                name={''}
+                description={''}
+                price={0}
+                img={undefined}
+                category={'Coastal Escapes'}
+            />
+        )
+        expect(getByText(/coastal escapes/i)).toBeInTheDocument()
+    })
+
     it.each([
         { price: 1, result: '$1,00' },
         { price: 1.11, result: '$1,11' },

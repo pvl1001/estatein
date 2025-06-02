@@ -28,7 +28,13 @@ export const PropertiesSection: FC<Props> = () => {
             description={t('section.properties.description')}
             skeletonComponent={<PropertyCardSkeleton />}
             slideList={propertyList.map((item) => (
-                <PropertyCard {...item} />
+                <PropertyCard
+                    img={item.img}
+                    name={item.name}
+                    price={item.price}
+                    description={item.description}
+                    category={item.category}
+                />
             ))}
         />
     )

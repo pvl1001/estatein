@@ -35,6 +35,7 @@ export const mockPropertyHandler = http.get(`${baseUrl}/properties`, () => {
                 insurance: 0,
                 total_monthly_costs: 0,
             },
+            category: 'Coastal Escapes',
         },
     ])
 })
