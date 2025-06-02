@@ -9,7 +9,7 @@ type Props = {
 
 export const Logo: FC<Props> = ({ className }) => {
     return (
-        <a href={'/'} className={cn(s._, className)}>
+        <a href={import.meta.env.VITE_BASEPATH} className={cn(s._, className)}>
             <Icon.Logo />
         </a>
     )
