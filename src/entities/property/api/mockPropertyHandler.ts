@@ -15,7 +15,7 @@ export const mockPropertyHandler = http.get(`${baseUrl}/properties`, () => {
             bathroomCount: 0,
             price: 0,
             size: 0,
-            yearBuilt: 0,
+            year: 0,
             amenities: [],
             isFeatured: true,
             additional_fees: {

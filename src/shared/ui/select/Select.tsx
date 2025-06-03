@@ -1,39 +1,27 @@
-import { ComponentProps, FC, ReactNode, useRef, useState } from 'react'
+import { ComponentProps, FC, ReactNode, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../icon'
 import s from './Select.module.scss'
 
-type Option = {
-    value: string
-    title: string
+export type Option = {
+    title: string | number
+    value: string | number
 }
 
 type Props = Omit<ComponentProps<'input'>, 'onChange'> & {
+    options: Option[]
     icon?: ReactNode
-    options?: Option[]
-    onChange?: (value: string) => void
+    onChange?: (value: Option['value']) => void
 }
 
-const testOptions: Option[] = [
-    {
-        title: 'option 1',
-        value: 'option 1',
-    },
-    {
-        title: 'option 2',
-        value: 'option 2',
-    },
-]
-
 export const Select: FC<Props> = ({
-    options = testOptions,
+    options,
     icon,
     onChange,
     ...inputProps
 }) => {
     const [currentOption, setCurrentOption] = useState<Option>()
     const [isShowOptionList, setIsShowOptionList] = useState(false)
-    const ref = useRef(null)
 
     function openOptionList() {
         setIsShowOptionList(true)
@@ -49,12 +37,15 @@ export const Select: FC<Props> = ({
         closeOptionList()
     }
 
+    const getDefaultTitle = options.find((o) => o.value === inputProps.value)
+    const defaultValue = currentOption?.title ?? getDefaultTitle?.title ?? ''
+
     return (
         <div className={s._}>
             {isShowOptionList && (
                 <div className={s.overlay} onClick={closeOptionList} />
             )}
-            <div className={s.select} ref={ref}>
+            <div className={s.select}>
                 {icon && <div className={s.icon}>{icon}</div>}
 
                 <input
@@ -62,8 +53,8 @@ export const Select: FC<Props> = ({
                     placeholder={'test'}
                     readOnly
                     onClick={openOptionList}
-                    defaultValue={currentOption?.title}
                     {...inputProps}
+                    value={defaultValue}
                 />
 
                 <button

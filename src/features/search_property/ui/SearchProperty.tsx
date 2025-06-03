@@ -1,31 +1,53 @@
 import { useForm } from 'react-hook-form'
 import { FC } from 'react'
+import { useSearchParams } from 'react-router'
 import cn from 'classnames'
+import { useGetPropertyQuery } from 'entities/property'
 import { Button } from 'shared/ui/button'
 import { Icon } from 'shared/ui/icon'
-import { Select } from 'shared/ui/select'
+import { Option, Select } from 'shared/ui/select'
+import { usePropertyOptions } from '../lib/usePropertyOptions'
 import s from './SearchProperty.module.scss'
 
 type Props = {
     className?: string
 }
 
-const values = {
-    search: '',
-    location: '',
-    type: '',
-    range: '',
-    size: '',
-    year: '',
-}
-
 export const SearchProperty: FC<Props> = ({ className }) => {
-    const { register, handleSubmit, setValue } = useForm({
-        values,
-    })
+    const [searchParams, setSearchParams] = useSearchParams()
+    const { data: properties = [] } = useGetPropertyQuery()
+    const options = usePropertyOptions(properties)
+
+    const values = {
+        name: searchParams.get('name') || '',
+        location: searchParams.get('location') || '',
+        type: searchParams.get('type') || '',
+        price: searchParams.get('price') || '',
+        size: searchParams.get('size') || '',
+        year: searchParams.get('year') || '',
+    }
+
+    const { register, handleSubmit, setValue } = useForm({ values })
+
+    function onChange(name: keyof typeof values, value: Option['value']) {
+        setValue(name, value.toString())
+        setSearchParams(
+            (prev) => {
+                prev.set(name, value.toString())
+                return prev
+            },
+            { preventScrollReset: true }
+        )
+    }
 
     function onSubmit(data: typeof values) {
-        console.log(data)
+        setSearchParams(
+            (prev) => {
+                prev.set('name', data.name)
+                return prev
+            },
+            { preventScrollReset: true }
+        )
     }
 
     return (
@@ -37,7 +59,7 @@ export const SearchProperty: FC<Props> = ({ className }) => {
                             type="text"
                             autoComplete={'off'}
                             placeholder={'Search For A Property'}
-                            {...register('search')}
+                            {...register('name')}
                         />
                         <Button
                             type={'submit'}
@@ -58,27 +80,41 @@ export const SearchProperty: FC<Props> = ({ className }) => {
                             icon={<Icon.Location />}
                             placeholder={'Location'}
                             {...register('location')}
-                            onChange={(value) => setValue('location', value)}
+                            onChange={(value) => onChange('location', value)}
+                            value={values.location}
+                            options={options.location}
                         />
                         <Select
                             icon={<Icon.Property />}
                             placeholder={'Property Type'}
-                            onChange={(value) => setValue('type', value)}
+                            {...register('type')}
+                            onChange={(value) => onChange('type', value)}
+                            value={values.type}
+                            options={options.type}
                         />
                         <Select
                             icon={<Icon.Photo />}
                             placeholder={'Pricing Range'}
-                            onChange={(value) => setValue('range', value)}
+                            {...register('price')}
+                            onChange={(value) => onChange('price', value)}
+                            value={values.price}
+                            options={options.price}
                         />
                         <Select
                             icon={<Icon.Box />}
                             placeholder={'Property Size'}
-                            onChange={(value) => setValue('size', value)}
+                            {...register('size')}
+                            onChange={(value) => onChange('size', value)}
+                            value={values.size}
+                            options={options.size}
                         />
                         <Select
                             icon={<Icon.Datepicker />}
                             placeholder={'Build Year'}
-                            onChange={(value) => setValue('year', value)}
+                            {...register('year')}
+                            onChange={(value) => onChange('year', value)}
+                            value={values.year}
+                            options={options.year}
                         />
                     </fieldset>
                 </form>

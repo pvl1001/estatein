@@ -7,11 +7,13 @@ import {
 } from 'entities/property'
 import { Ns } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
+import { usePropertyFilter } from '../../lib/usePropertyFilter'
 
 export type Props = {}
 
 export const PropertiesSection: FC<Props> = () => {
     const { t } = useTranslation([Ns.PROPERTIES_PAGE])
+    const { filter } = usePropertyFilter()
     const {
         data: propertyList = [],
         isLoading,
@@ -27,7 +29,7 @@ export const PropertiesSection: FC<Props> = () => {
             })}
             description={t('section.properties.description')}
             skeletonComponent={<PropertyCardSkeleton />}
-            slideList={propertyList.map((item) => (
+            slideList={filter(propertyList).map((item) => (
                 <PropertyCard
                     img={item.img}
                     name={item.name}
