@@ -11,14 +11,13 @@
 }
 
 .select {
-    @include input-wrapper-style;
-
     display: flex;
     align-items: center;
     width: 100%;
     padding: var(--select-padding);
     background-color: var(--color-main-bg);
     gap: var(--select-gap);
+    @include input-wrapper-style;
 
     input {
         line-height: var(--select-line-height);
@@ -70,8 +69,10 @@
     position: absolute;
     z-index: var(--select-z-index);
     width: 100%;
+    max-height: 30rem;
     margin-top: 1rem;
     padding-block: 2rem;
+    overflow: auto;
     border: var(--border);
     border-radius: var(--border-radius);
     background-color: var(--color-dark);

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { FC, ReactNode, useId, useState } from 'react'
+import { FC, ReactNode, useEffect, useId, useState } from 'react'
 import cn from 'classnames'
 import { useSliderSpaceBetween } from '../../lib/hooks'
 import { useWindowResize } from '../../lib/hooks'
@@ -27,13 +27,19 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
     const [index, setIndex] = useState(slidesPerView)
 
     useWindowResize(() => {
-        const activeIndex =
-            window.innerWidth > mobile
-                ? Math.min(slidesPerView, slideList.length)
-                : 1
+        const activeIndex = window.innerWidth > mobile ? slidesPerView : 1
         setSlidesPerView(activeIndex)
         setIndex(activeIndex)
     })
+
+    useEffect(() => {
+        const activeIndex =
+            window.innerWidth < mobile
+                ? 1
+                : Math.min(slidesPerView, slideList.length)
+
+        setIndex(activeIndex)
+    }, [slideList.length])
 
     return (
         <>

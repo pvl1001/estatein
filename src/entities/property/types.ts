@@ -9,7 +9,7 @@ export type TPropertyItem = {
     bathroomCount: number
     price: number
     size: number
-    yearBuilt: number
+    year: number
     amenities: string[]
     isFeatured: boolean
     additional_fees: {
