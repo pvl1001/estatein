@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { ComponentProps, FC, ReactNode, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../icon'
@@ -22,6 +23,7 @@ export const Select: FC<Props> = ({
     className,
     ...inputProps
 }) => {
+    const { t } = useTranslation()
     const [currentOption, setCurrentOption] = useState<Option>()
     const [isShowOptionList, setIsShowOptionList] = useState(false)
 
@@ -74,21 +76,17 @@ export const Select: FC<Props> = ({
                         onClick={() => clickOption()}
                         className={cn(s.option, s._empty)}
                     >
-                        empty
+                        {t('empty')}
                     </li>
-                    {options.length ? (
-                        options.map((option) => (
-                            <li
-                                key={option.title}
-                                className={s.option}
-                                onClick={() => clickOption(option)}
-                            >
-                                {option.title}
-                            </li>
-                        ))
-                    ) : (
-                        <p className={s.option}>Список пуст</p>
-                    )}
+                    {options.map((option) => (
+                        <li
+                            key={option.title}
+                            className={s.option}
+                            onClick={() => clickOption(option)}
+                        >
+                            {option.title}
+                        </li>
+                    ))}
                 </ul>
             )}
         </div>

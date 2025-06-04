@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { useGetPropertyQuery } from 'entities/property'
@@ -15,6 +16,7 @@ type Props = {
 }
 
 export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
+    const { t } = useTranslation()
     const { data: properties = [] } = useGetPropertyQuery()
     const options = usePropertyOptions(properties)
     const { values, onChange, register, onSubmit } = usePropertySearchForm()
@@ -31,7 +33,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         <input
                             type="text"
                             autoComplete={'off'}
-                            placeholder={'Search For A Property'}
+                            placeholder={t('search.placeholder.search', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('name')}
                         />
                         <Button
@@ -43,7 +47,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                                 <Icon.Find />
                             </div>
                             <span className={s.submit_button__text}>
-                                Find Property
+                                {t('search.submit_button', {
+                                    postProcess: 'uppAll',
+                                })}
                             </span>
                         </Button>
                     </label>
@@ -51,7 +57,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <fieldset className={s.fieldset}>
                         <Select
                             icon={<Icon.Location />}
-                            placeholder={'Location'}
+                            placeholder={t('search.placeholder.location', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('location')}
                             onChange={(value) => onChange('location', value)}
                             value={values.location}
@@ -59,7 +67,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         />
                         <Select
                             icon={<Icon.Property />}
-                            placeholder={'Property Type'}
+                            placeholder={t('search.placeholder.type', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('type')}
                             onChange={(value) => onChange('type', value)}
                             value={values.type}
@@ -67,7 +77,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         />
                         <Select
                             icon={<Icon.Photo />}
-                            placeholder={'Pricing Range'}
+                            placeholder={t('search.placeholder.price', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('price')}
                             onChange={(value) => onChange('price', value)}
                             value={values.price}
@@ -75,7 +87,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         />
                         <Select
                             icon={<Icon.Box />}
-                            placeholder={'Property Size'}
+                            placeholder={t('search.placeholder.size', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('size')}
                             onChange={(value) => onChange('size', value)}
                             value={values.size}
@@ -83,7 +97,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         />
                         <Select
                             icon={<Icon.Datepicker />}
-                            placeholder={'Build Year'}
+                            placeholder={t('search.placeholder.year', {
+                                postProcess: 'uppAll',
+                            })}
                             {...register('year')}
                             onChange={(value) => onChange('year', value)}
                             value={values.year}

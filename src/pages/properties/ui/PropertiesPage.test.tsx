@@ -1,7 +1,7 @@
 import { TestId } from 'shared/lib/const'
 import { render, userEvent } from 'shared/lib/test-utils'
 import { PropertiesPage } from './PropertiesPage.tsx'
-import { queryByText } from '@testing-library/react'
+import { queryByText, waitFor } from '@testing-library/react'
 
 describe('PropertiesPage', () => {
     it('renders skeleton and displays properties', async () => {
@@ -27,8 +27,8 @@ describe('PropertiesPage', () => {
             getByText,
         } = render(<PropertiesPage />)
 
-        const inputSearch = await findByPlaceholderText(/search/i)
-        const submitButton = getByRole('button', { name: /find/i })
+        const inputSearch = await findByPlaceholderText(/placeholder\.search/i)
+        const submitButton = getByRole('button', { name: /submit_button/i })
 
         // слайд загрузился, имя отобразилось
         expect(await findByText(/test name/i)).toBeInTheDocument()
@@ -40,11 +40,13 @@ describe('PropertiesPage', () => {
         await user.click(submitButton)
 
         // слайды не найдены, отображается сообщение-заглушка
-        expect(queryByText(container, /test name/i)).not.toBeInTheDocument()
-        expect(getByText(/not found/i)).toBeInTheDocument()
+        await waitFor(() => {
+            expect(queryByText(container, /test name/i)).not.toBeInTheDocument()
+            expect(getByText(/not found/i)).toBeInTheDocument()
+        })
 
         // очистили поле
-        await user.clear(await findByPlaceholderText(/search/i))
+        await user.clear(await findByPlaceholderText(/placeholder\.search/i))
         expect(inputSearch).toHaveValue('')
         await user.click(submitButton)
 
