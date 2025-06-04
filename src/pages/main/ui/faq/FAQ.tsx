@@ -12,16 +12,16 @@ export const Faq: FC<Props> = () => {
 
     return (
         <SectionSlider
-            isLoading={isLoading}
             isError={isError}
             title={t('section.faq.title', {
                 postProcess: 'uppAll',
             })}
             description={t('section.faq.description')}
-            skeletonComponent={<FaqCardSkeleton />}
-            slideList={faqList.map((faq) => (
-                <FaqCard {...faq} />
-            ))}
+            slideList={
+                isLoading
+                    ? Array(3).fill(FaqCardSkeleton)
+                    : faqList.map((faq) => <FaqCard {...faq} />)
+            }
             buttonViewAllProps={{
                 to: Paths.MAIN,
                 text: t('section.faq.view_all_button', {

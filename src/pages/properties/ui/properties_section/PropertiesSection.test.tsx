@@ -1,24 +1,11 @@
 import { TestId } from 'shared/lib/const'
 import { render } from 'shared/lib/test-utils'
-import { PropertiesSection, Props } from './PropertiesSection.tsx'
+import { PropertiesPage } from '../PropertiesPage.tsx'
 
-describe('PropertyProperties', () => {
-    const initialProps: Props = {
-        title: '',
-        description: '',
-    }
-
-    it('should be skeleton', () => {
-        const { getAllByTestId, unmount } = render(
-            <PropertiesSection {...initialProps} />
-        )
-        expect(getAllByTestId(TestId.SKELETON)[0]).toBeInTheDocument()
-        unmount()
-    })
-
+describe('PropertyPage', () => {
     it('renders skeleton and displays properties after data is fetched', async () => {
         const { getAllByTestId, queryByTestId, findByText, queryByText } =
-            render(<PropertiesSection {...initialProps} />)
+            render(<PropertiesPage />)
 
         // Отображение скелетона
         expect(getAllByTestId(TestId.SKELETON)[0]).toBeInTheDocument()

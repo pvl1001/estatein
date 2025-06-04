@@ -18,7 +18,6 @@ export const PropertiesSection: FC<Props> = () => {
     return (
         <SectionSlider
             isError={isError}
-            isLoading={isLoading}
             title={t('section.properties.title', {
                 postProcess: 'uppAll',
             })}
@@ -29,18 +28,21 @@ export const PropertiesSection: FC<Props> = () => {
                     postProcess: 'uppAll',
                 }),
             }}
-            skeletonComponent={<PropertyCardSkeleton />}
-            slideList={propertyList.map((item) => (
-                <PropertyCard
-                    img={item.img}
-                    type={item.type}
-                    bathroomCount={item.bathroomCount}
-                    bedroomCount={item.bedroomCount}
-                    name={item.name}
-                    price={item.price}
-                    description={item.description}
-                />
-            ))}
+            slideList={
+                isLoading
+                    ? Array(3).fill(PropertyCardSkeleton)
+                    : propertyList.map((item) => (
+                          <PropertyCard
+                              img={item.img}
+                              type={item.type}
+                              bathroomCount={item.bathroomCount}
+                              bedroomCount={item.bedroomCount}
+                              name={item.name}
+                              price={item.price}
+                              description={item.description}
+                          />
+                      ))
+            }
         />
     )
 }

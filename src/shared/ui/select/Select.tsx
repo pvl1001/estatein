@@ -12,12 +12,14 @@ type Props = Omit<ComponentProps<'input'>, 'onChange'> & {
     options: Option[]
     icon?: ReactNode
     onChange?: (value: Option['value']) => void
+    className?: string
 }
 
 export const Select: FC<Props> = ({
     options,
     icon,
     onChange,
+    className,
     ...inputProps
 }) => {
     const [currentOption, setCurrentOption] = useState<Option>()
@@ -41,7 +43,7 @@ export const Select: FC<Props> = ({
     const defaultValue = currentOption?.title ?? getDefaultTitle?.title ?? ''
 
     return (
-        <div className={s._}>
+        <div className={cn(s._, className)}>
             {isShowOptionList && (
                 <div className={s.overlay} onClick={closeOptionList} />
             )}
@@ -50,7 +52,6 @@ export const Select: FC<Props> = ({
 
                 <input
                     type="text"
-                    placeholder={'test'}
                     readOnly
                     onClick={openOptionList}
                     {...inputProps}

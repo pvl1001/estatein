@@ -16,16 +16,16 @@ export const ClientSay: FC<Props> = () => {
 
     return (
         <SectionSlider
-            isLoading={isLoading}
             isError={isError}
             title={t('section.client.title', {
                 postProcess: 'uppAll',
             })}
             description={t('section.client.description')}
-            skeletonComponent={<ReviewCardSkeleton />}
-            slideList={reviewList.map((review) => (
-                <ReviewCard {...review} />
-            ))}
+            slideList={
+                isLoading
+                    ? Array(3).fill(ReviewCardSkeleton)
+                    : reviewList.map((review) => <ReviewCard {...review} />)
+            }
             buttonViewAllProps={{
                 to: Paths.MAIN,
                 text: t('section.client.view_all_button', {

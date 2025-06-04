@@ -19,13 +19,13 @@ export const ClientsSection: FC<Props> = () => {
         <SectionSlider
             className={s._}
             isError={isError}
-            isLoading={isLoading}
-            skeletonComponent={<ClientCardSkeleton />}
             title={t('section.clients.title', { postProcess: 'uppAll' })}
             description={t('section.clients.description')}
-            slideList={clients.map((client) => (
-                <ClientCard {...client} />
-            ))}
+            slideList={
+                isLoading
+                    ? Array(2).fill(ClientCardSkeleton)
+                    : clients.map((client) => <ClientCard {...client} />)
+            }
             sliderConfig={{
                 slidesPerView: 2,
                 spaceBetween: 30,

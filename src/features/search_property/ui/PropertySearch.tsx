@@ -1,59 +1,32 @@
-import { useForm } from 'react-hook-form'
 import { FC } from 'react'
-import { useSearchParams } from 'react-router'
 import cn from 'classnames'
 import { useGetPropertyQuery } from 'entities/property'
 import { Button } from 'shared/ui/button'
 import { Icon } from 'shared/ui/icon'
-import { Option, Select } from 'shared/ui/select'
+import { Select } from 'shared/ui/select'
 import { usePropertyOptions } from '../lib/usePropertyOptions'
-import s from './SearchProperty.module.scss'
+import { usePropertySearchForm } from '../lib/usePropertySearchForm.ts'
+import { PropertySearchSkeleton } from './PropertySearchSkeleton.tsx'
+import s from './PropertySearch.module.scss'
 
 type Props = {
     className?: string
+    isLoading?: boolean
 }
 
-export const SearchProperty: FC<Props> = ({ className }) => {
-    const [searchParams, setSearchParams] = useSearchParams()
+export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
     const { data: properties = [] } = useGetPropertyQuery()
     const options = usePropertyOptions(properties)
+    const { values, onChange, register, onSubmit } = usePropertySearchForm()
 
-    const values = {
-        name: searchParams.get('name') || '',
-        location: searchParams.get('location') || '',
-        type: searchParams.get('type') || '',
-        price: searchParams.get('price') || '',
-        size: searchParams.get('size') || '',
-        year: searchParams.get('year') || '',
-    }
-
-    const { register, handleSubmit, setValue } = useForm({ values })
-
-    function onChange(name: keyof typeof values, value: Option['value']) {
-        setValue(name, value.toString())
-        setSearchParams(
-            (prev) => {
-                prev.set(name, value.toString())
-                return prev
-            },
-            { preventScrollReset: true }
-        )
-    }
-
-    function onSubmit(data: typeof values) {
-        setSearchParams(
-            (prev) => {
-                prev.set('name', data.name)
-                return prev
-            },
-            { preventScrollReset: true }
-        )
+    if (isLoading) {
+        return <PropertySearchSkeleton className={className} />
     }
 
     return (
         <div className={cn(s._, className)}>
             <div className="wrapper">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={onSubmit}>
                     <label className={s.search_input}>
                         <input
                             type="text"

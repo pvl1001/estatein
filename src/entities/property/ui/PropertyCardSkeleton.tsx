@@ -31,16 +31,6 @@ export const PropertyCardSkeleton: FC<Props> = () => {
                 </Text.Description>
             </div>
 
-            <ul className={s.option_list}>
-                {Array(3)
-                    .fill({})
-                    .map((_, i) => (
-                        <Skeleton key={i}>
-                            <li style={{ flex: 1 }} />
-                        </Skeleton>
-                    ))}
-            </ul>
-
             <div className={s.footer}>
                 <div className={s.price_container}>
                     <Skeleton>

@@ -4,13 +4,13 @@
     display: inline-block;
     animation: pulse linear 1s infinite;
     border-radius: var(--border-radius);
-    pointer-events: none;
 
     &,
     & * {
         border: 0 !important;
         background: var(--skeleton-color) !important;
         color: transparent !important;
+        pointer-events: none;
     }
 
     @keyframes pulse {
