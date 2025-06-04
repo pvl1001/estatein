@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next'
-import { FC, ReactNode, useEffect, useId, useState } from 'react'
+import { FC, ReactNode, useId } from 'react'
 import cn from 'classnames'
 import { useSliderSpaceBetween } from '../../lib/hooks'
-import { useWindowResize } from '../../lib/hooks'
-import { getBreakpoints } from '../../lib/utils'
 import { Icon } from '../icon'
+import { useSlider } from './lib/useSlider.ts'
 import { SliderConfig } from './types.ts'
 import { Autoplay, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -20,33 +19,16 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
     const { t } = useTranslation()
     const swiperId: string = useId()
     const pageRem: number = useSliderSpaceBetween(config?.spaceBetween ?? 20)
-    const { mobile } = getBreakpoints()
-    const [slidesPerView, setSlidesPerView] = useState(
-        (config?.slidesPerView as number) ?? 3
-    )
-    const [index, setIndex] = useState(slidesPerView)
-
-    useWindowResize(() => {
-        const activeIndex = window.innerWidth > mobile ? slidesPerView : 1
-        setSlidesPerView(activeIndex)
-        setIndex(activeIndex)
+    const { onSlideChange, slidesPerView, activeIndex, swiperRef } = useSlider({
+        configPerView: (config?.slidesPerView as number) ?? 3,
+        listLength: slideList.length,
     })
-
-    useEffect(() => {
-        const activeIndex =
-            window.innerWidth < mobile
-                ? 1
-                : Math.min(slidesPerView, slideList.length)
-
-        setIndex(activeIndex)
-    }, [slideList.length])
 
     return (
         <>
             <Swiper
-                onSlideChange={({ activeIndex }) => {
-                    setIndex(activeIndex + slidesPerView)
-                }}
+                ref={swiperRef}
+                onSlideChange={onSlideChange}
                 className={s._}
                 modules={[Navigation, Autoplay]}
                 navigation={{
@@ -71,7 +53,7 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
 
                 <div className={s.counter}>
                     <span className={s.counter__active}>
-                        {String(index).padStart(2, '0')}
+                        {String(activeIndex).padStart(2, '0')}
                     </span>{' '}
                     {t('of')} {String(slideList.length).padStart(2, '0')}
                 </div>

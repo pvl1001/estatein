@@ -4,6 +4,7 @@ import { Paths } from '../../lib/const'
 import { Button } from '../button'
 import { Slider } from '../slider'
 import { SliderConfig } from '../slider/types.ts'
+import { Text } from '../text'
 import { TextBox } from '../text_box'
 import s from './SectionSlider.module.scss'
 
@@ -54,6 +55,11 @@ export const SectionSlider: FC<Props> = ({
                 </div>
 
                 {isError && 'Error!'}
+                {slideList.length === 0 && (
+                    <Text.Description as={'p'} className={s.slide_list_empty}>
+                        Properties Not Found
+                    </Text.Description>
+                )}
                 <Slider
                     slideList={slideList}
                     viewButton={viewAllButton}

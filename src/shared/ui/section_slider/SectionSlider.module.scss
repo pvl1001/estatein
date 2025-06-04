@@ -15,6 +15,11 @@
     display: flex;
 }
 
+.slide_list_empty {
+    line-height: 30rem;
+    text-align: center;
+}
+
 @include media($media-s) {
     ._ {
         --property-text-container-margin-bottom: 4rem;
