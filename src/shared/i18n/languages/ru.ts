@@ -6,6 +6,7 @@ export const ru: typeof en = {
     read_more: 'читать далее',
     step: 'шаг',
     empty: 'пусто',
+    not_found: 'не найдено',
     button: {
         learn_more: 'Подробнее',
         browse_properties: 'Посмотреть $t(glossary:property_acc)',
