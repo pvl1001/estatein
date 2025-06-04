@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { ComponentProps, FC, ReactNode, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../icon'
@@ -12,14 +13,17 @@ type Props = Omit<ComponentProps<'input'>, 'onChange'> & {
     options: Option[]
     icon?: ReactNode
     onChange?: (value: Option['value']) => void
+    className?: string
 }
 
 export const Select: FC<Props> = ({
     options,
     icon,
     onChange,
+    className,
     ...inputProps
 }) => {
+    const { t } = useTranslation()
     const [currentOption, setCurrentOption] = useState<Option>()
     const [isShowOptionList, setIsShowOptionList] = useState(false)
 
@@ -41,7 +45,7 @@ export const Select: FC<Props> = ({
     const defaultValue = currentOption?.title ?? getDefaultTitle?.title ?? ''
 
     return (
-        <div className={s._}>
+        <div className={cn(s._, className)}>
             {isShowOptionList && (
                 <div className={s.overlay} onClick={closeOptionList} />
             )}
@@ -50,7 +54,6 @@ export const Select: FC<Props> = ({
 
                 <input
                     type="text"
-                    placeholder={'test'}
                     readOnly
                     onClick={openOptionList}
                     {...inputProps}
@@ -73,21 +76,17 @@ export const Select: FC<Props> = ({
                         onClick={() => clickOption()}
                         className={cn(s.option, s._empty)}
                     >
-                        empty
+                        {t('empty')}
                     </li>
-                    {options.length ? (
-                        options.map((option) => (
-                            <li
-                                key={option.title}
-                                className={s.option}
-                                onClick={() => clickOption(option)}
-                            >
-                                {option.title}
-                            </li>
-                        ))
-                    ) : (
-                        <p className={s.option}>Список пуст</p>
-                    )}
+                    {options.map((option) => (
+                        <li
+                            key={option.title}
+                            className={s.option}
+                            onClick={() => clickOption(option)}
+                        >
+                            {option.title}
+                        </li>
+                    ))}
                 </ul>
             )}
         </div>

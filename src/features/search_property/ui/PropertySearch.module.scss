@@ -12,14 +12,16 @@
 .search_input {
     @include input-wrapper-style;
 
-    display: flex;
-    margin: var(--search-input-margin);
-    padding: var(--search-input-padding);
-    border-radius: var(--search-input-border-radius);
-    background-color: var(--color-main-bg);
-    box-shadow: 0 0 0 var(--search-input-shadow-width) var(--color-shadow);
-    font-size: var(--search-input-font-size);
-    gap: 2rem;
+    & {
+        display: flex;
+        margin: var(--search-input-margin);
+        padding: var(--search-input-padding);
+        border-radius: var(--search-input-border-radius);
+        background-color: var(--color-main-bg);
+        box-shadow: 0 0 0 var(--search-input-shadow-width) var(--color-shadow);
+        font-size: var(--search-input-font-size);
+        gap: 2rem;
+    }
 }
 
 .submit_button {

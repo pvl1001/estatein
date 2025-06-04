@@ -4,6 +4,7 @@ import { Paths } from '../../lib/const'
 import { Button } from '../button'
 import { Slider } from '../slider'
 import { SliderConfig } from '../slider/types.ts'
+import { Text } from '../text'
 import { TextBox } from '../text_box'
 import s from './SectionSlider.module.scss'
 
@@ -11,12 +12,10 @@ type Props = {
     title: string
     description: string
     slideList: ReactNode[]
-    skeletonComponent?: ReactNode
     buttonViewAllProps?: {
         to: Paths
         text: string
     }
-    isLoading?: boolean
     isError?: boolean
     sliderConfig?: SliderConfig
     className?: string
@@ -28,8 +27,6 @@ export const SectionSlider: FC<Props> = ({
     description,
     buttonViewAllProps,
     isError,
-    isLoading,
-    skeletonComponent,
     sliderConfig,
     className,
 }) => {
@@ -38,7 +35,6 @@ export const SectionSlider: FC<Props> = ({
             {buttonViewAllProps.text}
         </Button>
     ) : null
-    slideList = isLoading ? Array(3).fill(skeletonComponent) : slideList
 
     return (
         <section className={cn(s._, className)}>
@@ -54,6 +50,11 @@ export const SectionSlider: FC<Props> = ({
                 </div>
 
                 {isError && 'Error!'}
+                {slideList.length === 0 && (
+                    <Text.Description as={'p'} className={s.slide_list_empty}>
+                        Properties Not Found
+                    </Text.Description>
+                )}
                 <Slider
                     slideList={slideList}
                     viewButton={viewAllButton}

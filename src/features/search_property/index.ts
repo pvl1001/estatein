@@ -1,1 +1,1 @@
-export { SearchProperty } from './ui/SearchProperty'
+export { PropertySearch } from './ui/PropertySearch.tsx'

@@ -5,6 +5,7 @@ export const ru: typeof en = {
     of: 'из',
     read_more: 'читать далее',
     step: 'шаг',
+    empty: 'пусто',
     button: {
         learn_more: 'Подробнее',
         browse_properties: 'Посмотреть $t(glossary:property_acc)',
@@ -20,5 +21,16 @@ export const ru: typeof en = {
         value: 'разблокируй ценность недвижимости',
         management: 'простое управление недвижимостью',
         investments: 'умные инвестиции, обоснованные решения',
+    },
+    search: {
+        submit_button: 'найти',
+        placeholder: {
+            search: 'поиск недвижимости',
+            location: 'расположение',
+            type: 'тип недвижимости',
+            price: 'диапазон цен',
+            size: 'площадь',
+            year: 'год постройки',
+        },
     },
 }
