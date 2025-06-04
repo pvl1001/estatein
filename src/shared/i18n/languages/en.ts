@@ -6,6 +6,7 @@ export const en = {
     read_more: 'read more',
     step: 'step',
     empty: 'empty',
+    not_found: 'not found',
     button: {
         learn_more: 'learn more',
         browse_properties: 'browse $t(glossary:properties, upp)',

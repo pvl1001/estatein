@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FC, ReactNode } from 'react'
 import cn from 'classnames'
 import { Paths } from '../../lib/const'
@@ -30,6 +31,7 @@ export const SectionSlider: FC<Props> = ({
     sliderConfig,
     className,
 }) => {
+    const { t } = useTranslation()
     const viewAllButton = buttonViewAllProps ? (
         <Button to={buttonViewAllProps.to} theme={'dark'} className={s.button}>
             {buttonViewAllProps.text}
@@ -52,7 +54,9 @@ export const SectionSlider: FC<Props> = ({
                 {isError && 'Error!'}
                 {slideList.length === 0 && (
                     <Text.Description as={'p'} className={s.slide_list_empty}>
-                        Properties Not Found
+                        {t('not_found', {
+                            postProcess: 'uppAll',
+                        })}
                     </Text.Description>
                 )}
                 <Slider
