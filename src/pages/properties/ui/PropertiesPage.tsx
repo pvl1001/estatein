@@ -1,5 +1,6 @@
 import { PropertySearch } from 'features/search_property'
 import { useGetPropertyQuery } from 'entities/property'
+import { PropertyFormSection } from './form_section/PropertyFormSection.tsx'
 import { PropertiesSection } from './properties_section/PropertiesSection'
 import { PropertyHead } from './property_head/PropertyHead.tsx'
 import s from './PropertiesPage.module.scss'
@@ -23,6 +24,7 @@ export const PropertiesPage = () => {
                 isLoading={isLoading}
                 isError={isError}
             />
+            <PropertyFormSection />
         </>
     )
 }

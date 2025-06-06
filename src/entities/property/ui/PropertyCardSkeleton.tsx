@@ -23,10 +23,10 @@ export const PropertyCardSkeleton: FC<Props> = () => {
 
                 <Text.Description>
                     <Skeleton>
-                        <span>
+                        <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit. Dignissimos eaque impedit.
-                        </span>
+                        </p>
                     </Skeleton>
                 </Text.Description>
             </div>

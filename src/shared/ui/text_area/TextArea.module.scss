@@ -1,0 +1,29 @@
+._ {
+    --text-area-padding: 2.4rem 2rem;
+}
+
+.wrapper {
+    @include input-wrapper-style;
+
+    & {
+        overflow: hidden;
+    }
+
+    &._default {
+        background-color: var(--color-main-bg);
+    }
+
+    &._grey {
+        background-color: var(--color-dark);
+    }
+
+    textarea {
+        padding: var(--text-area-padding);
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --text-area-padding: 1.6rem 2rem;
+    }
+}

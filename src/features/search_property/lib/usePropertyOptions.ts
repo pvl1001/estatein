@@ -52,5 +52,7 @@ export const usePropertyOptions = (properties: TPropertyItem[]) => {
         year: numberOptions(properties, 'year'),
         size: numberOptions(properties, 'size'),
         price: numberOptions(properties, 'price'),
+        bathrooms: stringOptions(properties, 'bathroomCount'),
+        bedrooms: stringOptions(properties, 'bedroomCount'),
     }
 }

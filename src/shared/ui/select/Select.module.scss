@@ -1,66 +1,56 @@
 ._ {
     --select-z-index: 100;
-    --select-padding: 2rem;
     --select-icon-size: 2.4rem;
     --select-icon-arrow-size: 3rem;
     --select-icon-arrow-padding: 0.8rem;
     --select-gap: 2rem;
-    --select-line-height: 1.7;
 
     position: relative;
 }
 
-.select {
-    display: flex;
-    align-items: center;
+.input {
     width: 100%;
-    padding: var(--select-padding);
-    background-color: var(--color-main-bg);
-    gap: var(--select-gap);
-    @include input-wrapper-style;
+    height: inherit;
+}
 
-    input {
-        line-height: var(--select-line-height);
+.icon {
+    display: grid;
+    position: relative;
+    flex-shrink: 0;
+    width: var(--select-icon-size);
+    height: var(--select-icon-size);
+    margin-right: var(--select-gap);
+    padding: 0.15rem;
+    place-items: center;
+
+    svg {
+        max-width: 100%;
+        max-height: 100%;
     }
 
-    .icon {
-        display: grid;
-        position: relative;
-        flex-shrink: 0;
-        width: var(--select-icon-size);
-        height: var(--select-icon-size);
-        padding: 0.15rem;
-        place-items: center;
-
-        svg {
-            max-width: 100%;
-            max-height: 100%;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: calc(var(--select-gap) / -2);
-            bottom: 0;
-            width: 0.1rem;
-            background-color: var(--color-border);
-        }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: calc(var(--select-gap) / -2);
+        bottom: 0;
+        width: 0.1rem;
+        background-color: var(--color-border);
     }
+}
 
-    .arrow {
-        display: grid;
-        flex-shrink: 0;
-        width: var(--select-icon-arrow-size);
-        height: var(--select-icon-arrow-size);
-        padding: var(--select-icon-arrow-padding);
-        border-radius: 50%;
-        background-color: var(--color-dark);
-        place-items: center;
+.arrow {
+    display: grid;
+    flex-shrink: 0;
+    width: var(--select-icon-arrow-size);
+    height: var(--select-icon-arrow-size);
+    padding: var(--select-icon-arrow-padding);
+    border-radius: 50%;
+    background-color: var(--color-dark);
+    place-items: center;
 
-        svg {
-            color: var(--color-text-default);
-        }
+    svg {
+        color: var(--color-text-default);
     }
 }
 
@@ -102,11 +92,9 @@
 
 @include media($media-s) {
     ._ {
-        --select-padding: 1rem 1.4rem;
         --select-icon-size: 2rem;
         --select-icon-arrow-size: 3rem;
         --select-icon-arrow-padding: 0.8rem;
         --select-gap: 1.6rem;
-        --select-line-height: 1.7;
     }
 }

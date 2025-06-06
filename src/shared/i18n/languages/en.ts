@@ -34,6 +34,59 @@ export const en = {
             year: 'build year',
         },
     },
+    form: {
+        fields: {
+            firstname: {
+                label: 'first name',
+                placeholder: 'enter first name',
+            },
+            lastname: {
+                label: 'last name',
+                placeholder: 'enter last name',
+            },
+            email: {
+                label: 'email',
+                placeholder: 'enter your email',
+            },
+            phone: {
+                label: 'phone',
+                placeholder: 'enter phone number',
+            },
+            location: {
+                label: 'preferred location',
+                placeholder: 'select location',
+            },
+            type: {
+                label: 'property type',
+                placeholder: 'select property type',
+            },
+            bathrooms: {
+                label: 'no. of bathrooms',
+                placeholder: 'select no. of bedrooms',
+            },
+            bedrooms: {
+                label: 'no. of bedrooms',
+                placeholder: 'select no. of bedrooms',
+            },
+            budget: {
+                label: 'budget',
+                placeholder: 'select budget',
+            },
+            message: {
+                label: 'message',
+                placeholder: 'enter your message here...',
+            },
+            contact_method: {
+                label: 'preferred contact method',
+            },
+            agree: 'I agree with <Link>Terms of Use</Link> and <Link>Privacy Policy</Link>',
+        },
+        button: 'send your order',
+        errors: {
+            required: '$t(form.fields.{{fieldKey}}.label) is a required field',
+            email: 'enter your email in the format example@mail.ru',
+        },
+    },
 }
 
 export type LanguageStore<Key extends keyof TResources> = keyof TResources[Key]

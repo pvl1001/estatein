@@ -1,0 +1,13 @@
+._ {
+    --property-form-section-gap: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--property-form-section-gap);
+}
+
+@include media($media-s) {
+    ._ {
+        --property-form-section-gap: 4rem;
+    }
+}

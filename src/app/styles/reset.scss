@@ -10,13 +10,6 @@
     box-sizing: border-box;
 }
 
-a {
-    &,
-    &:visited {
-        text-decoration: none;
-    }
-}
-
 nav,
 footer,
 header,
@@ -53,6 +46,10 @@ input::-ms-clear {
 button {
     background-color: transparent;
     cursor: pointer;
+
+    &:disabled {
+        pointer-events: none;
+    }
 }
 
 button::-moz-focus-inner {

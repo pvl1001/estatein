@@ -83,5 +83,10 @@ button {
 }
 
 a {
-    color: var(--color-text-default);
+    transition: 0.15s ease-out;
+    color: inherit;
+
+    &:hover {
+        color: var(--color-text-default);
+    }
 }
