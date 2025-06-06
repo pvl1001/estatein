@@ -1,0 +1,58 @@
+.wrapper {
+    @include input-wrapper-style;
+
+    & {
+        display: flex;
+        align-items: center;
+        height: var(--input-height);
+        padding-inline: 2rem;
+        border-radius: var(--border-radius-s);
+    }
+
+    &._default {
+        background-color: var(--color-main-bg);
+    }
+
+    &._grey {
+        background-color: var(--color-dark);
+    }
+}
+
+.message {
+    position: absolute;
+}
+
+._ {
+    --input-height: 6.8rem;
+    --input-icon-size: 2.4rem;
+    --input-icon-margin-right: 1.2rem;
+    --flip-color: var(--color-error);
+
+    &._error {
+        @include flash-error-animation;
+
+        .message {
+            color: var(--color-error);
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.icon {
+    display: grid;
+    place-items: center;
+    width: var(--input-icon-size);
+    height: var(--input-icon-size);
+    margin-right: 1.2rem;
+}
+
+@include media($media-s) {
+    ._ {
+        --input-icon-margin-right: 0.6rem;
+        --input-height: 5.2rem;
+        --input-icon-size: 2rem;
+    }
+}

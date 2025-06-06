@@ -3,7 +3,7 @@ import { ComponentProps, ReactNode } from 'react'
 import cn from 'classnames'
 import { Loader } from 'shared/ui/loader'
 import { Text } from 'shared/ui/text'
-import s from './TextField.module.scss'
+import s from './DescribeTextField.module.scss'
 
 type Props = {
     icon?: ReactNode
@@ -16,7 +16,7 @@ type Props = {
     pending?: boolean
 }
 
-export const TextField = ({
+export const DescribeTextField = ({
     icon,
     buttonIcon,
     inputProps,

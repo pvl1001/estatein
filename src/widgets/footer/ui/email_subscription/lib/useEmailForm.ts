@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import * as yup from 'yup'
 import { request } from 'shared/api/request'
-import { getErrorMessage } from 'shared/lib/utils'
+import { getErrorMessage, schemas } from 'shared/lib/utils'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 const values = {
@@ -11,11 +11,7 @@ const values = {
 
 type FormStatus = 'pending' | 'reject' | 'success'
 
-const schema = yup.object({
-    email: yup.string().matches(/^\w+@\w+\.\w{2,3}$/, {
-        message: 'email.error',
-    }),
-})
+const schema = yup.object({ email: schemas.email })
 
 export const useEmailForm = () => {
     const [message, setMessage] = useState('')

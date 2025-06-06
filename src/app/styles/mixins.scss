@@ -30,20 +30,42 @@ $media-s: 767px;
     }
 }
 
+@mixin flash-error-animation {
+    --flash-color: var(--color-error);
+
+    animation: flash 0.15s linear 2;
+
+    &,
+    * {
+        border-color: var(--flash-color);
+    }
+
+    @keyframes flash {
+        0% {
+            --flash-color: var(--color-error);
+        }
+
+        100% {
+            --flash-color: var(--color-border);
+        }
+    }
+}
+
 @mixin input-wrapper-style {
     --input-border-radius: 1.2rem;
-    --input-transition: 0.1s ease-out;
+    --input-transition: border-color 0.15s ease-out, color 0.15s ease-out;
 
     transition: var(--input-transition);
     border: var(--border);
-    border-radius: var(--input-border-radius);
+    border-radius: var(--border-radius);
 
     svg {
         transition: var(--input-transition);
         color: var(--color-grey-40);
     }
 
-    &:has(input:focus) {
+    &:has(input:focus),
+    &:has(textarea:focus) {
         border-color: var(--color-text-default);
 
         svg {
@@ -51,9 +73,10 @@ $media-s: 767px;
         }
     }
 
-    input {
+    input,
+    textarea {
         width: 100%;
-        height: inherit;
+        height: 100%;
         background-color: inherit;
         color: inherit;
         font-size: inherit;
@@ -68,6 +91,6 @@ $media-s: 767px;
     }
 
     @include media($media-s) {
-        --input-border-radius: 0.8rem;
+        --input-border-radius: var(--border-radius-s);
     }
 }

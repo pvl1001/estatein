@@ -1,0 +1,44 @@
+._ {
+    --checkbox-size: 2.8rem;
+    --checkbox-gap: 1rem;
+
+    display: flex;
+    align-items: center;
+    gap: var(--checkbox-gap);
+
+    input {
+        display: none;
+
+        & + div {
+            display: grid;
+            width: var(--checkbox-size);
+            height: var(--checkbox-size);
+            border: var(--border);
+            border-radius: 0.4rem;
+            background-color: var(--color-dark);
+            cursor: pointer;
+            place-items: center;
+
+            svg {
+                transform: scale(0);
+                transition: 0.075s ease-out;
+                color: var(--color-primary);
+            }
+        }
+
+        &:checked + div svg {
+            transform: scale(1.05) translateX(5%);
+        }
+    }
+
+    &._error {
+        @include flash-error-animation;
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --checkbox-size: 2.4rem;
+        --checkbox-gap: 0.6rem;
+    }
+}

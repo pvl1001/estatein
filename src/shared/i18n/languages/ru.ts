@@ -34,4 +34,58 @@ export const ru: typeof en = {
             year: 'год постройки',
         },
     },
+    form: {
+        fields: {
+            firstname: {
+                label: 'Имя',
+                placeholder: 'Введите имя',
+            },
+            lastname: {
+                label: 'Фамилия',
+                placeholder: 'Введите фамилию',
+            },
+            email: {
+                label: 'Почта',
+                placeholder: 'Введите почту',
+            },
+            phone: {
+                label: 'Телефон',
+                placeholder: 'Введите телефонный номер',
+            },
+            location: {
+                label: 'Желаемое местоположение',
+                placeholder: 'Выберите местоположение',
+            },
+            type: {
+                label: 'Тип недвижимости',
+                placeholder: 'Выберите тип недвижимости',
+            },
+            bathrooms: {
+                label: 'Кол-во ванных комнат',
+                placeholder: 'Выберите кол-во ванных комнат',
+            },
+            bedrooms: {
+                label: 'Кол-во спален',
+                placeholder: 'Выберите кол-во спален',
+            },
+            budget: {
+                label: 'Бюджет',
+                placeholder: 'выберите бюджет',
+            },
+            message: {
+                label: 'сообщение',
+                placeholder: 'введите ваше сообщение...',
+            },
+            contact_method: {
+                label: 'Предпочтительный метод связи',
+            },
+            agree: 'Я согласен с <Link>Условиями использования</Link> и <Link>Политикой конфиденциальности</Link>',
+        },
+        button: 'Отправить заявку',
+        errors: {
+            required:
+                '$t(form.fields.{{fieldKey}}.label) является обязательным полем',
+            email: 'введите почту в формате example@mail.ru',
+        },
+    },
 }

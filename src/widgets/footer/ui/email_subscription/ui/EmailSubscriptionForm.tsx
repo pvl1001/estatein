@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import { Ns } from 'shared/lib/const'
 import { Icon } from 'shared/ui/icon'
-import { TextField } from '../../text_field'
+import { DescribeTextField } from '../../describe_text_field'
 import { useEmailForm } from '../lib/useEmailForm.ts'
 
 type Props = {
@@ -15,7 +15,7 @@ export const EmailSubscriptionForm: FC<Props> = ({ className }) => {
 
     return (
         <form onSubmit={onSubmit} className={className}>
-            <TextField
+            <DescribeTextField
                 icon={<Icon.Email />}
                 buttonIcon={<Icon.Send />}
                 pending={pending}

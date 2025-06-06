@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next'
-import { ComponentProps, FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../icon'
+import { TextField } from '../text_field'
+import { TextFieldProps } from '../text_field/TextField.tsx'
 import s from './Select.module.scss'
 
 export type Option = {
@@ -9,11 +11,10 @@ export type Option = {
     value: string | number
 }
 
-type Props = Omit<ComponentProps<'input'>, 'onChange'> & {
+type Props = Omit<TextFieldProps, 'onChange'> & {
     options: Option[]
     icon?: ReactNode
     onChange?: (value: Option['value']) => void
-    className?: string
 }
 
 export const Select: FC<Props> = ({
@@ -21,11 +22,13 @@ export const Select: FC<Props> = ({
     icon,
     onChange,
     className,
+    label,
     ...inputProps
 }) => {
     const { t } = useTranslation()
-    const [currentOption, setCurrentOption] = useState<Option>()
     const [isShowOptionList, setIsShowOptionList] = useState(false)
+    const title: Option['title'] =
+        options.find((o) => o.value === inputProps.value)?.title ?? ''
 
     function openOptionList() {
         setIsShowOptionList(true)
@@ -37,38 +40,33 @@ export const Select: FC<Props> = ({
 
     function clickOption(option?: Option) {
         onChange?.(option?.value ?? '')
-        setCurrentOption(option)
         closeOptionList()
     }
-
-    const getDefaultTitle = options.find((o) => o.value === inputProps.value)
-    const defaultValue = currentOption?.title ?? getDefaultTitle?.title ?? ''
 
     return (
         <div className={cn(s._, className)}>
             {isShowOptionList && (
                 <div className={s.overlay} onClick={closeOptionList} />
             )}
-            <div className={s.select}>
-                {icon && <div className={s.icon}>{icon}</div>}
-
-                <input
-                    type="text"
-                    readOnly
-                    onClick={openOptionList}
-                    {...inputProps}
-                    value={defaultValue}
-                />
-
-                <button
-                    type={'button'}
-                    className={s.arrow}
-                    onClick={openOptionList}
-                    style={isShowOptionList ? { rotate: '180deg' } : {}}
-                >
-                    <Icon.ArrowVector />
-                </button>
-            </div>
+            <TextField
+                readOnly
+                className={s.input}
+                label={label}
+                icon={icon && <div className={s.icon}>{icon}</div>}
+                onClick={openOptionList}
+                button={
+                    <button
+                        type={'button'}
+                        className={s.arrow}
+                        onClick={openOptionList}
+                        style={isShowOptionList ? { rotate: '180deg' } : {}}
+                    >
+                        <Icon.ArrowVector />
+                    </button>
+                }
+                {...inputProps}
+                value={title}
+            />
 
             {isShowOptionList && (
                 <ul className={s.option_list}>

@@ -3,6 +3,7 @@
     --button-padding: 1.8rem 2.4rem;
     --button-font-size: 1.8rem;
 
+    position: relative;
     box-sizing: content-box;
     flex-shrink: 0;
     padding: var(--button-padding);
@@ -32,6 +33,14 @@
     &._dark {
         --background: var(--color-dark);
     }
+
+    &._loading {
+        color: transparent;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
 }
 
 .link {
@@ -41,6 +50,16 @@
     button {
         flex-grow: 1;
     }
+}
+
+.loader {
+    $size: 1.2em;
+
+    position: absolute;
+    top: calc(50% - #{$size/2});
+    left: calc(50% - #{$size/2});
+    height: $size;
+    color: var(--color-text-default);
 }
 
 @include media($media-s) {
