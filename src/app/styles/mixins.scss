@@ -31,22 +31,17 @@ $media-s: 767px;
 }
 
 @mixin flash-error-animation {
-    --flash-color: var(--color-error);
-
-    animation: flash 0.15s linear 2;
-
-    &,
     * {
-        border-color: var(--flash-color);
+        animation: flash 0.15s forwards 2;
     }
 
     @keyframes flash {
         0% {
-            --flash-color: var(--color-error);
+            border-color: var(--color-border);
         }
 
         100% {
-            --flash-color: var(--color-border);
+            border-color: var(--color-error);
         }
     }
 }

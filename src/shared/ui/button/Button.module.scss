@@ -2,6 +2,7 @@
     --button-border-radius: 1rem;
     --button-padding: 1.8rem 2.4rem;
     --button-font-size: 1.8rem;
+    --button-loader-size: 1.2em;
 
     position: relative;
     box-sizing: content-box;
@@ -53,12 +54,10 @@
 }
 
 .loader {
-    $size: 1.2em;
-
     position: absolute;
-    top: calc(50% - #{$size/2});
-    left: calc(50% - #{$size/2});
-    height: $size;
+    top: calc(50% - var(--button-loader-size) / 2);
+    left: calc(50% - var(--button-loader-size) / 2);
+    height: var(--button-loader-size);
     color: var(--color-text-default);
 }
 
