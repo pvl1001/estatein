@@ -53,7 +53,7 @@ export const ru: typeof en = {
                 placeholder: 'Введите телефонный номер',
             },
             location: {
-                label: 'Желаемое местоположение',
+                label: 'Местоположение',
                 placeholder: 'Выберите местоположение',
             },
             type: {
