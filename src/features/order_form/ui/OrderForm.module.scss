@@ -4,6 +4,7 @@
     display: grid;
     gap: var(--property-form-gap);
     grid-template-columns: repeat(4, 1fr);
+    @include form-container;
 }
 
 .budget,
