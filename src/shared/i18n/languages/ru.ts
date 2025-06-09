@@ -86,6 +86,7 @@ export const ru: typeof en = {
             required:
                 '$t(form.fields.{{fieldKey}}.label) является обязательным полем',
             email: 'введите почту в формате example@mail.ru',
+            phone: 'введите номер телефона в формате +7 (000) 000-00-00',
         },
     },
 }

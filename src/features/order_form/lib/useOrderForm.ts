@@ -1,8 +1,9 @@
-import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { ControllerRenderProps, useForm } from 'react-hook-form'
+import { ChangeEvent, useState } from 'react'
 import * as yup from 'yup'
 import { request } from 'shared/api/request.ts'
-import { getErrorMessage, schemas } from 'shared/lib/utils'
+import { Mask, getErrorMessage, schemas } from 'shared/lib/utils'
+import { TextFieldProps } from 'shared/ui/text_field'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 const values = {
@@ -34,8 +35,8 @@ export const selects: (keyof Pick<
 const schema = yup.object({
     firstname: schemas.firstname.required('form.errors.required'),
     lastname: schemas.lastname.required('form.errors.required'),
-    email: schemas.email.required('form.errors.required'),
-    phone: schemas.phone.required('form.errors.required'),
+    email: schemas.email.required(),
+    phone: schemas.phone.required(),
     location: schemas.location.required('form.errors.required'),
     type: schemas.type.required('form.errors.required'),
     bathrooms: schemas.bathrooms.required('form.errors.required'),
@@ -119,11 +120,27 @@ export const useOrderForm = () => {
         }
     }
 
+    function phoneMask({
+        name,
+        onChange,
+    }: ControllerRenderProps<typeof values>):
+        | Pick<TextFieldProps, 'onChange' | 'maxLength'>
+        | undefined {
+        if (/phone/i.test(name)) {
+            return {
+                onChange: (e: ChangeEvent<HTMLInputElement>) =>
+                    onChange(Mask.phone(e.target.value)),
+                maxLength: 18,
+            }
+        }
+    }
+
     return {
         onSubmit: handleSubmit(submit),
         register,
         control,
         errors,
         isSending,
+        phoneMask,
     }
 }

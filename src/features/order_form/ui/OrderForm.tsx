@@ -22,7 +22,8 @@ export const OrderForm: FC<Props> = ({ className }) => {
     const { t } = useTranslation()
     const { data: properties = [], isLoading } = useGetPropertyQuery()
     const options = usePropertyOptions(properties)
-    const { onSubmit, register, control, errors, isSending } = useOrderForm()
+    const { onSubmit, register, control, errors, isSending, phoneMask } =
+        useOrderForm()
 
     if (isLoading) {
         return <OrderFormSkeleton />
@@ -31,19 +32,30 @@ export const OrderForm: FC<Props> = ({ className }) => {
     return (
         <form onSubmit={onSubmit} className={cn(s._, className)}>
             {textFields.map((fieldName) => (
-                <TextField
+                <Controller
                     key={fieldName}
-                    label={t(`form.fields.${fieldName}.label`, {
-                        postProcess: 'uppAll',
-                    })}
-                    placeholder={t(`form.fields.${fieldName}.placeholder`, {
-                        postProcess: 'uppAll',
-                    })}
-                    theme={'grey'}
-                    error={t(errors[fieldName]?.message as any, {
-                        fieldKey: fieldName,
-                    })}
-                    {...register(fieldName)}
+                    name={fieldName}
+                    control={control}
+                    render={({ field }) => (
+                        <TextField
+                            key={fieldName}
+                            label={t(`form.fields.${fieldName}.label`, {
+                                postProcess: 'uppAll',
+                            })}
+                            placeholder={t(
+                                `form.fields.${fieldName}.placeholder`,
+                                {
+                                    postProcess: 'uppAll',
+                                }
+                            )}
+                            theme={'grey'}
+                            error={t(errors[fieldName]?.message as any, {
+                                fieldKey: fieldName,
+                            })}
+                            {...field}
+                            {...phoneMask(field)}
+                        />
+                    )}
                 />
             ))}
             {selects.map((selectName) => (
@@ -99,15 +111,23 @@ export const OrderForm: FC<Props> = ({ className }) => {
                         postProcess: 'uppAll',
                     })}
                 </label>
-                <TextField
-                    placeholder={t(`form.fields.phone.placeholder`, {
-                        postProcess: 'uppAll',
-                    })}
-                    theme={'grey'}
-                    icon={<Icon.Phone />}
-                    error={errors.preferred_phone?.message}
-                    {...register('preferred_phone')}
+                <Controller
+                    name={'preferred_phone'}
+                    control={control}
+                    render={({ field }) => (
+                        <TextField
+                            placeholder={t(`form.fields.phone.placeholder`, {
+                                postProcess: 'uppAll',
+                            })}
+                            theme={'grey'}
+                            icon={<Icon.Phone />}
+                            error={errors.preferred_phone?.message}
+                            {...field}
+                            {...phoneMask(field)}
+                        />
+                    )}
                 />
+
                 <TextField
                     placeholder={t(`form.fields.email.placeholder`, {
                         postProcess: 'uppAll',

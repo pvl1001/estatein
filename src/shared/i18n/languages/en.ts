@@ -85,6 +85,7 @@ export const en = {
         errors: {
             required: '$t(form.fields.{{fieldKey}}.label) is a required field',
             email: 'enter your email in the format example@mail.ru',
+            phone: 'enter your phone in the format +7 (000) 000-00-00',
         },
     },
 }
