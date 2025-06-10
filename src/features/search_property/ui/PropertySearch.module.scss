@@ -65,7 +65,7 @@
     gap: calc(var(--input-icon-size) / 2);
 
     svg {
-        height: inherit;
+        height: 100%;
     }
 
     &::after {
