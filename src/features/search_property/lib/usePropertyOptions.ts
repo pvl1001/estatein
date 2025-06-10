@@ -1,7 +1,10 @@
 import { TPropertyItem } from 'entities/property'
 import { Option } from 'shared/ui/select'
 
-function splitIntoThree<T>(array: T[]): [T[], T[], T[]] {
+function splitIntoThree<T>(array: T[]): T[][] {
+    if (array.length <= 6) {
+        return []
+    }
     const partSize = Math.ceil(array.length / 3)
     return [
         array.slice(0, partSize),
@@ -40,9 +43,15 @@ function numberOptions<T extends Record<string, any>>(
     array: T[],
     key: keyof T
 ): Option[] {
-    return splitIntoThree(array.map((p) => p[key]).sort((a, b) => a - b))
+    const result = splitIntoThree(
+        array.map((p) => p[key]).sort((a, b) => a - b)
+    )
         .map(minMax)
         .map(toOptionFormat)
+    if (result.length) {
+        return result
+    }
+    return stringOptions(array, key)
 }
 
 export const usePropertyOptions = (properties: TPropertyItem[]) => {

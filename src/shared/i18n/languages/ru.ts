@@ -53,7 +53,7 @@ export const ru: typeof en = {
                 placeholder: 'Введите телефонный номер',
             },
             location: {
-                label: 'Желаемое местоположение',
+                label: 'Местоположение',
                 placeholder: 'Выберите местоположение',
             },
             type: {
@@ -85,7 +85,8 @@ export const ru: typeof en = {
         errors: {
             required:
                 '$t(form.fields.{{fieldKey}}.label) является обязательным полем',
-            email: 'введите почту в формате example@mail.ru',
+            email: 'введите почту в формате example@m.ru',
+            phone: 'введите номер в формате +7 (000) 000-00-00',
         },
     },
 }

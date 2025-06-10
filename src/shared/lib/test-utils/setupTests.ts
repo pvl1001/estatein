@@ -5,7 +5,7 @@ import { mockReviewsHandler } from 'entities/review'
 import '@testing-library/jest-dom'
 import { setupServer } from 'msw/node'
 
-const server = setupServer(
+export const server = setupServer(
     mockReviewsHandler,
     mockPropertyHandler,
     mockFaqHandler,

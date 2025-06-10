@@ -1,5 +1,6 @@
-import { ComponentProps, FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode, useId } from 'react'
 import cn from 'classnames'
+import { TestId } from '../../lib/const'
 import { Label } from '../label'
 import s from './TextField.module.scss'
 
@@ -22,9 +23,15 @@ export const TextField: FC<TextFieldProps> = ({
     wrapperClassName,
     ...inputProps
 }) => {
+    const id = useId()
     return (
-        <div className={cn(s._, className, error && s._error)}>
-            {label && <Label>{label}</Label>}
+        <div
+            className={cn(s._, className, error && s._error)}
+            data-testid={TestId.TEXT_FIELD}
+        >
+            {label && (
+                <Label htmlFor={`${inputProps.name}_${id}`}>{label}</Label>
+            )}
 
             <div
                 className={cn(
@@ -34,7 +41,11 @@ export const TextField: FC<TextFieldProps> = ({
                 )}
             >
                 {icon && <div className={s.icon}>{icon}</div>}
-                <input type="text" {...inputProps} />
+                <input
+                    type="text"
+                    id={`${inputProps.name}_${id}`}
+                    {...inputProps}
+                />
                 {button}
             </div>
 

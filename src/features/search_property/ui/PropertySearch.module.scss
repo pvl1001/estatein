@@ -59,6 +59,22 @@
     }
 }
 
+.icon {
+    display: flex;
+    height: 100%;
+    gap: calc(var(--input-icon-size) / 2);
+
+    svg {
+        height: inherit;
+    }
+
+    &::after {
+        content: '';
+        width: 0.1rem;
+        background-color: var(--color-border);
+    }
+}
+
 @include media($media-s) {
     ._ {
         --search-input-margin: auto auto 2rem;

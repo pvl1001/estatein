@@ -1,9 +1,11 @@
 ._ {
     --property-form-gap: 5rem;
+    --property-form-textarea-height: 16.2rem;
 
     display: grid;
     gap: var(--property-form-gap);
     grid-template-columns: repeat(4, 1fr);
+    @include form-container;
 }
 
 .budget,
@@ -26,7 +28,7 @@
 
     textarea {
         width: 100%;
-        height: 12.2rem;
+        height: var(--property-form-textarea-height);
         resize: none;
     }
 }
@@ -42,6 +44,7 @@
 @include media($media-s) {
     ._ {
         --property-form-gap: 2rem;
+        --property-form-textarea-height: 8.3rem;
     }
 
     ._,

@@ -31,33 +31,28 @@ $media-s: 767px;
 }
 
 @mixin flash-error-animation {
-    --flash-color: var(--color-error);
-
-    animation: flash 0.15s linear 2;
-
-    &,
     * {
-        border-color: var(--flash-color);
+        animation: flash 0.15s forwards 2;
     }
 
     @keyframes flash {
         0% {
-            --flash-color: var(--color-error);
+            border-color: var(--color-border);
         }
 
         100% {
-            --flash-color: var(--color-border);
+            border-color: var(--color-error);
         }
     }
 }
 
 @mixin input-wrapper-style {
-    --input-border-radius: 1.2rem;
+    --input-border-radius: 0.8rem;
     --input-transition: border-color 0.15s ease-out, color 0.15s ease-out;
 
     transition: var(--input-transition);
     border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: var(--input-border-radius);
 
     svg {
         transition: var(--input-transition);
@@ -91,6 +86,18 @@ $media-s: 767px;
     }
 
     @include media($media-s) {
-        --input-border-radius: var(--border-radius-s);
+        --input-border-radius: 0.6rem;
+    }
+}
+
+@mixin form-container {
+    --form-container-padding: 10rem;
+
+    padding: var(--form-container-padding);
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    @include media($media-s) {
+        --form-container-padding: 2rem;
     }
 }

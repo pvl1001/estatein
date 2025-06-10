@@ -13,32 +13,6 @@
     height: inherit;
 }
 
-.icon {
-    display: grid;
-    position: relative;
-    flex-shrink: 0;
-    width: var(--select-icon-size);
-    height: var(--select-icon-size);
-    margin-right: var(--select-gap);
-    padding: 0.15rem;
-    place-items: center;
-
-    svg {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: calc(var(--select-gap) / -2);
-        bottom: 0;
-        width: 0.1rem;
-        background-color: var(--color-border);
-    }
-}
-
 .arrow {
     display: grid;
     flex-shrink: 0;
@@ -48,6 +22,7 @@
     border-radius: 50%;
     background-color: var(--color-dark);
     place-items: center;
+    cursor: pointer;
 
     svg {
         color: var(--color-text-default);

@@ -84,7 +84,8 @@ export const en = {
         button: 'send your order',
         errors: {
             required: '$t(form.fields.{{fieldKey}}.label) is a required field',
-            email: 'enter your email in the format example@mail.ru',
+            email: 'enter email in the format example@m.com',
+            phone: 'enter phone in the format +7 (000) 000-00-00',
         },
     },
 }

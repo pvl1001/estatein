@@ -1,16 +1,15 @@
-import { Mock, vi } from 'vitest'
-import { request } from 'shared/api/request'
+import { HttpResponse, delay, http } from 'msw'
+import { baseUrl } from 'shared/api/baseQuery.ts'
 import { TestId } from 'shared/lib/const'
 import {
     RenderResult,
     UserEvent,
     render,
+    server,
     userEvent,
     waitFor,
 } from 'shared/lib/test-utils'
 import { EmailSubscriptionForm } from './EmailSubscriptionForm.tsx'
-
-vi.mock('shared/api/request')
 
 describe('EmailSubscriptionForm', () => {
     let renderResult: RenderResult
@@ -23,7 +22,6 @@ describe('EmailSubscriptionForm', () => {
         renderResult = render(<EmailSubscriptionForm />)
         input = renderResult.getByRole('textbox')
         submitButton = renderResult.getByRole('button')
-        vi.clearAllMocks()
     })
 
     it.each([
@@ -61,13 +59,19 @@ describe('EmailSubscriptionForm', () => {
 
     it('should show loader during API request', async () => {
         // Мокаем успешный ответ с задержкой
-        ;(request.post as Mock).mockImplementationOnce(
-            () => new Promise((resolve) => setTimeout(() => resolve({}), 500))
+        server.use(
+            http.post(`${baseUrl}/emails`, async () => {
+                await delay(500)
+                return HttpResponse.json()
+            })
         )
 
         const { getByTestId, queryByTestId } = renderResult
 
         await user.type(input, 'test@mail.ru')
+        await waitFor(() => {
+            expect(input).toHaveValue('test@mail.ru')
+        })
         await user.click(submitButton)
 
         // Проверяем что лоадер появился
@@ -81,23 +85,35 @@ describe('EmailSubscriptionForm', () => {
 
     it('should show success message on successful submission', async () => {
         // Мокаем успешный ответ
-        ;(request.post as Mock).mockResolvedValueOnce({})
+        server.use(http.post(`${baseUrl}/emails`, () => HttpResponse.json()))
 
         const { findByText } = renderResult
 
         await user.type(input, 'test@mail.ru')
+        await waitFor(() => {
+            expect(input).toHaveValue('test@mail.ru')
+        })
         await user.click(submitButton)
 
         expect(await findByText(/success/i)).toBeInTheDocument()
     })
 
     it('should show error message on API failure', async () => {
-        // Мокаем ошибку API
-        ;(request.post as Mock).mockRejectedValueOnce(Error('API Error'))
+        server.use(
+            http.post(`${baseUrl}/emails`, () => {
+                return HttpResponse.json(
+                    { message: 'API Error' },
+                    { status: 400 }
+                )
+            })
+        )
 
         const { findByText } = renderResult
 
         await user.type(input, 'test@mail.ru')
+        await waitFor(() => {
+            expect(input).toHaveValue('test@mail.ru')
+        })
         await user.click(submitButton)
 
         expect(await findByText(/API Error/i)).toBeInTheDocument()

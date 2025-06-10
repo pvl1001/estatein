@@ -1,12 +1,16 @@
 ._ {
     --input-label-margin-bottom: 1.6rem;
+    --input-label-font-size: 2rem;
 
     display: inline-block;
     margin-bottom: var(--input-label-margin-bottom);
+    font-size: var(--input-label-font-size);
+    pointer-events: none;
 }
 
 @include media($media-s) {
     ._ {
         --input-label-margin-bottom: 1rem;
+        --input-label-font-size: 1.6rem;
     }
 }
