@@ -59,7 +59,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <Select
                         icon={
                             <div className={s.icon}>
-                                <Icon.Location />
+                                <div className={s.icon__wrapper}>
+                                    <Icon.Location />
+                                </div>
                             </div>
                         }
                         wrapperClassName={s.input}
@@ -74,7 +76,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <Select
                         icon={
                             <div className={s.icon}>
-                                <Icon.Property />
+                                <div className={s.icon__wrapper}>
+                                    <Icon.Property />
+                                </div>
                             </div>
                         }
                         wrapperClassName={s.input}
@@ -89,7 +93,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <Select
                         icon={
                             <div className={s.icon}>
-                                <Icon.Photo />
+                                <div className={s.icon__wrapper}>
+                                    <Icon.Photo />
+                                </div>
                             </div>
                         }
                         wrapperClassName={s.input}
@@ -104,7 +110,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <Select
                         icon={
                             <div className={s.icon}>
-                                <Icon.Box />
+                                <div className={s.icon__wrapper}>
+                                    <Icon.Box />
+                                </div>
                             </div>
                         }
                         wrapperClassName={s.input}
@@ -119,7 +127,9 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                     <Select
                         icon={
                             <div className={s.icon}>
-                                <Icon.Datepicker />
+                                <div className={s.icon__wrapper}>
+                                    <Icon.Datepicker />
+                                </div>
                             </div>
                         }
                         wrapperClassName={s.input}
