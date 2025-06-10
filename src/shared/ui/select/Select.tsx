@@ -2,8 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { FC, ReactNode, useState } from 'react'
 import cn from 'classnames'
 import { Icon } from '../icon'
-import { TextField } from '../text_field'
-import { TextFieldProps } from '../text_field/TextField.tsx'
+import { TextField, TextFieldProps } from '../text_field'
 import s from './Select.module.scss'
 
 export type Option = {

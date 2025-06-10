@@ -42,7 +42,7 @@ export default ({ mode }: UserConfig) => {
         test: {
             globals: true,
             environment: 'jsdom',
-            setupFiles: './src/setupTests.ts',
+            setupFiles: './src/shared/lib/test-utils/setupTests.ts',
         },
         css: {
             transformer: 'postcss',

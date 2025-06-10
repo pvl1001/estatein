@@ -5,6 +5,7 @@
     display: inline-block;
     margin-bottom: var(--input-label-margin-bottom);
     font-size: var(--input-label-font-size);
+    pointer-events: none;
 }
 
 @include media($media-s) {
