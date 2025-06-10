@@ -25,7 +25,7 @@
     --input-height: 6.8rem;
     --input-icon-size: 2.4rem;
     --input-icon-margin-right: 1.2rem;
-    --flip-color: var(--color-error);
+    --input-icon-padding: 0.15rem;
 
     &._error {
         @include flash-error-animation;
@@ -41,17 +41,18 @@
 }
 
 .icon {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     aspect-ratio: 1;
     height: var(--input-icon-size);
-    margin-right: 1.2rem;
-    padding: 0.15rem;
+    margin-right: var(--input-icon-margin-right);
+    padding: var(--input-icon-padding);
 }
 
 @include media($media-s) {
     ._ {
-        --input-icon-margin-right: 0.6rem;
+        --input-icon-margin-right: 0.7rem;
         --input-height: 5.2rem;
         --input-icon-size: 2rem;
     }

@@ -61,16 +61,17 @@
 
 .icon {
     display: flex;
-    height: 100%;
-    gap: calc(var(--input-icon-size) / 2);
 
-    svg {
-        height: 100%;
+    &__wrapper {
+        width: var(--input-icon-size);
+        height: var(--input-icon-size);
+        padding: var(--input-icon-padding);
     }
 
     &::after {
         content: '';
-        width: 0.1rem;
+        flex: 1 0 0.1rem;
+        margin-left: var(--input-icon-margin-right);
         background-color: var(--color-border);
     }
 }
