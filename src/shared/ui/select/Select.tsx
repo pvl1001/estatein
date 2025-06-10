@@ -18,7 +18,6 @@ type Props = Omit<TextFieldProps, 'onChange'> & {
 
 export const Select: FC<Props> = ({
     options,
-    icon,
     onChange,
     className,
     label,
@@ -51,7 +50,6 @@ export const Select: FC<Props> = ({
                 readOnly
                 className={s.input}
                 label={label}
-                icon={icon && <div className={s.icon}>{icon}</div>}
                 onClick={openOptionList}
                 button={
                     <button

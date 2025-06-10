@@ -43,9 +43,10 @@
 .icon {
     display: grid;
     place-items: center;
-    width: var(--input-icon-size);
+    aspect-ratio: 1;
     height: var(--input-icon-size);
     margin-right: 1.2rem;
+    padding: 0.15rem;
 }
 
 @include media($media-s) {

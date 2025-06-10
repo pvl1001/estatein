@@ -57,7 +57,11 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
 
                 <fieldset className={s.fieldset}>
                     <Select
-                        icon={<Icon.Location />}
+                        icon={
+                            <div className={s.icon}>
+                                <Icon.Location />
+                            </div>
+                        }
                         wrapperClassName={s.input}
                         placeholder={t('search.placeholder.location', {
                             postProcess: 'uppAll',
@@ -68,7 +72,11 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         options={options.location}
                     />
                     <Select
-                        icon={<Icon.Property />}
+                        icon={
+                            <div className={s.icon}>
+                                <Icon.Property />
+                            </div>
+                        }
                         wrapperClassName={s.input}
                         placeholder={t('search.placeholder.type', {
                             postProcess: 'uppAll',
@@ -79,7 +87,11 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         options={options.type}
                     />
                     <Select
-                        icon={<Icon.Photo />}
+                        icon={
+                            <div className={s.icon}>
+                                <Icon.Photo />
+                            </div>
+                        }
                         wrapperClassName={s.input}
                         placeholder={t('search.placeholder.price', {
                             postProcess: 'uppAll',
@@ -90,7 +102,11 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         options={options.price}
                     />
                     <Select
-                        icon={<Icon.Box />}
+                        icon={
+                            <div className={s.icon}>
+                                <Icon.Box />
+                            </div>
+                        }
                         wrapperClassName={s.input}
                         placeholder={t('search.placeholder.size', {
                             postProcess: 'uppAll',
@@ -101,7 +117,11 @@ export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
                         options={options.size}
                     />
                     <Select
-                        icon={<Icon.Datepicker />}
+                        icon={
+                            <div className={s.icon}>
+                                <Icon.Datepicker />
+                            </div>
+                        }
                         wrapperClassName={s.input}
                         placeholder={t('search.placeholder.year', {
                             postProcess: 'uppAll',
