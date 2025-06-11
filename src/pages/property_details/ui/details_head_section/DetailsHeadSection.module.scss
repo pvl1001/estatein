@@ -1,0 +1,114 @@
+._ {
+    --detail-name-font-size: 3rem;
+    --detail-location-padding: 1rem;
+    --detail-image-container-padding: 5rem;
+    --detail-image-container-height: 90rem;
+    --detail-head-section-gap: 3rem;
+    --details-page-padding-top: 12rem;
+    --details-page-head-info-margin-bottom: 2rem;
+    --details-params-padding: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--detail-head-section-gap);
+    padding-top: var(--details-page-padding-top);
+}
+
+.head_info {
+    display: flex;
+    align-items: center;
+    gap: 1rem 2rem;
+    margin-bottom: var(--details-page-head-info-margin-bottom);
+
+    > *:last-child {
+        margin-left: auto;
+    }
+}
+
+.name {
+    font-size: var(--detail-name-font-size);
+    font-weight: 600;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--detail-location-padding);
+    border: var(--border);
+    border-radius: var(--border-radius-s);
+
+    svg {
+        width: 1em;
+    }
+}
+
+.image_container {
+    display: grid;
+    height: var(--detail-image-container-height);
+    padding: var(--detail-image-container-padding);
+    border-radius: var(--border-radius);
+    background-color: var(--color-dark);
+    place-items: center;
+
+    .img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: var(--border-radius-s);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.params {
+    display: flex;
+    gap: var(--detail-head-section-gap);
+
+    & > div {
+        flex: 1;
+        height: fit-content;
+        padding: var(--details-params-padding);
+        border: var(--border);
+        border-radius: var(--border-radius);
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --detail-name-font-size: 2rem;
+        --detail-location-padding: 0.8rem;
+        --detail-image-container-padding: 2rem;
+        --detail-image-container-height: 30rem;
+        --detail-head-section-gap: 2rem;
+        --details-page-padding-top: 6rem;
+        --details-page-head-info-margin-bottom: 1rem;
+        --details-params-padding: 2rem;
+    }
+
+    .head_info {
+        flex-wrap: wrap;
+
+        > *:last-child {
+            margin-left: initial;
+        }
+    }
+
+    .name {
+        width: 100%;
+    }
+
+    .price {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    .params {
+        flex-direction: column;
+    }
+}

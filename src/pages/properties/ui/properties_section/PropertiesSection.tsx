@@ -35,6 +35,7 @@ export const PropertiesSection: FC<Props> = ({
                     ? Array(3).fill(PropertyCardSkeleton)
                     : filter(propertyList).map((item) => (
                           <PropertyCard
+                              id={item.id}
                               img={item.img}
                               name={item.name}
                               price={item.price}

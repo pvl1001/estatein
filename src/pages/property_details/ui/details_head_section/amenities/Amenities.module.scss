@@ -1,0 +1,33 @@
+._ {
+    --details-amenity-padding: 1.8rem 2.4rem;
+    --details-amenity-gap: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--details-params-padding);
+}
+
+.features_list {
+    display: grid;
+    gap: var(--details-amenity-gap);
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: var(--details-amenity-padding);
+        border-left: 0.1rem solid var(--color-primary);
+        gap: 1rem;
+        background-color: var(--color-dark);
+    }
+}
+
+@include media($media-s) {
+    ._ {
+        --details-amenity-padding: 1rem 1.2rem;
+        --details-amenity-gap: 1.8rem;
+    }
+
+    .icon {
+        flex: 0 0 1.8rem;
+    }
+}

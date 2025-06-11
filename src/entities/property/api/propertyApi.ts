@@ -6,10 +6,13 @@ export const propertyApi = createApi({
     reducerPath: 'propertyApi',
     baseQuery,
     endpoints: ({ query }) => ({
-        getProperty: query<TPropertyItem[], void>({
+        getAllProperties: query<TPropertyItem[], void>({
             query: () => '/properties',
+        }),
+        getOneProperty: query<TPropertyItem, string>({
+            query: (id) => `/properties/${id}`,
         }),
     }),
 })
 
-export const { useGetPropertyQuery } = propertyApi
+export const { useGetAllPropertiesQuery, useGetOnePropertyQuery } = propertyApi

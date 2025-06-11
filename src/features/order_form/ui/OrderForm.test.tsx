@@ -142,4 +142,15 @@ describe('OrderForm', () => {
             expect(screen.getByText(/test message error/i)).toBeInTheDocument()
         })
     })
+
+    it('phone should be with mask', async () => {
+        const { findByLabelText } = render(<OrderForm />)
+        const user = userEvent.setup()
+        const phone = await findByLabelText(/phone/)
+
+        await user.type(phone, '90522557400000')
+        await waitFor(() => {
+            expect(phone).toHaveValue('+7 (905) 225-57-40')
+        })
+    })
 })

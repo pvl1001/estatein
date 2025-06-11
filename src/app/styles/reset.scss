@@ -10,6 +10,13 @@
     box-sizing: border-box;
 }
 
+a {
+    &,
+    &:visited {
+        text-decoration: none;
+    }
+}
+
 nav,
 footer,
 header,
@@ -37,6 +44,7 @@ input,
 button,
 textarea {
     font-family: inherit;
+    font-weight: inherit;
 }
 
 input::-ms-clear {

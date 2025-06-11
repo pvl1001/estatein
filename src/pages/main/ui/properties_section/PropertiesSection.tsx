@@ -3,7 +3,7 @@ import { FC } from 'react'
 import {
     PropertyCard,
     PropertyCardSkeleton,
-    useGetPropertyQuery,
+    useGetAllPropertiesQuery,
 } from 'entities/property'
 import { Ns, Paths } from 'shared/lib/const'
 import { SectionSlider } from 'shared/ui/section_slider'
@@ -12,7 +12,7 @@ export type Props = {}
 
 export const PropertiesSection: FC<Props> = () => {
     const { t } = useTranslation([Ns.MAIN_PAGE])
-    const { data = [], isLoading, isError } = useGetPropertyQuery()
+    const { data = [], isLoading, isError } = useGetAllPropertiesQuery()
     const propertyList = data.filter((p) => p.isFeatured)
 
     return (
@@ -23,7 +23,7 @@ export const PropertiesSection: FC<Props> = () => {
             })}
             description={t('section.properties.description')}
             buttonViewAllProps={{
-                to: Paths.MAIN,
+                to: Paths.PROPERTIES,
                 text: t('section.properties.view_all_button', {
                     postProcess: 'uppAll',
                 }),
@@ -33,6 +33,7 @@ export const PropertiesSection: FC<Props> = () => {
                     ? Array(3).fill(PropertyCardSkeleton)
                     : propertyList.map((item) => (
                           <PropertyCard
+                              id={item.id}
                               img={item.img}
                               type={item.type}
                               bathroomCount={item.bathroomCount}

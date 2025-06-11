@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
-import { useGetPropertyQuery } from 'entities/property'
+import { useGetAllPropertiesQuery } from 'entities/property'
 import { Button } from 'shared/ui/button'
 import { Icon } from 'shared/ui/icon'
 import { Select } from 'shared/ui/select'
@@ -18,7 +18,7 @@ type Props = {
 
 export const PropertySearch: FC<Props> = ({ className, isLoading }) => {
     const { t } = useTranslation()
-    const { data: properties = [] } = useGetPropertyQuery()
+    const { data: properties = [] } = useGetAllPropertiesQuery()
     const options = usePropertyOptions(properties)
     const { values, onChange, register, onSubmit } = usePropertySearchForm()
 

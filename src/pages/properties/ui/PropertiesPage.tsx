@@ -1,5 +1,5 @@
 import { PropertySearch } from 'features/search_property'
-import { useGetPropertyQuery } from 'entities/property'
+import { useGetAllPropertiesQuery } from 'entities/property'
 import { PropertyFormSection } from './form_section/PropertyFormSection.tsx'
 import { PropertiesSection } from './properties_section/PropertiesSection'
 import { PropertyHead } from './property_head/PropertyHead.tsx'
@@ -10,7 +10,7 @@ export const PropertiesPage = () => {
         data: propertyList = [],
         isLoading,
         isError,
-    } = useGetPropertyQuery()
+    } = useGetAllPropertiesQuery()
 
     return (
         <>

@@ -8,7 +8,6 @@
     --feature-card-option-padding: 0.8rem 1.4rem;
     --feature-card-option-icon-width: 2.4rem;
     --feature-card-button-width: 23rem;
-    --feature-card-price-font-size: 2.4rem;
     --feature-card-category-padding: 0.8rem 1.4rem;
 
     display: flex;
@@ -68,21 +67,6 @@
     }
 }
 
-.price_container {
-    display: grid;
-    flex: 1;
-}
-
-.price_title {
-    color: var(--color-grey-60);
-    font-size: var(--feature-card-option-list-font-size);
-}
-
-.price {
-    display: block;
-    font-size: var(--feature-card-price-font-size);
-}
-
 .read_more {
     color: var(--color-text-default);
     text-decoration: underline;
@@ -108,7 +92,6 @@
         --feature-card-option-list-gap: 0.6rem;
         --feature-card-button-width: 16rem;
         --feature-card-option-icon-width: 2rem;
-        --feature-card-price-font-size: 1.8rem;
         --feature-card-category-padding: 0.6rem 1.2rem;
     }
 

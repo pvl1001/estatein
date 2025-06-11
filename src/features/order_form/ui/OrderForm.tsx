@@ -2,7 +2,7 @@ import { Controller } from 'react-hook-form'
 import { Trans, useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
-import { useGetPropertyQuery } from 'entities/property'
+import { useGetAllPropertiesQuery } from 'entities/property'
 import { Button } from 'shared/ui/button'
 import { Checkbox } from 'shared/ui/checkbox'
 import { Icon } from 'shared/ui/icon'
@@ -20,7 +20,7 @@ type Props = {
 
 export const OrderForm: FC<Props> = ({ className }) => {
     const { t } = useTranslation()
-    const { data: properties = [], isLoading } = useGetPropertyQuery()
+    const { data: properties = [], isLoading } = useGetAllPropertiesQuery()
     const options = usePropertyOptions(properties)
     const { onSubmit, register, control, errors, isSending, phoneMask } =
         useOrderForm()

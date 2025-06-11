@@ -1,0 +1,21 @@
+._ {
+    --feature-card-price-font-size: 2.4rem;
+
+    display: grid;
+}
+
+.price_title {
+    color: var(--color-grey-60);
+    font-size: var(--feature-card-option-list-font-size);
+}
+
+.price {
+    display: block;
+    font-size: var(--feature-card-price-font-size);
+}
+
+@include media($media-s) {
+    ._ {
+        --feature-card-price-font-size: 1.8rem;
+    }
+}

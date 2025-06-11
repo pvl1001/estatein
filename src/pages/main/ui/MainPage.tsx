@@ -1,5 +1,5 @@
+import { Faq } from 'widgets/faq'
 import { ClientSay } from './client_say/ClientSay.tsx'
-import { Faq } from './faq/FAQ.tsx'
 import { HeadSection } from './head_section/HeadSection'
 import { PropertiesSection } from './properties_section/PropertiesSection'
 
