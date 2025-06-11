@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import cn from 'classnames'
 import { Button } from 'shared/ui/button'
+import { Price } from 'shared/ui/price'
 import { Skeleton } from 'shared/ui/skeleton'
 import { Text } from 'shared/ui/text'
 import s from './PropertyCard.module.scss'
@@ -34,10 +35,7 @@ export const PropertyCardSkeleton: FC<Props> = () => {
             <div className={s.footer}>
                 <div className={s.price_container}>
                     <Skeleton>
-                        <span className={s.price_title}>Price</span>
-                    </Skeleton>
-                    <Skeleton>
-                        <span className={s.price}>123</span>
+                        <Price>{500}</Price>
                     </Skeleton>
                 </div>
                 <Skeleton>

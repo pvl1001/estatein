@@ -10,6 +10,13 @@
     box-sizing: border-box;
 }
 
+a {
+    &,
+    &:visited {
+        text-decoration: none;
+    }
+}
+
 nav,
 footer,
 header,
