@@ -1,7 +1,6 @@
 import image from 'shared/assets/images/abstract.webp'
 import { render } from 'shared/lib/test-utils'
 import { PropertyCard } from './PropertyCard.tsx'
-import s from './PropertyCard.module.scss'
 
 describe('PropertyCard', () => {
     const initialProps = {
@@ -69,18 +68,5 @@ describe('PropertyCard', () => {
             />
         )
         expect(getByText(/coastal escapes/i)).toBeInTheDocument()
-    })
-
-    it.skip.each([
-        { price: 1, result: '$1,00' },
-        { price: 1.11, result: '$1,11' },
-        { price: 100, result: '$100,00' },
-        { price: 1000, result: '$1,000,00' },
-    ])('price $price should be $result', ({ result, price }) => {
-        const { container } = render(
-            <PropertyCard {...initialProps} price={price} />
-        )
-        const priceElement = container.querySelector(`.${s.price}`)!
-        expect(priceElement.textContent).toBe(result)
     })
 })
