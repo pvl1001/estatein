@@ -13,7 +13,7 @@ export const AmenitiesSkeleton: FC<Props> = () => {
 
             <ul className={s.features_list}>
                 {[1, 2, 3, 4].map((amenity) => (
-                    <Skeleton>
+                    <Skeleton key={amenity}>
                         <li key={amenity}>{amenity}</li>
                     </Skeleton>
                 ))}

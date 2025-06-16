@@ -2,10 +2,11 @@ import { useTranslation } from 'react-i18next'
 import { FC, ReactNode, useId } from 'react'
 import cn from 'classnames'
 import { useSliderSpaceBetween } from '../../lib/hooks'
+import { getBreakpoints } from '../../lib/utils'
 import { Icon } from '../icon'
 import { useSlider } from './lib/useSlider.ts'
 import { SliderConfig } from './types.ts'
-import { Autoplay, Navigation } from 'swiper/modules'
+import { Autoplay, Navigation, Virtual } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import s from './Slider.module.scss'
 
@@ -17,12 +18,12 @@ type Props = {
 
 export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
     const { t } = useTranslation()
+    const { mobile } = getBreakpoints()
     const swiperId: string = useId()
     const pageRem: number = useSliderSpaceBetween(config?.spaceBetween ?? 20)
-    const { onSlideChange, slidesPerView, activeIndex, swiperRef } = useSlider({
-        configPerView: (config?.slidesPerView as number) ?? 3,
-        listLength: slideList.length,
-    })
+    const { onSlideChange, activeIndex, swiperRef } = useSlider(
+        slideList.length
+    )
 
     return (
         <>
@@ -30,14 +31,20 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
                 ref={swiperRef}
                 onSlideChange={onSlideChange}
                 className={s._}
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation, Autoplay, Virtual]}
+                virtual
                 navigation={{
                     nextEl: `#${swiperId}.${s._next}`,
                     prevEl: `#${swiperId}.${s._prev}`,
                 }}
                 {...config}
-                slidesPerView={slidesPerView}
+                slidesPerView={1}
                 spaceBetween={pageRem}
+                breakpoints={{
+                    [mobile + 1]: {
+                        slidesPerView: 3,
+                    },
+                }}
             >
                 {slideList.map((slide, i) => (
                     <SwiperSlide key={i} className={s.slide}>
