@@ -1,49 +1,53 @@
 import { useEffect, useRef, useState } from 'react'
-import { useWindowResize } from '../../../lib/hooks'
-import { getBreakpoints } from '../../../lib/utils'
 import { SwiperRef } from 'swiper/react'
+import { Swiper } from 'swiper/types'
 
-type Props = {
-    configPerView: number
-    listLength: number
-}
-export const useSlider = ({ configPerView, listLength }: Props) => {
+export const useSlider = (listLength: number) => {
     const swiperRef = useRef<SwiperRef>(null)
-    const { mobile } = getBreakpoints()
-    const [slidesPerView, setSlidesPerView] = useState(configPerView ?? 3)
-    const [index, setIndex] = useState(slidesPerView)
+    const [activeIndex, setActiveIndex] = useState(() => getActiveIndex(0))
 
-    function onSlideChange({ activeIndex }: SwiperRef['swiper']) {
-        setIndex(activeIndex + slidesPerView)
+    function getActiveIndex(currentIndex: number) {
+        return currentIndex + getCurrentSlidesPerView(swiperRef.current?.swiper)
+    }
+
+    function onSlideChange(swiper: Swiper) {
+        setActiveIndex(swiper.activeIndex + getCurrentSlidesPerView(swiper))
+    }
+
+    function getVisibleSlidesCount(count: number) {
+        if (listLength < count) {
+            return listLength
+        }
+        return count
+    }
+
+    function getCurrentSlidesPerView(swiper: Swiper | undefined): number {
+        if (!swiper) return 0
+        const { breakpoints } = swiper.params
+        const currentBreakpoint = swiper.getBreakpoint(breakpoints)
+
+        return getVisibleSlidesCount(
+            breakpoints?.[currentBreakpoint]
+                ? (breakpoints[currentBreakpoint].slidesPerView as number)
+                : (swiper.params.slidesPerView as number)
+        )
     }
 
     function slideToFirst() {
         swiperRef.current?.swiper.slideTo(0, 0)
     }
 
-    function minActiveIndex(n: number): number {
-        return Math.min(n, listLength)
-    }
-
-    useWindowResize(() => {
-        const activeIndex = minActiveIndex(
-            window.innerWidth > mobile ? slidesPerView : 1
-        )
-        setSlidesPerView(activeIndex)
-        setIndex(activeIndex)
-        slideToFirst()
-    })
+    useEffect(() => {
+        swiperRef.current && onSlideChange(swiperRef.current.swiper)
+    }, [getCurrentSlidesPerView(swiperRef.current?.swiper)])
 
     useEffect(() => {
-        const activeIndex = minActiveIndex(slidesPerView)
-        setIndex(activeIndex)
         slideToFirst()
     }, [listLength])
 
     return {
-        slidesPerView,
-        activeIndex: index,
         onSlideChange,
+        activeIndex,
         swiperRef,
     }
 }

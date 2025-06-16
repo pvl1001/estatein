@@ -19,7 +19,12 @@ describe('SectionSlider', () => {
     it('should be with slides', () => {
         const slideList = [1, 2, 3]
         const { getByText } = render(
-            <SectionSlider title={''} description={''} slideList={slideList} />
+            <SectionSlider
+                title={''}
+                description={''}
+                slideList={slideList}
+                sliderConfig={{ virtual: false }}
+            />
         )
 
         slideList.forEach((slide) => {

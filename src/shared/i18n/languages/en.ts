@@ -7,6 +7,10 @@ export const en = {
     step: 'step',
     empty: 'empty',
     not_found: 'not found',
+    bedrooms: 'bedrooms',
+    bathrooms: 'bathrooms',
+    area: 'area',
+    square_feet: 'square feet',
     button: {
         learn_more: 'learn more',
         browse_properties: 'browse $t(glossary:properties, upp)',
