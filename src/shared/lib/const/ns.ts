@@ -7,4 +7,5 @@ export enum Ns {
     MAIN_PAGE = 'mainPage',
     ABOUT_PAGE = 'aboutPage',
     PROPERTIES_PAGE = 'propertiesPage',
+    PROPERTY_DETAILS_PAGE = 'propertyDetailsPage',
 }

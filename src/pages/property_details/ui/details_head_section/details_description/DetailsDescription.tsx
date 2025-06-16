@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import { FC } from 'react'
 import cn from 'classnames'
 import { TPropertyItem } from 'entities/property'
+import { Ns } from 'shared/lib/const'
 import { Icon, IconContainer } from 'shared/ui/icon'
 import { Text } from 'shared/ui/text'
 import s from './DetailsDescription.module.scss'
@@ -19,10 +21,16 @@ export const DetailsDescription: FC<Props> = ({
     size,
     className,
 }) => {
+    const { t } = useTranslation([Ns.PROPERTY_DETAILS_PAGE, Ns.TRANSLATION])
+
     return (
         <div className={cn(s._, className)}>
             <div className={s.text_container}>
-                <Text.Title as="h5">Description</Text.Title>
+                <Text.Title as="h5">
+                    {t('sections.head.description_container.title', {
+                        postProcess: 'uppAll',
+                    })}
+                </Text.Title>
                 <Text.Description>{description}</Text.Description>
             </div>
 
@@ -32,7 +40,7 @@ export const DetailsDescription: FC<Props> = ({
                         <IconContainer>
                             <Icon.Bedroom />
                         </IconContainer>
-                        Bedrooms
+                        {t(`translation:bedrooms`, { postProcess: 'uppAll' })}
                     </Text.Description>
                     <p className={s.value}>
                         {String(bedroomCount).padStart(2, '0')}
@@ -43,7 +51,7 @@ export const DetailsDescription: FC<Props> = ({
                         <IconContainer>
                             <Icon.Bathroom />
                         </IconContainer>
-                        Bathrooms
+                        {t(`translation:bathrooms`, { postProcess: 'uppAll' })}
                     </Text.Description>
                     <p className={s.value}>
                         {String(bathroomCount).padStart(2, '0')}
@@ -54,9 +62,14 @@ export const DetailsDescription: FC<Props> = ({
                         <IconContainer>
                             <Icon.Area />
                         </IconContainer>
-                        Area
+                        {t(`translation:area`, { postProcess: 'uppAll' })}
                     </Text.Description>
-                    <p className={s.value}>{size.toFeet()} Square Feet</p>
+                    <p className={s.value}>
+                        {size.toFeet()}{' '}
+                        {t(`translation:square_feet`, {
+                            postProcess: 'uppAll',
+                        })}
+                    </p>
                 </li>
             </ul>
         </div>

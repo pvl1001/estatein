@@ -38,7 +38,6 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
                     prevEl: `#${swiperId}.${s._prev}`,
                 }}
                 {...config}
-                slidesPerView={1}
                 spaceBetween={pageRem}
                 breakpoints={{
                     [mobile + 1]: {

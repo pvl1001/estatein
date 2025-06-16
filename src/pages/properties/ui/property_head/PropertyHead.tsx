@@ -11,7 +11,7 @@ export const PropertyHead: FC<Props> = () => {
     return (
         <section className={s._}>
             <TextBox
-                title={t('section.head.title')}
+                title={t('section.head.title', { postProcess: 'uppAll' })}
                 description={t('section.head.description')}
             />
         </section>

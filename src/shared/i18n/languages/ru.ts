@@ -7,6 +7,10 @@ export const ru: typeof en = {
     step: 'шаг',
     empty: 'пусто',
     not_found: 'не найдено',
+    bedrooms: 'спален',
+    bathrooms: 'ванных',
+    area: 'площадь',
+    square_feet: 'кв. футов',
     button: {
         learn_more: 'Подробнее',
         browse_properties: 'Посмотреть $t(glossary:property_acc)',
