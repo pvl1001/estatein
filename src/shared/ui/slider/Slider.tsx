@@ -37,13 +37,13 @@ export const Slider: FC<Props> = ({ slideList, viewButton, config }) => {
                     nextEl: `#${swiperId}.${s._next}`,
                     prevEl: `#${swiperId}.${s._prev}`,
                 }}
-                {...config}
-                spaceBetween={pageRem}
                 breakpoints={{
                     [mobile + 1]: {
                         slidesPerView: 3,
                     },
                 }}
+                spaceBetween={pageRem}
+                {...config}
             >
                 {slideList.map((slide, i) => (
                     <SwiperSlide key={i} className={s.slide}>
